@@ -118,6 +118,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SchoolEDM.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Sessoin.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
@@ -143,6 +146,9 @@
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="vPresence.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSessoin.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="vStudent.cs">

@@ -30,6 +30,8 @@ namespace DataAccess
         public string Image { get; set; }
         public string UserName { get; set; }
         public string UserPass { get; set; }
+        public string Email { get; set; }
+        public string ZipCode { get; set; }
     
         public virtual ICollection<LessonGroup> LessonGroups { get; set; }
     }

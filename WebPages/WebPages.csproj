@@ -634,9 +634,12 @@
     <Content Include="Dashboard\Admin\EditEmployee.aspx" />
     <Content Include="Dashboard\Admin\EditStudent.aspx" />
     <Content Include="Dashboard\Admin\Employees.aspx" />
+    <Content Include="Dashboard\Admin\Kartabl.aspx" />
     <Content Include="Dashboard\Admin\LessonGroups.aspx" />
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
+    <Content Include="Dashboard\Admin\NewSesion.aspx" />
+    <Content Include="Dashboard\Admin\SesionHistory.aspx" />
     <Content Include="Dashboard\Admin\Students.aspx" />
     <Content Include="Dashboard\Admin\studentsPayment.aspx" />
     <Content Include="Dashboard\Charts.aspx" />
@@ -664,7 +667,11 @@
     <Content Include="Dashboard\Scores.aspx" />
     <Content Include="Dashboard\Styles\bootstrap.css" />
     <Content Include="Dashboard\Styles\custom.min.css" />
+
+    <Content Include="Dashboard\Styles\HamoonStyle.css" />
+
     <Content Include="Dashboard\Styles\sasanStyle.css" />
+
     <Content Include="Dashboard\Styles\simple-sidebar.css" />
     <Content Include="Dashboard\WeeklySchedule.aspx" />
     <Content Include="packages.config" />
@@ -797,10 +804,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dashboard.resx</DependentUpon>
     </Compile>
+
     <Compile Include="App_GlobalResources\sasanRes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sasanRes.resx</DependentUpon>
+
+    <Compile Include="App_GlobalResources\HamoonResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HamoonResource.resx</DependentUpon>
+
     </Compile>
     <Compile Include="Dashboard\Admin\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
@@ -900,6 +914,13 @@
     <Compile Include="Dashboard\Admin\Employees.aspx.designer.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Admin\Kartabl.aspx.cs">
+      <DependentUpon>Kartabl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\Kartabl.aspx.designer.cs">
+      <DependentUpon>Kartabl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Admin\LessonGroups.aspx.cs">
       <DependentUpon>LessonGroups.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -920,6 +941,20 @@
     </Compile>
     <Compile Include="Dashboard\Admin\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\NewSesion.aspx.cs">
+      <DependentUpon>NewSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\NewSesion.aspx.designer.cs">
+      <DependentUpon>NewSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\SesionHistory.aspx.cs">
+      <DependentUpon>SesionHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\SesionHistory.aspx.designer.cs">
+      <DependentUpon>SesionHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\Students.aspx.cs">
       <DependentUpon>Students.aspx</DependentUpon>
@@ -1062,9 +1097,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+
     <Content Include="App_GlobalResources\sasanRes.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>sasanRes.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\HamoonResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>HamoonResource.Designer.cs</LastGenOutput>
+
     </Content>
   </ItemGroup>
   <PropertyGroup>
