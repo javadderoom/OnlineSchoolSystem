@@ -233,5 +233,22 @@ namespace DataAccess.Repository
                 }
             }
         }
+        public DataTable searchLessonsGroups(string text)
+        {
+            SchoolDBEntities pb = conn.GetContext();
+            List<vLessonGroup> llg = new List<vLessonGroup>();
+            var query =
+                from r in pb.vLessonGroups
+                where r.LessonTitle.Contains(text)
+                || r.FirstName.Contains(text)
+                || r.LastName.Contains(text)
+                || r.GradeTitle.Contains(text)
+                || r.Year.Contains(text)
+                select r;
+
+            llg = query.ToList();
+            return OnlineTools.ToDataTable(llg);
+
+        }
     }
 }

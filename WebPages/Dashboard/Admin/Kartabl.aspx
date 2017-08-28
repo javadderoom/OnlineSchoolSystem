@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard/Dashboard.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="WebPages.Dashboard.Kartabl" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard/Admin/AdminPanel.Master" AutoEventWireup="true" CodeBehind="Kartabl.aspx.cs" Inherits="WebPages.Dashboard.Admin.Kartabl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta charset="utf-8" />
@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link href="Styles/bootstrap.css" rel="stylesheet" />
-    <link href="Styles/simple-sidebar.css" rel="stylesheet" />
-    <link href="Styles/AdminPanelStyles.css" rel="stylesheet" />
-
-    <%--  <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/simple-sidebar.css" rel="stylesheet" />--%>
-    <link href="font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Styles/bootstrap.css" rel="stylesheet" />
+    <link href="../Styles/simple-sidebar.css" rel="stylesheet" />
+    <script src="../JavaScript/custom.min.js"></script>
+    <link href="../Styles/AdminPanelStyles.css" rel="stylesheet" />
+    <link href="../font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="c-title">
-        <h4>مشخصات شخصی</h4>
+        <h4>
+            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,PersonalInfo%>" /></h4>
     </div>
     <div class="c-content">
         <%--<div id="demo-form2" class="form-horizontal form-label-right">--%>
@@ -49,12 +48,12 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                            <span id="ContentPlaceHolder1_lbl_StudentCode" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,StudentCode%>" /></span>
+                            <span id="ContentPlaceHolder1_lbl_PersonalCode" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,PersonalCode%>" /></span>
                         </div>
 
                         <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                            <span id="lblStudentCode" runat="server" class="control-label formLabel"></span>
+                            <span id="lblPersonalCode" runat="server" class="control-label formLabel"></span>
                         </div>
                     </div>
                 </div>
@@ -84,18 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                            <span id="ContentPlaceHolder1_lbl_Field" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,reshte_tahsili%>" /></span>
-                        </div>
 
-                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                            <span id="lblField" runat="server" class="control-label formLabel"></span>
-                        </div>
-                    </div>
-                </div>
                 <div class="ln_solid"></div>
 
                 <div class="form-group">
@@ -213,7 +201,7 @@
             <div class="ln_solid"></div>
             <div class="form-group">
                 <div class="col-xs-12 text-right">
-                    <a class="btn btn-auto-v btn-auto-h btn-primary goRight" href="http://localhost:4911/Dashboard/EditProfile.aspx">
+                    <a class="btn btn-auto-v btn-auto-h btn-primary goRight" href="http://localhost:4911/Dashboard/Admin/EditProfile.aspx">
                         <asp:Literal runat="server" Text="<%$ Resources:Dashboard,edite%>" />
                         <span class="fa fa-edit"></span>
                     </a>
