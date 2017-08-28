@@ -16,12 +16,12 @@
     <div class="c-title">
         <h4>
 
-            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,LessonGroups%>" />
-        </h4>
+            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,students%>" /></h4>
     </div>
     <div class="x_content">
         <div class="row">
             <div class="col-md-4 hidden-xs">
+                <%--awdawdwa--%>
                 <label style="padding-top: 5px;">
                     نمایش
                                
@@ -37,9 +37,6 @@
                 </label>
             </div>
             <div class="col-md-4 col-xs-12 text-righ">
-                <a href="AddLessonGroup.aspx" class="btn btn-primary">
-                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,AddLessonGroup%>" />
-                </a>
             </div>
             <div class="col-md-4 col-xs-12 text-righ">
                 <div class="input-group">
@@ -51,55 +48,34 @@
 
                     <div id="ContentPlaceHolder1_upSearch">
 
-                        <input name="ctl00$ContentPlaceHolder1$tbxnameSearch" runat="server" placeholder="نام کارمند" type="text" maxlength="50" id="tbxSearch" class="form-control text-right dirRight" />
+                        <input name="ctl00$ContentPlaceHolder1$tbxnameSearch" runat="server" placeholder="نام دانش آموز" type="text" maxlength="50" id="tbxSearch" class="form-control text-right dirRight pull-right" />
                     </div>
                 </div>
             </div>
         </div>
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
         <div id="ContentPlaceHolder1_upGrid">
-
             <div>
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
-                        <asp:GridView ID="gvLessonGroups" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False"
-                            CssClass="dirRight table" HorizontalAlign="Center" OnRowDataBound="gvEmployees_RowDataBound" AllowPaging="True" OnSelectedIndexChanged="gvEmployees_SelectedIndexChanged" OnRowEditing="gvEmployees_RowEditing" OnRowCommand="gvEmployees_RowCommand" EnableSortingAndPagingCallbacks="True" PageSize="5">
+
+                        <asp:GridView ID="gvStudents" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" CssClass="dirRight table" HorizontalAlign="Center" OnRowDataBound="gvStudents_RowDataBound" AllowCustomPaging="True" AllowPaging="True" OnSelectedIndexChanged="gvStudents_SelectedIndexChanged" OnRowEditing="gvStudents_RowEditing" OnRowCommand="gvStudents_RowCommand">
                             <Columns>
-                                <asp:BoundField DataField="LGID" HeaderText="<%$ Resources:Dashboard,ID%>" />
-                                <asp:BoundField DataField="Class" HeaderText="<%$ Resources:Dashboard,Class%>" />
-                                <asp:BoundField DataField="LessonTitle" HeaderText="<%$ Resources:Dashboard,LessonTitle%>" />
-                                <asp:BoundField DataField="Unit" HeaderText="<%$ Resources:Dashboard,Unit%>" />
-                                <asp:BoundField DataField="FirstName" HeaderText="<%$ Resources:Dashboard,TeacherFName%>" />
-                                <asp:BoundField DataField="LastName" HeaderText="<%$ Resources:Dashboard,TeacherLName%>" />
-                                <asp:BoundField DataField="GradeTitle" HeaderText="<%$ Resources:Dashboard,GradeTitle%>" />
-                                <asp:BoundField DataField="Day" HeaderText="<%$ Resources:Dashboard,Day%>" />
-                                <asp:BoundField DataField="Time" HeaderText="<%$ Resources:Dashboard,Time%>" />
-                                <asp:BoundField DataField="Year" HeaderText="<%$ Resources:Dashboard,Year%>" />
-                                <asp:TemplateField ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Justify">
+                                <asp:BoundField DataField="studentCode" HeaderText="<%$ Resources:Dashboard,shomare_daneshamozi%>" />
+                                <asp:BoundField DataField="FirstName" HeaderText="<%$ Resources:Dashboard,name%>" />
+                                <asp:BoundField DataField="LastName" HeaderText="<%$ Resources:Dashboard,family%>" />
+                                <asp:BoundField DataField="FathersFirstName" HeaderText="<%$ Resources:Dashboard,father_name%>" />
+                                <asp:BoundField DataField="GradeTitle" HeaderText="سال" />
+
+                                <asp:TemplateField>
                                     <ItemTemplate>
-                                        <asp:Button ID="Edid" runat="server"
-                                            CommandName="Edit"
-                                            CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                            Text="<%$ Resources:Dashboard,edite%>" />
 
                                         <asp:Button ID="Details" runat="server"
                                             CommandName="Details"
                                             CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                            Text="<%$ Resources:Dashboard,Details%>" />
+                                            Text="<%$ Resources:sasanRes,payments%>" Width="100" />
 
-                                        <asp:Button OnClientClick="if(!confirm('ایا مطمئن هستید؟')) return false;" ID="Delet" runat="server"
-                                            CommandName="Delet"
-                                            CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                            Text="<%$ Resources:Dashboard,Delete%>" />
-                                        <asp:Button ID="Students" runat="server"
-                                            CommandName="Students"
-                                            CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                            Text="<%$ Resources:Dashboard,Students%>"
-                                            Width="115px" />
                                     </ItemTemplate>
-
-                                    <ItemStyle HorizontalAlign="Justify" VerticalAlign="Middle"></ItemStyle>
                                 </asp:TemplateField>
                             </Columns>
 
@@ -116,177 +92,6 @@
                 </asp:UpdatePanel>
             </div>
         </div>
-        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-            <ContentTemplate>
-                <div class="modal fade" id="modalShowDetails" tabindex="-1" role="dialog" aria-labelledby="modalAskSubmitUpdate-label" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                <h4 class="modal-title" id="modalAskSubmitUpdate-label">
-                                    <span class=" glyphicon glyphicon-th-list"></span>
-                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,LessonGroupDetails%>" />
-                                </h4>
-                            </div>
-                            <div class="modal-body" id="divtoprint">
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                            <span id="lblID" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,ID%>" />
-                                            </span>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-
-                                            <span id="tbxID" runat="server" class="form-control control-label formLabel"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                            <span id="ContentPlaceHolder1_lbl_Class" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,Class%>" />
-                                            </span>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                            <span id="tbxClass" runat="server" class="form-control control-label formLabel"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                            <span id="ContentPlaceHolder1_lbl_LessonTitle" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,LessonTitle%>" />
-                                            </span>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                            <span id="tbxLessonTitle" runat="server" class="form-control control-label formLabel" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="ln_solid"></div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                            <span id="ContentPlaceHolder1_lbl_Unit" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,Unit%>" />
-                                            </span>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                            <span id="tbxUnit" runat="server" class="form-control control-label formLabel"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                            <span id="ContentPlaceHolder1_lbl_TFName" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,TeacherFName%>" />
-                                            </span>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                            <span id="tbxTeacherFName" runat="server" class="form-control control-label formLabel"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                            <span id="ContentPlaceHolder1_lbl_TLName" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,TeacherLName%>" />
-                                            </span>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                            <span id="tbxTeacherLName" runat="server" class="form-control control-label formLabel"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                            <span id="ContentPlaceHolder1_lbl_GradeTitle" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,GradeTitle%>" />
-                                            </span>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                            <span id="tbxGradeTitle" runat="server" class="form-control control-label formLabel"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                            <span id="ContentPlaceHolder1_lbl_Day" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,Day%>" />
-                                            </span>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                            <span id="tbxDay" runat="server" class="form-control control-label formLabel"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                            <span id="ContentPlaceHolder1_lbl_Time" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,Time%>" />
-                                            </span>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                            <span id="tbxTime" runat="server" class="form-control control-label formLabel"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                            <span id="ContentPlaceHolder1_lbl_Year" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,Year%>" />
-                                            </span>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                            <span id="tbxYear" runat="server" class="form-control control-label formLabel"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <div class="row">
-                                    <div class="col-xs-12 text-center">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,back%>" />
-                                        </button>
-                                        <button type="button" id="btnPrint" class="btn btn-default" onclick=" my()">print</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ContentTemplate>
-        </asp:UpdatePanel>
-
         <div class="row">
             <div class="col-md-5 col-md-push-7 col-xs-6 col-xs-push-6">
                 <button type="button" id="btnViewAll" class="btn btn-auto-h btn-info goRight" runat="server" style="margin-right: 5px;" onserverclick="btnShowAll_Click">
@@ -298,5 +103,225 @@
             </div>
         </div>
     </div>
-    <script src="../JavaScript/JavaScript.js"></script>
+
+    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+        <ContentTemplate>
+
+            <div class="modal fade" id="modalShowDetails" tabindex="-1" role="dialog" aria-labelledby="modalAskSubmitUpdate-label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="modalAskSubmitUpdate-label">هشدار
+
+                                                   
+
+                                <span class="glyphicon glyphicon-warning-sign"></span>
+                            </h4>
+                        </div>
+                        <div class="modal-body" id="divtoprint">
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="lblStudentCode" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,shomare_daneshamozi%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+
+                                        <span id="tbxStudentCode" runat="server" class="form-control control-label formLabel"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="lblcodemelli" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,codemelli%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+
+                                        <span id="tbxNatinalCode" runat="server" class="form-control control-label formLabel"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="ContentPlaceHolder1_lbl_FirstName" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,name%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+                                        <span id="tbxFirstName" runat="server" class="form-control control-label formLabel"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="ContentPlaceHolder1_lbl_LastName" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,family%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+                                        <span id="tbxLastName" runat="server" class="form-control control-label formLabel" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ln_solid"></div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="ContentPlaceHolder1_lbl_BirthYear" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,birthday%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+                                        <span id="tbxBirthDay" runat="server" class="form-control control-label formLabel"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="ContentPlaceHolder1_lbl_FixTel" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,telephon_sabet%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+                                        <span id="tbxFixTel" runat="server" class="form-control control-label formLabel"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="ContentPlaceHolder1_lbl_EmployeeUserName" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,UserName%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+                                        <span id="tbxUserName" runat="server" class="form-control control-label formLabel"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="ContentPlaceHolder1_lbl_EmployeePassword" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,Password%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+                                        <span id="tbxPassword" runat="server" class="form-control control-label formLabel"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="ContentPlaceHolder1_lbl_Mobile" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,mobile%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+                                        <span id="tbxMobile" runat="server" class="form-control control-label formLabel"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="ContentPlaceHolder1_lbl_EmpoyeetType" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,EmployeeType%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+                                        <span id="tbxEmployeeType" runat="server" class="form-control control-label formLabel"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="ContentPlaceHolder1_lbl_Email" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,email%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+                                        <span id="tbxEmail" runat="server" class="form-control control-label formLabel"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                                        <span id="ContentPlaceHolder1_lbl_Address" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
+                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,address%>" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
+                                        <textarea name="ctl00$ContentPlaceHolder1$tbxAddress" rows="2" cols="20" runat="server" id="tbxAddress" class="form-control text-right dirRight"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <button type="button" class="btn btn-default " data-dismiss="modal">
+                                        <asp:Literal runat="server" Text="<%$ Resources:Dashboard,back%>" />
+                                    </button>
+                                    <button type="button" id="btnPrint" class="btn btn-default" onclick=" my()">print</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+
+    <script>
+        function my() {
+
+            var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+            mywindow.document.write(document.getElementById("divtoprint").innerHTML);
+
+            mywindow.document.close(); // necessary for IE >= 10
+            mywindow.focus(); // necessary for IE >= 10*/
+
+            mywindow.print();
+            mywindow.close();
+
+            return true;
+
+        }
+    </script>
 </asp:Content>
