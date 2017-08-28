@@ -81,9 +81,9 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to جلسه جدید.
         /// </summary>
-        internal static string NewSesion {
+        internal static string NewSession {
             get {
-                return ResourceManager.GetString("NewSesion", resourceCulture);
+                return ResourceManager.GetString("NewSession", resourceCulture);
             }
         }
         
@@ -99,9 +99,9 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to جلسات قبلی.
         /// </summary>
-        internal static string SesionHistory {
+        internal static string SessionHistory {
             get {
-                return ResourceManager.GetString("SesionHistory", resourceCulture);
+                return ResourceManager.GetString("SessionHistory", resourceCulture);
             }
         }
     }

@@ -47,17 +47,17 @@
 
 
                                     <asp:Button ID="SesionHistory" Width="80px" runat="server"
-                                        CommandName="SesionHistory"
+                                        CommandName="SessionHistory"
                                         CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                        Text="<%$ Resources:HamoonResource,SesionHistory%>" />
+                                        Text="<%$ Resources:HamoonResource,SessionHistory%>" />
 
 
 
 
                                     <asp:Button ID="NewSesion" CssClass="StudentsButton" Width="80px" runat="server"
-                                        CommandName="NewSesion"
+                                        CommandName="NewSession"
                                         CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                        Text="<%$ Resources:HamoonResource,NewSesion%>" />
+                                        Text="<%$ Resources:HamoonResource,NewSession%>" />
                                 </ItemTemplate>
                                 <ItemStyle HorizontalAlign="Justify" VerticalAlign="Middle" />
                             </asp:TemplateField>

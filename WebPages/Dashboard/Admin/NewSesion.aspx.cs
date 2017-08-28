@@ -9,8 +9,11 @@ namespace WebPages.Dashboard.Admin
 {
     public partial class NewSesion : System.Web.UI.Page
     {
+        string id;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            { id = Request.QueryString["LGID"]; }
 
         }
     }

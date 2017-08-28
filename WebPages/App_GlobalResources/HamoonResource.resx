@@ -123,13 +123,13 @@
   <data name="NewScore" xml:space="preserve">
     <value>نمره جدید</value>
   </data>
-  <data name="NewSesion" xml:space="preserve">
+  <data name="NewSession" xml:space="preserve">
     <value>جلسه جدید</value>
   </data>
   <data name="Present" xml:space="preserve">
     <value>حظور غیاب</value>
   </data>
-  <data name="SesionHistory" xml:space="preserve">
+  <data name="SessionHistory" xml:space="preserve">
     <value>جلسات قبلی</value>
   </data>
 </root>
