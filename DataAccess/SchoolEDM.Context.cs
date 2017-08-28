@@ -49,5 +49,7 @@ namespace DataAccess
         public DbSet<LessonGroup> LessonGroups { get; set; }
         public DbSet<vOzviat> vOzviats { get; set; }
         public DbSet<vbarnameHaftegi> vbarnameHaftegis { get; set; }
+        public DbSet<Sessoin> Sessoins { get; set; }
+        public DbSet<vSessoin> vSessoins { get; set; }
     }
 }
