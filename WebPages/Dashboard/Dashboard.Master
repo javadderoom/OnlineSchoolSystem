@@ -1,0 +1,204 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.master.cs" Inherits="WebPages.Dashboard.Dashboard" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+
+            <nav class="navbar navbar-default navbar-fixed-top no-margin " style="background-color: #EDEDED;">
+                <!-- bs-example-navbar-collapse-1 -->
+
+                <div class="navbar-header fixed-brand" style="margin-right: 20px;">
+
+                    <a class="navbar-brand" href="http://localhost:4911/Dashboard/News.aspx" id="brandIcon">
+                        <i class="fa fa-rocket fa-4"></i>SEEGATESITE</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle">
+                        <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Brand and toggle get grouped for better mobile display -->
+
+                <!-- navbar-header-->
+            </nav>
+
+            <div id="wrapper" class="toggled-2">
+                <!-- Sidebar -->
+
+                <div id="sidebar-wrapper">
+                    <div class=" sid-profile">
+                        <div class="profile-pic" style="float: right">
+                            <img src="Images/3408.jpg" id="imgSideProfile" runat="server" alt="..." class="img-responsive img-circle img-profile" />
+                        </div>
+                        <div class="profile-info" style="text-align: right">
+                            <span>خوش آمدید </span>
+                            <h4>
+                                <span id="lblUsername">جواد شیخ اعظمی</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <%--  -----------------------sidebar---------------------------------------------------%>
+                    <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+                        <li>
+
+                            <a href="#" class="a-properties">
+                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,news%>" /><span class="fa-stack fa-lg pull-left">
+
+                                    <i class="fa fa-bell fa-stack-1x " style="float: left;"></i></span>
+                            </a>
+                            <ul class="nav-pills nav-stacked" style="list-style-type: none; display: block;">
+                                <li>
+
+                                    <a href="http://localhost:4911/Dashboard/News.aspx" class="a-properties sub-menu">
+                                        <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                        <asp:Literal runat="server" Text="<%$ Resources:Dashboard,news%>" />
+                                        <span class="fa-stack fa-lg pull-left"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="a-properties">
+                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,kartabl%>" /><span class="fa-stack fa-lg pull-left">
+
+                                    <i class="fa fa-user fa-stack-1x " style="float: left;"></i></span>
+                            </a>
+                            <ul class="nav-pills nav-stacked" style="list-style-type: none;">
+                                <li><a href="http://localhost:4911/Dashboard/Dashboard.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,kartabl%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a>
+                                </li>
+                                <li><a href="http://localhost:4911/Dashboard/ProfilePicture.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,change_picture%>" />
+
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a></li>
+                                <li><a href="http://localhost:4911/Dashboard/Password.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,change_password%>" />
+
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="#" class="a-properties ">
+                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,amoozesh%>" /><span class="fa-stack fa-lg pull-left">
+
+                                    <i class="glyphicon glyphicon-education fa-stack-1x " style="float: left;"></i></span>
+                            </a>
+                            <ul class="nav-pills nav-stacked" style="list-style-type: none;">
+                                <li><a href="http://localhost:4911/Dashboard/Scores.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,karname_salane%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a>
+                                </li>
+                                <li><a href="http://localhost:4911/Dashboard/MScores.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,karname_mahane%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a></li>
+                                <li><a href="http://localhost:4911/Dashboard/Charts.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,nmoodar%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a></li>
+                                <li><a href="http://localhost:4911/Dashboard/ClassScores.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,nomarat%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a></li>
+                                <li><a href="http://localhost:4911/Dashboard/WeeklySchedule.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,barname_haftegi%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="#" class="a-properties ">
+                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,homework%>" /><span class="fa-stack fa-lg pull-left">
+
+                                    <i class="fa fa-file-text-o fa-stack-1x " style="float: left;"></i></span>
+                            </a>
+                            <ul class="nav-pills nav-stacked" style="list-style-type: none;">
+                                <li><a href="http://localhost:4911/Dashboard/HomeWork.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,homework%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a></li>
+                                <li><a href="http://localhost:4911/Dashboard/HomeWorkHistory.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,homework_history%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a></li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="#" class="a-properties ">
+                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,salary%>" /><span class="fa-stack fa-lg pull-left">
+
+                                    <i class="fa fa-money fa-stack-1x " style="float: left;"></i></span>
+                            </a>
+                            <ul class="nav-pills nav-stacked" style="list-style-type: none;">
+                                <li><a href="http://localhost:4911/Dashboard/Payments.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,payments%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a></li>
+                                <li><a href="http://localhost:4911/Dashboard/SalaryPayment.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,salary_payment%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- /#sidebar-wrapper -->
+                <!-- Page Content -->
+                <div style="margin-right: 10px">
+                    <div id="page-content-wrapper" class="ContentPlaceHolderStyle">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /#page-content-wrapper -->
+        </div>
+
+        <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="JavaScript/jquery.min.js"></script>
+        <script src="JavaScript/bootstrap.min.js"></script>
+        <script src="JavaScript/sidebar_menu.js"></script>
+        <script src="JavaScript/JavaScript.js"></script>
+        <%--<script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/sidebar_menu.js"></script>--%>
+    </form>
+</body>
+</html>

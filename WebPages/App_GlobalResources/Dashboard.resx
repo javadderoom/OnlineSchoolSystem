@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="amoozesh" xml:space="preserve">
+    <value>آموزش</value>
+  </data>
+  <data name="barname_haftegi" xml:space="preserve">
+    <value>برنامه هفتگی</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>خانه                                           </value>
+  </data>
+  <data name="homework" xml:space="preserve">
+    <value>تکالیف</value>
+  </data>
+  <data name="karname_mahane" xml:space="preserve">
+    <value>کارنامه ماهانه</value>
+  </data>
+  <data name="karname_salane" xml:space="preserve">
+    <value>کارنامه سالانه</value>
+  </data>
+  <data name="kartabl" xml:space="preserve">
+    <value>کارتابل شخصی</value>
+  </data>
+  <data name="nmoodar" xml:space="preserve">
+    <value>نمودار پیشرفت تحصیلی</value>
+  </data>
+  <data name="nomarat" xml:space="preserve">
+    <value>نمرات</value>
+  </data>
+  <data name="virayesh_mshakhasat" xml:space="preserve">
+    <value>ویرایش مشخصات</value>
+  </data>
+  <data name="news" xml:space="preserve">
+    <value>اخبار</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>آدرس محل سکونت</value>
+  </data>
+  <data name="birthday" xml:space="preserve">
+    <value>تاریخ تولد</value>
+  </data>
+  <data name="change_password" xml:space="preserve">
+    <value>تغییر رمز عبور</value>
+  </data>
+  <data name="change_picture" xml:space="preserve">
+    <value>تغییر عکس پروفایل</value>
+  </data>
+  <data name="codemelli" xml:space="preserve">
+    <value>کد ملی</value>
+  </data>
+  <data name="c_password" xml:space="preserve">
+    <value>رمز عبور فعلی</value>
+  </data>
+  <data name="edite" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>پست الکترونیک</value>
+  </data>
+  <data name="family" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
+  <data name="father_name" xml:space="preserve">
+    <value>نام پدر</value>
+  </data>
+  <data name="img_file" xml:space="preserve">
+    <value>فایل تصویر</value>
+  </data>
+  <data name="maghta" xml:space="preserve">
+    <value>مقطع تحصیلی</value>
+  </data>
+  <data name="mobile" xml:space="preserve">
+    <value>موبایل</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="n_password" xml:space="preserve">
+    <value>رمز عبور جدید</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>رمز عبور</value>
+  </data>
+  <data name="postal_code" xml:space="preserve">
+    <value>کد پستی محل سکونت</value>
+  </data>
+  <data name="reshte_tahsili" xml:space="preserve">
+    <value>رشته تحصیلی</value>
+  </data>
+  <data name="sabt" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="select_img" xml:space="preserve">
+    <value>انتخاب تصویر</value>
+  </data>
+  <data name="shomare_daneshamozi" xml:space="preserve">
+    <value>شماره دانش آموزی</value>
+  </data>
+  <data name="telephon_sabet" xml:space="preserve">
+    <value>تلفن ثابت محل سکونت</value>
+  </data>
+  <data name="tn_password" xml:space="preserve">
+    <value>تکرار رمز عبور جدید</value>
+  </data>
+  <data name="AddNews" xml:space="preserve">
+    <value>خبر جدید</value>
+  </data>
+  <data name="homework_history" xml:space="preserve">
+    <value>تاریخچه تکالیف</value>
+  </data>
+  <data name="payments" xml:space="preserve">
+    <value>پرداخت ها</value>
+  </data>
+  <data name="salary" xml:space="preserve">
+    <value>شهریه</value>
+  </data>
+  <data name="salary_payment" xml:space="preserve">
+    <value>پرداخت شهریه</value>
+  </data>
+  <data name="AreUSure" xml:space="preserve">
+    <value>آیا برای بروزرسانی اطلاعات اطمینان دارید؟</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازگشت</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>خیر</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>هشدار</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>بله</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="new_student" xml:space="preserve">
+    <value>دانش آموز جدید</value>
+  </data>
+  <data name="students" xml:space="preserve">
+    <value>لیست دانش آموزان</value>
+  </data>
+  <data name="add_student" xml:space="preserve">
+    <value>اضافه کردن دانش آموز</value>
+  </data>
+  <data name="SGrade" xml:space="preserve">
+    <value>مقطع تحصیلی</value>
+  </data>
+  <data name="Edit_student" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>کارمندان</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>نمایش همه</value>
+  </data>
+  <data name="StudentsManage" xml:space="preserve">
+    <value>مدریت دانش آموزان</value>
+  </data>
+  <data name="EmployeeType" xml:space="preserve">
+    <value>سمت</value>
+  </data>
+  <data name="NewEmployee" xml:space="preserve">
+    <value>کارمند جدید</value>
+  </data>
+  <data name="PersonalCode" xml:space="preserve">
+    <value>کد پرسنلی</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>نام کاربری</value>
+  </data>
+  <data name="EmployeeDetails" xml:space="preserve">
+    <value>مشخصات کارمند</value>
+  </data>
+  <data name="EmployeesManage" xml:space="preserve">
+    <value>مدیریت کارمندان</value>
+  </data>
+  <data name="StudentDetails" xml:space="preserve">
+    <value>مشخصات دانش آموز</value>
+  </data>
+  <data name="AddLesson" xml:space="preserve">
+    <value>اضافه کردن درس</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>جزییات</value>
+  </data>
+  <data name="LessonDetails" xml:space="preserve">
+    <value>مشخصات درس</value>
+  </data>
+  <data name="Lessons" xml:space="preserve">
+    <value>لیست دروس</value>
+  </data>
+  <data name="LessonsManage" xml:space="preserve">
+    <value>مدیریت دروس</value>
+  </data>
+  <data name="LessonTitle" xml:space="preserve">
+    <value>نام درس</value>
+  </data>
+  <data name="NewLesson" xml:space="preserve">
+    <value>درس جدید</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>واحد</value>
+  </data>
+  <data name="AddLessonGroup" xml:space="preserve">
+    <value>اضافه کردن گروه درسی</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>کلاس</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>روز</value>
+  </data>
+  <data name="GradeTitle" xml:space="preserve">
+    <value>پایه تحصیلی</value>
+  </data>
+  <data name="LessonGroups" xml:space="preserve">
+    <value>لیست گروه های درسی</value>
+  </data>
+  <data name="LessonGroupDetails" xml:space="preserve">
+    <value>جزییات گروه درسی</value>
+  </data>
+  <data name="LessonGroupsManage" xml:space="preserve">
+    <value>مدیریت گروه های درسی</value>
+  </data>
+  <data name="NewLessonGroup" xml:space="preserve">
+    <value>گروه درسی جدید</value>
+  </data>
+  <data name="TeacherFName" xml:space="preserve">
+    <value>نام مدرس</value>
+  </data>
+  <data name="TeacherLName" xml:space="preserve">
+    <value>نام خانوادگی مدرس</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>ساعت</value>
+  </data>
+  <data name="EditeLessonGroup" xml:space="preserve">
+    <value>ویرایش گروه درسی</value>
+  </data>
+  <data name="editClasses" xml:space="preserve">
+    <value>مدیریت کلاس ها</value>
+  </data>
+  <data name="AddClasses" xml:space="preserve">
+    <value>افزودن برنامه هفتگی</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>سال تحصیلی</value>
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value>رشته تحصیلی</value>
+  </data>
+  <data name="StuCount" xml:space="preserve">
+    <value>تعداد دانش آموزان</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>افزودن</value>
+  </data>
+</root>
