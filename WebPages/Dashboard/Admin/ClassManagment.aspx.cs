@@ -80,6 +80,30 @@ namespace WebPages.Dashboard.Admin
 
                 Response.Redirect("http://localhost:4911/Dashboard/Admin/ClassStudents.aspx?LGID=" + row.Cells[0].Text);
             }
+            if (e.CommandName == "SesionHistory")
+            {
+                // Retrieve the row index stored in the
+                // CommandArgument property.
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Retrieve the row that contains the button
+                // from the Rows collection.
+                GridViewRow row = gvClasses.Rows[index];
+
+                Response.Redirect("http://localhost:4911/Dashboard/Admin/SesionHistory.aspx?LGID=" + row.Cells[0].Text);
+            }
+            if (e.CommandName == "NewSesion")
+            {
+                // Retrieve the row index stored in the
+                // CommandArgument property.
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Retrieve the row that contains the button
+                // from the Rows collection.
+                GridViewRow row = gvClasses.Rows[index];
+
+                Response.Redirect("http://localhost:4911/Dashboard/Admin/PresentOrAbsent.aspx?LGID=" + row.Cells[0].Text);
+            }
         }
     }
 }

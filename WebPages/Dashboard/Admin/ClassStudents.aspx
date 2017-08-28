@@ -34,19 +34,7 @@
                             <asp:BoundField DataField="FirstName" HeaderText="<%$ Resources:Dashboard,name%>" />
                             <asp:BoundField DataField="LastName" HeaderText="<%$ Resources:Dashboard,family%>" />
 
-                            <asp:TemplateField ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Justify">
-                                <ItemTemplate>
-                                    <asp:TextBox ID="tbxNomre" runat="server" Width="30px"></asp:TextBox>
-                                </ItemTemplate>
 
-                                <ItemStyle HorizontalAlign="Justify" VerticalAlign="Middle"></ItemStyle>
-                            </asp:TemplateField>
-                            <asp:TemplateField ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Justify">
-                                <ItemTemplate>
-                                </ItemTemplate>
-
-                                <ItemStyle HorizontalAlign="Justify" VerticalAlign="Middle"></ItemStyle>
-                            </asp:TemplateField>
                         </Columns>
 
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
