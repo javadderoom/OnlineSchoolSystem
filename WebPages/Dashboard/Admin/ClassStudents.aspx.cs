@@ -12,9 +12,7 @@ namespace WebPages.Dashboard.Admin
 {
     public partial class ClassStudents : System.Web.UI.Page
     {
-        public void LoadDrpDList()
-        {
-        }
+
 
         public void loadLessonGroup()
         {

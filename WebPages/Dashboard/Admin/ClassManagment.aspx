@@ -37,10 +37,27 @@
                             <asp:BoundField DataField="Year" HeaderText="<%$ Resources:Dashboard,Year%>" />
                             <asp:TemplateField ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Justify">
                                 <ItemTemplate>
-                                    <asp:Button ID="Students" CssClass="StudentsButton" Width="150px" runat="server"
+                                    <asp:Button ID="Students" CssClass="StudentsButton" Width="115px" runat="server"
                                         CommandName="Students"
                                         CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
                                         Text="<%$ Resources:Dashboard,students%>" />
+
+
+
+
+
+                                    <asp:Button ID="SesionHistory" Width="80px" runat="server"
+                                        CommandName="SesionHistory"
+                                        CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
+                                        Text="<%$ Resources:HamoonResource,SesionHistory%>" />
+
+
+
+
+                                    <asp:Button ID="NewSesion" CssClass="StudentsButton" Width="80px" runat="server"
+                                        CommandName="NewSesion"
+                                        CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
+                                        Text="<%$ Resources:HamoonResource,NewSesion%>" />
                                 </ItemTemplate>
                                 <ItemStyle HorizontalAlign="Justify" VerticalAlign="Middle" />
                             </asp:TemplateField>
