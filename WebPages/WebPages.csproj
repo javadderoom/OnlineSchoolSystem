@@ -629,17 +629,13 @@
     <Content Include="Dashboard\Admin\ClassManagment.aspx" />
     <Content Include="Dashboard\Admin\ClassMembers.aspx" />
     <Content Include="Dashboard\Admin\ClassStudents.aspx" />
-    <Content Include="Dashboard\Admin\Dashboard.aspx" />
     <Content Include="Dashboard\Admin\EditLessonGroup.aspx" />
     <Content Include="Dashboard\Admin\EditEmployee.aspx" />
-    <Content Include="Dashboard\Admin\EditProfile.aspx" />
     <Content Include="Dashboard\Admin\EditStudent.aspx" />
     <Content Include="Dashboard\Admin\Employees.aspx" />
     <Content Include="Dashboard\Admin\LessonGroups.aspx" />
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
-    <Content Include="Dashboard\Admin\Password.aspx" />
-    <Content Include="Dashboard\Admin\ProfilePicture.aspx" />
     <Content Include="Dashboard\Admin\Students.aspx" />
     <Content Include="Dashboard\Charts.aspx" />
     <Content Include="Dashboard\ClassScores.aspx" />
@@ -861,13 +857,6 @@
     <Compile Include="Dashboard\Admin\ClassStudents.aspx.designer.cs">
       <DependentUpon>ClassStudents.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\Admin\Dashboard.aspx.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Dashboard\Admin\Dashboard.aspx.designer.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Dashboard\Admin\EditLessonGroup.aspx.cs">
       <DependentUpon>EditLessonGroup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -881,13 +870,6 @@
     </Compile>
     <Compile Include="Dashboard\Admin\EditEmployee.aspx.designer.cs">
       <DependentUpon>EditEmployee.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Dashboard\Admin\EditProfile.aspx.cs">
-      <DependentUpon>EditProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Dashboard\Admin\EditProfile.aspx.designer.cs">
-      <DependentUpon>EditProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\EditStudent.aspx.cs">
       <DependentUpon>EditStudent.aspx</DependentUpon>
@@ -923,20 +905,6 @@
     </Compile>
     <Compile Include="Dashboard\Admin\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Dashboard\Admin\Password.aspx.cs">
-      <DependentUpon>Password.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Dashboard\Admin\Password.aspx.designer.cs">
-      <DependentUpon>Password.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Dashboard\Admin\ProfilePicture.aspx.cs">
-      <DependentUpon>ProfilePicture.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Dashboard\Admin\ProfilePicture.aspx.designer.cs">
-      <DependentUpon>ProfilePicture.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\Students.aspx.cs">
       <DependentUpon>Students.aspx</DependentUpon>
