@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPages.Dashboard {
+namespace WebPages.Dashboard.Admin {
     
     
     public partial class Kartabl {
@@ -31,13 +31,13 @@ namespace WebPages.Dashboard {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblStuID;
         
         /// <summary>
-        /// lblStudentCode control.
+        /// lblPersonalCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblStudentCode;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblPersonalCode;
         
         /// <summary>
         /// lblFirstName control.
@@ -56,15 +56,6 @@ namespace WebPages.Dashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblLastName;
-        
-        /// <summary>
-        /// lblField control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblField;
         
         /// <summary>
         /// lblFatherName control.

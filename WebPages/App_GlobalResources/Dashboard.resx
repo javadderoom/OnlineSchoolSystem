@@ -384,4 +384,7 @@
   <data name="StudentCode" xml:space="preserve">
     <value>کد دانش آموزی</value>
   </data>
+  <data name="PersonalInfo" xml:space="preserve">
+    <value>مشخصات شخصی</value>
+  </data>
 </root>

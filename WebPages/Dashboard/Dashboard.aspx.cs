@@ -10,7 +10,7 @@ using DataAccess.Repository;
 
 namespace WebPages.Dashboard
 {
-    public partial class Dashboard1 : System.Web.UI.Page
+    public partial class Kartabl : System.Web.UI.Page
     {
         private vStudentRepository sr = new vStudentRepository();
 
