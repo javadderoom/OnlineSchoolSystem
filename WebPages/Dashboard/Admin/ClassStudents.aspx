@@ -36,24 +36,13 @@
 
                             <asp:TemplateField ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Justify">
                                 <ItemTemplate>
-                                    <asp:Button ID="Edid" runat="server"
-                                        CommandName="Edit"
-                                        CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                        Text="<%$ Resources:Dashboard,edite%>" />
+                                    <asp:TextBox ID="tbxNomre" runat="server" Width="30px"></asp:TextBox>
+                                </ItemTemplate>
 
-                                    <asp:Button ID="Details" runat="server"
-                                        CommandName="Details"
-                                        CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                        Text="<%$ Resources:Dashboard,Details%>" />
-
-                                    <asp:Button OnClientClick="if(!confirm('ایا مطمئن هستید؟')) return false;" ID="Delet" runat="server"
-                                        CommandName="Delet"
-                                        CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                        Text="<%$ Resources:Dashboard,Delete%>" />
-                                    <asp:Button OnClientClick="if(!confirm('ایا مطمئن هستید؟')) return false;" ID="Students" runat="server"
-                                        CommandName="Students"
-                                        CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                        Text="<%$ Resources:Dashboard,Students%>" />
+                                <ItemStyle HorizontalAlign="Justify" VerticalAlign="Middle"></ItemStyle>
+                            </asp:TemplateField>
+                            <asp:TemplateField ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Justify">
+                                <ItemTemplate>
                                 </ItemTemplate>
 
                                 <ItemStyle HorizontalAlign="Justify" VerticalAlign="Middle"></ItemStyle>
