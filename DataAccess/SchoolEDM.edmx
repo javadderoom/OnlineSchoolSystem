@@ -62,6 +62,7 @@
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
           <Property Name="BirthDate" Type="nvarchar" MaxLength="8" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="12" />
           <Property Name="PersonalCode" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -69,6 +70,7 @@
           <Property Name="Image" Type="nvarchar(max)" />
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
           <Property Name="UserPass" Type="nvarchar(max)" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="LessonGroups">
           <Key>
@@ -279,7 +281,7 @@ warning 6002: The table/view 'SchoolDB.dbo.vLessonGroups' does not have a primar
           <Property Name="GradeTitle" Type="nvarchar" MaxLength="50" />
           <Property Name="Day" Type="int" />
           <Property Name="Time" Type="int" />
-          <Property Name="Year" Type="nvarchar" MaxLength="4" />
+          <Property Name="Year" Type="nvarchar" MaxLength="5" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SchoolDB.dbo.vNomarat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1048,6 +1050,8 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="LessonGroups" Relationship="SchoolDBModel.FK_LessonGroups_Karmand" FromRole="Karmand" ToRole="LessonGroup" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Lesson">
           <Key>
@@ -1235,7 +1239,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="GradeTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Day" Type="Int32" />
           <Property Name="Time" Type="Int32" />
-          <Property Name="Year" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vNomarat">
           <Key>
@@ -1674,6 +1678,8 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <EntitySetMapping Name="Karmands">
             <EntityTypeMapping TypeName="SchoolDBModel.Karmand">
               <MappingFragment StoreEntitySet="Karmand">
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="UserPass" ColumnName="UserPass" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
