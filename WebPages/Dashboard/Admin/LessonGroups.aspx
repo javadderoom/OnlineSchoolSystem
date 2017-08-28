@@ -90,10 +90,11 @@
                                             CommandName="Delet"
                                             CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
                                             Text="<%$ Resources:Dashboard,Delete%>" />
-                                        <asp:Button OnClientClick="if(!confirm('ایا مطمئن هستید؟')) return false;" ID="Students" runat="server"
+                                        <asp:Button ID="Students" runat="server"
                                             CommandName="Students"
                                             CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                            Text="<%$ Resources:Dashboard,Students%>" />
+                                            Text="<%$ Resources:Dashboard,Students%>"
+                                            Width="150px" />
                                     </ItemTemplate>
 
                                     <ItemStyle HorizontalAlign="Justify" VerticalAlign="Middle"></ItemStyle>

@@ -27,7 +27,13 @@ namespace WebPages.Dashboard.Admin
 
         public void LoadStudents()
         {
-            gvStudents.DataSource = rep.GetAllStudents();
+            List<string> stuCodes = new List<string>();
+            foreach (GridViewRow row in gvSelectedStudents.Rows)
+            {
+                stuCodes.Add(row.Cells[1].Text);
+
+            }
+            gvStudents.DataSource = rep.GetAllStudentsExcept(stuCodes);
             gvStudents.DataBind();
         }
 
@@ -35,8 +41,9 @@ namespace WebPages.Dashboard.Admin
 
         public void LoadSelectedStudents()
         {
+            string id = Request.QueryString["LGID"];
             List<vOzviat> vs = new List<vOzviat>();
-            List<string> St = or.FindByLGID(3);
+            List<string> St = or.FindStudentCodeByLGID(id.ToInt());
             for (int i = 0; i < St.Count; i++)
             {
                 vs.Add(or.FindStudentinOzviat(St[i]));
@@ -44,7 +51,7 @@ namespace WebPages.Dashboard.Admin
             gvSelectedStudents.DataSource = OnlineTools.ToDataTable(vs); ;
             gvSelectedStudents.DataBind();
             lblStudentsCount.InnerText = St.Count.ToString();
-            vLessonGroup lgg = lg.FindByLGID(3);
+            vLessonGroup lgg = lg.FindByLGID(id.ToInt());
             lblTeacherName.InnerText = lgg.FirstName + " " + lgg.LastName;
             lblClass.InnerText = lgg.Class;
             lblLesson.InnerText = lgg.LessonTitle;
@@ -72,10 +79,10 @@ namespace WebPages.Dashboard.Admin
 
                 // Retrieve the row that contains the button
                 // from the Rows collection.
-                GridViewRow row = gvStudents.Rows[index];
+                GridViewRow row = gvSelectedStudents.Rows[index];
 
                 //Response.Redirect("http://localhost:4911/Dashboard/Admin/Details.aspx?LGID=" + row.Cells[0].Text);
-                string id = row.Cells[0].Text;
+                string id = row.Cells[1].Text;
 
                 if (id != "" || id != null)
                 {
@@ -91,7 +98,6 @@ namespace WebPages.Dashboard.Admin
                     tbxMobile.InnerText = lo.MobileNumber;
                     tbxAddress.InnerText = lo.Address;
 
-                    //tbxEmail.Value = lo.Email;
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
                     sb.Append(@"<script type='text/javascript'>");
                     sb.Append("$('#modalShowDetails').modal('show');");
@@ -172,32 +178,124 @@ namespace WebPages.Dashboard.Admin
                     "ModalScript", sb.ToString(), false);
                 }
             }
-            if (e.CommandName == "Add")
-            {
-                int index = Convert.ToInt32(e.CommandArgument);
 
-                // Retrieve the row that contains the button
-                // from the Rows collection.
-                GridViewRow row = gvStudents.Rows[index];
-
-                string id = row.Cells[0].Text;
-                DataAccess.Ozviat oo = new DataAccess.Ozviat();
-                oo.LGID = 3;
-                List<string> St = or.FindByLGID(3);
-
-                if (St.IndexOf(id) == -1)
-                {
-                    oo.StudentCode = id;
-                    or.SaveOzviat(oo);
-                    LoadSelectedStudents();
-                    LoadStudents();
-                }
-                else
-                {
-                }
-            };
         }
 
         #endregion AllStudents
+
+        protected void GVchk_CheckedChanged(object sender, EventArgs e)
+        {
+            //int i = lblSelectedRecords.Text.IndexOf(':');
+            //int num = lblSelectedRecords.Text.Substring(i + 1).ToInt();
+
+
+            CheckBox ch = sender as CheckBox;
+            // if (ch.Checked == true) num++;
+            // else num--;
+            // lblSelectedRecords.Text = "تعداد انتخاب شده ها:";
+            // lblSelectedRecords.Text += num.ToString();
+            Page_Load(null, null);
+        }
+
+        protected void ContentPlaceHolder1_btnAddStudent_Click(object sender, EventArgs e)
+        {
+            List<string> loid = new List<string>();
+            CheckBox chk;
+            foreach (GridViewRow gvr in gvStudents.Rows)
+            {
+                chk = gvr.Cells[5].FindControl("GVchk") as CheckBox;
+                if (chk.Checked == true)
+                {
+                    loid.Add(gvr.Cells[0].Text.ToString());
+                }
+            }
+
+            string id = Request.QueryString["LGID"];
+
+            DataAccess.Ozviat oo;
+            foreach (string s in loid)
+            {
+                oo = new DataAccess.Ozviat();
+                oo.LGID = id.ToInt();
+                oo.StudentCode = s;
+                or.SaveOzviat(oo);
+            }
+
+
+
+            LoadSelectedStudents();
+            LoadStudents();
+
+        }
+        public string tabdiladadbehoruf(int adad)
+        {
+            string horuf = "";
+            switch (adad)
+            {
+                case 1:
+                    horuf = "اول";
+                    break;
+
+                case 2:
+                    horuf = "دوم";
+                    break;
+
+                case 3:
+                    horuf = "سوم";
+                    break;
+
+                case 4:
+                    horuf = "چهارم";
+                    break;
+
+                case 5:
+                    horuf = "پنجم";
+                    break;
+
+                case 6:
+                    horuf = "ششم";
+                    break;
+
+                case 7:
+                    horuf = "هفتم";
+                    break;
+
+                case 8:
+                    horuf = "هشتم";
+                    break;
+
+                case 9:
+                    horuf = "نهم";
+                    break;
+
+                case 10:
+                    horuf = "دهم";
+                    break;
+
+                case 11:
+                    horuf = "یازدهم";
+                    break;
+
+                case 12:
+                    horuf = "دوازدهم";
+                    break;
+
+
+            }
+            return horuf;
+        }
+        protected void func_search(object sender, EventArgs e)
+        {
+            List<string> stuCodes = new List<string>();
+            foreach (GridViewRow row in gvSelectedStudents.Rows)
+            {
+                stuCodes.Add(row.Cells[1].Text);
+
+            }
+            gvStudents.DataSource = rep.searchStudents(tbxSearch.Text, stuCodes);
+            gvStudents.DataBind();
+        }
     }
+
+
 }

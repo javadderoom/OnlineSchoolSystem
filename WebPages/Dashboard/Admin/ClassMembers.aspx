@@ -18,6 +18,7 @@
         <h4>
             <asp:Literal runat="server" Text="<%$ Resources:Dashboard,NewLesson%>" /></h4>
     </div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="c-content">
         <div id="demo-form2" class="form-horizontal form-label-right">
             <div class="col-md-12  col-xs-12">
@@ -28,7 +29,7 @@
                                 <asp:Literal runat="server" Text="<%$ Resources:Dashboard,StuCount%>" /></span>
                             <span class="fa fa-arrow-circle-down"></span>
                             <br />
-                            <span runat="server" id="lblStudentsCount" class="control-label formLabel" style="color: #0066CC; font-size: 100%; font-weight: bold;"></span>
+                            <span runat="server" id="lblStudentsCount" class="control-label formLabel" style="color: Green; font-size: 100%; font-weight: bold;"></span>
                         </div>
                         <div class="col-xs-12 col-sm-3  text-right dirRight goLeft">
                             <span id="ContentPlaceHolder1_Label4" class="control-label formLabel" style="color: #666666; font-size: 100%; font-weight: bold;">
@@ -54,10 +55,10 @@
                         </div>
                     </div>
                 </div>
-                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                    <ContentTemplate>
-                        <div>
+
+                <div>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
                             <asp:GridView ID="gvSelectedStudents" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
                                 CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" CssClass="dirRight table"
                                 HorizontalAlign="Center" OnRowDataBound="gvSelectedStudents_RowDataBound" AllowCustomPaging="True" AllowPaging="True"
@@ -95,9 +96,9 @@
                                 <SortedDescendingCellStyle BackColor="#E5E5E5" />
                                 <SortedDescendingHeaderStyle BackColor="#242121" />
                             </asp:GridView>
-                        </div>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
 
                 <div class="ln_solid"></div>
                 <div class="row">
@@ -128,9 +129,30 @@
                     </div>
                 </div>
                 <div class="ln_solid"></div>
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-                        <div>
+                <div>
+                    <div class="row" style="margin-bottom: 20px">
+                        <div class="col-md-4 col-xs-12 text-righ pull-right">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button onserverclick="func_search" type="button" id="ContentPlaceHolder1_btnSearch" runat="server" class="btn btn-primary">
+                                        <span class="fa fa-search"></span>
+                                    </button>
+                                </span>
+
+                                <div id="ContentPlaceHolder1_upSearch">
+
+                                    <asp:TextBox runat="server" name="tbx_search" type="text" ID="tbxSearch" placeholder="نام,نام خانوادگی,شماره دانش اموزی" MaxLength="50" class="form-control text-right dirRight" />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 text-righ pull-right">
+                            <asp:Button runat="server" OnClick="ContentPlaceHolder1_btnAddStudent_Click" name="ctl00$ContentPlaceHolder1$btnAddStudent" value="اضافه کردن دانش آموز" ID="ContentPlaceHolder1_btnAddStudent" class="btn btn-primary" Text="افزودن دانش آموز" />
+                        </div>
+
+                    </div>
+                    <asp:UpdatePanel runat="server" ID="updp1">
+                        <ContentTemplate>
                             <asp:GridView ID="gvStudents" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
                                 CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" CssClass="dirRight table"
                                 HorizontalAlign="Center" OnRowDataBound="gvStudents_RowDataBound" AllowCustomPaging="True" AllowPaging="True"
@@ -141,6 +163,7 @@
                                     <asp:BoundField DataField="FirstName" HeaderText="نام" />
                                     <asp:BoundField DataField="LastName" HeaderText="نام خانوادگی" />
                                     <asp:BoundField DataField="FathersFirstName" HeaderText="نام پدر" />
+                                    <asp:BoundField DataField="GradeTitle" HeaderText="سال" />
 
                                     <asp:TemplateField>
                                         <ItemTemplate>
@@ -150,11 +173,16 @@
                                                 CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
                                                 Text="<%$ Resources:Dashboard,Details%>" />
 
-                                            <asp:Button ID="Add" runat="server"
+                                            <%--                                            <asp:Button ID="Add" runat="server"
                                                 CommandName="Add"
                                                 CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                                Text="<%$ Resources:Dashboard,Add%>" />
+                                                Text="<%$ Resources:Dashboard,Add%>" />--%>
+
+                                            <asp:CheckBox ID="GVchk" runat="server" AutoPostBack="false" OnCheckedChanged="GVchk_CheckedChanged" />
                                         </ItemTemplate>
+
+
+
                                     </asp:TemplateField>
                                 </Columns>
 
@@ -167,10 +195,28 @@
                                 <SortedDescendingCellStyle BackColor="#E5E5E5" />
                                 <SortedDescendingHeaderStyle BackColor="#242121" />
                             </asp:GridView>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    <div class="row">
+                        <div class="col-md-4 hidden-xs">
+                            <label style="padding-top: 5px;">
+                                نمایش
+                                <select name="ctl00$ContentPlaceHolder1$ddlPageSize" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlPageSize\',\'\')', 0)" id="ContentPlaceHolder1_ddlPageSize" style="font-weight: normal;">
+                                    <option selected="selected" value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="75">75</option>
+                                    <option value="100">100</option>
+                                </select>
+                                رکورد
+                            </label>
                         </div>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-                <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+
+                    </div>
+                    <div class="ln_solid"></div>
+                </div>
+
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
 
                         <div class="modal fade" id="modalShowDetails" tabindex="-1" role="dialog" aria-labelledby="modalAskSubmitUpdate-label" aria-hidden="true">
@@ -370,6 +416,7 @@
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
+
                 <div class="form-group">
                     <%-- <div class="col-xs-4 text-left">
                         <a href="http://localhost:4911/Dashboard/Admin/Lessons.aspx" class="btn btn-default">
@@ -386,7 +433,29 @@
 
                 <div class="extra" style="height: 100px">
                 </div>
+
+
             </div>
         </div>
     </div>
+
+    <script>
+        function my() {
+
+            var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+            mywindow.document.write(document.getElementById("divtoprint").innerHTML);
+
+            mywindow.document.close(); // necessary for IE >= 10
+            mywindow.focus(); // necessary for IE >= 10*/
+
+            mywindow.print();
+            mywindow.close();
+
+            return true;
+
+        }
+    </script>
 </asp:Content>
+
+

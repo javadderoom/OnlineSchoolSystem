@@ -87,6 +87,18 @@ namespace WebPages.Dashboard.Admin
 
         protected void gvEmployees_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            if (e.CommandName == "Students")
+            {
+                // Retrieve the row index stored in the
+                // CommandArgument property.
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Retrieve the row that contains the button
+                // from the Rows collection.
+                GridViewRow row = gvLessonGroups.Rows[index];
+
+                Response.Redirect("http://localhost:4911/Dashboard/Admin/ClassMembers.aspx?LGID=" + row.Cells[0].Text);
+            }
             if (e.CommandName == "Edit")
             {
                 // Retrieve the row index stored in the

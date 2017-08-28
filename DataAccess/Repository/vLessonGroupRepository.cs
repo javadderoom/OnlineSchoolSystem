@@ -35,6 +35,38 @@ namespace DataAccess.Repository
             return result;
         }
 
+        public DataTable GetLessonGroupsByLGIDList(List<int> list)
+        {
+            List<vLessonGroup> result = new List<vLessonGroup>();
+            foreach (int id in list)
+            {
+                SchoolDBEntities sd = conn.GetContext();
+
+                IEnumerable<vLessonGroup> pl =
+                    from r in sd.vLessonGroups
+                    where r.LGID == id
+                    orderby r.LGID
+                    select r;
+                foreach (var item in pl.ToList())
+                { result.Add(item); }
+            }
+
+            return OnlineTools.ToDataTable(result);
+        }
+
+        public List<int> GetClassesOfTeacher(string id)
+        {
+            SchoolDBEntities sd = conn.GetContext();
+
+            IEnumerable<int> pl =
+                from r in sd.LessonGroups
+                where r.TeacherCode == id
+
+                select r.LGID;
+
+            return pl.ToList();
+        }
+
         public List<string> GetlistOfAllYears()
         {
             List<string> result = new List<string>();
