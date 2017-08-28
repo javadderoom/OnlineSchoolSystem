@@ -638,6 +638,7 @@
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
     <Content Include="Dashboard\Admin\Students.aspx" />
+    <Content Include="Dashboard\Admin\studentsPayment.aspx" />
     <Content Include="Dashboard\Charts.aspx" />
     <Content Include="Dashboard\ClassScores.aspx" />
     <Content Include="Dashboard\Dashboard.aspx" />
@@ -663,6 +664,7 @@
     <Content Include="Dashboard\Scores.aspx" />
     <Content Include="Dashboard\Styles\bootstrap.css" />
     <Content Include="Dashboard\Styles\custom.min.css" />
+    <Content Include="Dashboard\Styles\sasanStyle.css" />
     <Content Include="Dashboard\Styles\simple-sidebar.css" />
     <Content Include="Dashboard\WeeklySchedule.aspx" />
     <Content Include="packages.config" />
@@ -920,6 +922,13 @@
     </Compile>
     <Compile Include="Dashboard\Admin\Students.aspx.designer.cs">
       <DependentUpon>Students.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\studentsPayment.aspx.cs">
+      <DependentUpon>studentsPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\studentsPayment.aspx.designer.cs">
+      <DependentUpon>studentsPayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Charts.aspx.cs">
       <DependentUpon>Charts.aspx</DependentUpon>
