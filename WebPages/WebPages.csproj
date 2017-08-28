@@ -633,6 +633,7 @@
     <Content Include="Dashboard\Admin\EditEmployee.aspx" />
     <Content Include="Dashboard\Admin\EditStudent.aspx" />
     <Content Include="Dashboard\Admin\Employees.aspx" />
+    <Content Include="Dashboard\Admin\Kartabl.aspx" />
     <Content Include="Dashboard\Admin\LessonGroups.aspx" />
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
@@ -884,6 +885,13 @@
     </Compile>
     <Compile Include="Dashboard\Admin\Employees.aspx.designer.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\Kartabl.aspx.cs">
+      <DependentUpon>Kartabl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\Kartabl.aspx.designer.cs">
+      <DependentUpon>Kartabl.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\LessonGroups.aspx.cs">
       <DependentUpon>LessonGroups.aspx</DependentUpon>
