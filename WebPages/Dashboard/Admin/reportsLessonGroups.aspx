@@ -37,11 +37,8 @@
                 </label>
             </div>
             <div class="col-md-4 col-xs-12 text-righ">
-                <a href="AddLessonGroup.aspx" class="btn btn-primary">
-                    <asp:Literal runat="server" Text="<%$ Resources:Dashboard,AddLessonGroup%>" />
-                </a>
             </div>
-            <div class="col-md-4 col-xs-12 text-righ">
+            <div class="col-md-4 col-xs-12 text-righ pull-right" style="float: right">
                 <div class="input-group">
                     <span class="input-group-btn">
                         <button type="button" id="btnSearch" class="btn btn-primary" runat="server" onserverclick="btnSearch_Click">
@@ -51,7 +48,7 @@
 
                     <div id="ContentPlaceHolder1_upSearch">
 
-                        <input name="ctl00$ContentPlaceHolder1$tbxnameSearch" runat="server" placeholder="نام کارمند" type="text" maxlength="50" id="tbxSearch" class="form-control text-right dirRight" />
+                        <input name="ctl00$ContentPlaceHolder1$tbxnameSearch" runat="server" placeholder="جستجو" type="text" maxlength="50" id="tbxSearch" class="form-control text-right dirRight" />
                     </div>
                 </div>
             </div>
@@ -82,7 +79,7 @@
                                         <asp:Button ID="Details" runat="server"
                                             CommandName="Details"
                                             CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                            Text="<%$ Resources:Dashboard,Details%>" />
+                                            Text="<%$ Resources:sasanRes,details%>" />
 
                                     </ItemTemplate>
 

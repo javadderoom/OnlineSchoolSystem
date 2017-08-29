@@ -12,11 +12,13 @@ namespace DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Salary
+    public partial class vReportLessongroup
     {
-        public int SalaryID { get; set; }
-        public Nullable<int> Grade { get; set; }
-        public Nullable<int> Year { get; set; }
-        public Nullable<int> Gheimat { get; set; }
+        public Nullable<decimal> Nomre { get; set; }
+        public Nullable<bool> Type { get; set; }
+        public Nullable<int> ExamType { get; set; }
+        public string SessionDate { get; set; }
+        public Nullable<int> LGID { get; set; }
+        public int SessionID { get; set; }
     }
 }

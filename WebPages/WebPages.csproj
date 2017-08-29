@@ -637,7 +637,12 @@
     <Content Include="Dashboard\Admin\LessonGroups.aspx" />
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
+    <Content Include="Dashboard\Admin\reportsStudentsChart.aspx" />
+    <Content Include="Dashboard\Admin\reportsStudents.aspx" />
+    <Content Include="Dashboard\Admin\reportsGradesChart.aspx" />
+    <Content Include="Dashboard\Admin\reportsGrades.aspx" />
     <Content Include="Dashboard\Admin\reportsLessonGroups.aspx" />
+    <Content Include="Dashboard\Admin\reportsLessonGroupsChart.aspx" />
     <Content Include="Dashboard\Admin\Students.aspx" />
     <Content Include="Dashboard\Admin\studentsPayment.aspx" />
     <Content Include="Dashboard\Charts.aspx" />
@@ -922,12 +927,47 @@
     <Compile Include="Dashboard\Admin\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.cs">
+      <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.designer.cs">
+      <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudents.aspx.cs">
+      <DependentUpon>reportsStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudents.aspx.designer.cs">
+      <DependentUpon>reportsStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGradesChart.aspx.cs">
+      <DependentUpon>reportsGradesChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGradesChart.aspx.designer.cs">
+      <DependentUpon>reportsGradesChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGrades.aspx.cs">
+      <DependentUpon>reportsGrades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGrades.aspx.designer.cs">
+      <DependentUpon>reportsGrades.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Admin\reportsLessonGroups.aspx.cs">
       <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Dashboard\Admin\reportsLessonGroups.aspx.designer.cs">
       <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsLessonGroupsChart.aspx.cs">
+      <DependentUpon>reportsLessonGroupsChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsLessonGroupsChart.aspx.designer.cs">
+      <DependentUpon>reportsLessonGroupsChart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\Students.aspx.cs">
       <DependentUpon>Students.aspx</DependentUpon>

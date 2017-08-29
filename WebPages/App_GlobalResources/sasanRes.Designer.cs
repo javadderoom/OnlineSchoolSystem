@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نمودار.
+        /// </summary>
+        internal static string chart {
+            get {
+                return ResourceManager.GetString("chart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to گزارش کلاس ها.
         /// </summary>
         internal static string classreports {
@@ -93,6 +102,15 @@ namespace Resources {
         internal static string desc {
             get {
                 return ResourceManager.GetString("desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to جزییات.
+        /// </summary>
+        internal static string details {
+            get {
+                return ResourceManager.GetString("details", resourceCulture);
             }
         }
         
