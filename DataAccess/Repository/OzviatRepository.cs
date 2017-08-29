@@ -108,6 +108,14 @@ namespace DataAccess.Repository
                 }
             }
         }
+        public string StudentCountByLGID(int LGID)
+        {
+            int result = 0;
+
+            result = db.Ozviats.Where(p => p.LGID == LGID).Count();
+
+            return result.ToString();
+        }
 
         public Boolean SaveOzviat(Ozviat oz)
         {

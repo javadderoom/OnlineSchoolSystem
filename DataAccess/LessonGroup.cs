@@ -17,6 +17,7 @@ namespace DataAccess
         public LessonGroup()
         {
             this.Ozviats = new HashSet<Ozviat>();
+            this.Sessoins = new HashSet<Sessoin>();
             this.Tamarins = new HashSet<Tamarin>();
             this.Sessoins = new HashSet<Sessoin>();
         }
@@ -35,6 +36,7 @@ namespace DataAccess
         public virtual Karmand Karmand { get; set; }
         public virtual Lesson Lesson { get; set; }
         public virtual ICollection<Ozviat> Ozviats { get; set; }
+        public virtual ICollection<Sessoin> Sessoins { get; set; }
         public virtual ICollection<Tamarin> Tamarins { get; set; }
         public virtual ICollection<Sessoin> Sessoins { get; set; }
     }
