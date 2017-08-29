@@ -80,6 +80,7 @@
     <Content Include="Dashboard\Admin\AddLessonGroup.aspx" />
     <Content Include="Dashboard\Admin\AddNews.aspx" />
     <Content Include="Dashboard\Admin\AddStudent.aspx" />
+    <Content Include="Dashboard\Admin\adminStudentsPayment.aspx" />
     <Content Include="Dashboard\Admin\ckeditor\adapters\jquery.js" />
     <Content Include="Dashboard\Admin\ckeditor\build-config.js" />
     <Content Include="Dashboard\Admin\ckeditor\ckeditor.js" />
@@ -802,10 +803,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dashboard.resx</DependentUpon>
     </Compile>
+
+    <Compile Include="App_GlobalResources\sasanRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sasanRes.resx</DependentUpon>
+
     <Compile Include="App_GlobalResources\HamoonResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HamoonResource.resx</DependentUpon>
+
     </Compile>
     <Compile Include="Dashboard\Admin\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
@@ -848,6 +856,13 @@
     </Compile>
     <Compile Include="Dashboard\Admin\AdminPanel.Master.designer.cs">
       <DependentUpon>AdminPanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\adminStudentsPayment.aspx.cs">
+      <DependentUpon>adminStudentsPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\adminStudentsPayment.aspx.designer.cs">
+      <DependentUpon>adminStudentsPayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\ClassManagment.aspx.cs">
       <DependentUpon>ClassManagment.aspx</DependentUpon>
@@ -1081,9 +1096,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+
+    <Content Include="App_GlobalResources\sasanRes.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>sasanRes.Designer.cs</LastGenOutput>
+    </Content>
     <Content Include="App_GlobalResources\HamoonResource.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>HamoonResource.Designer.cs</LastGenOutput>
+
     </Content>
   </ItemGroup>
   <PropertyGroup>
