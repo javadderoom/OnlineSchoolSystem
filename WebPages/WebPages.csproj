@@ -634,12 +634,14 @@
     <Content Include="Dashboard\Admin\EditLessonGroup.aspx" />
     <Content Include="Dashboard\Admin\EditEmployee.aspx" />
     <Content Include="Dashboard\Admin\EditStudent.aspx" />
+    <Content Include="Dashboard\Admin\EmployeePassword.aspx" />
     <Content Include="Dashboard\Admin\Employees.aspx" />
     <Content Include="Dashboard\Admin\Kartabl.aspx" />
     <Content Include="Dashboard\Admin\LessonGroups.aspx" />
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
     <Content Include="Dashboard\Admin\NewSesion.aspx" />
+    <Content Include="Dashboard\Admin\Picture.aspx" />
     <Content Include="Dashboard\Admin\SesionHistory.aspx" />
     <Content Include="Dashboard\Admin\Students.aspx" />
     <Content Include="Dashboard\Admin\studentsPayment.aspx" />
@@ -910,6 +912,13 @@
     <Compile Include="Dashboard\Admin\EditStudent.aspx.designer.cs">
       <DependentUpon>EditStudent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Admin\EmployeePassword.aspx.cs">
+      <DependentUpon>EmployeePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\EmployeePassword.aspx.designer.cs">
+      <DependentUpon>EmployeePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Admin\Employees.aspx.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -951,6 +960,13 @@
     </Compile>
     <Compile Include="Dashboard\Admin\NewSesion.aspx.designer.cs">
       <DependentUpon>NewSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\Picture.aspx.cs">
+      <DependentUpon>Picture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\Picture.aspx.designer.cs">
+      <DependentUpon>Picture.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\SesionHistory.aspx.cs">
       <DependentUpon>SesionHistory.aspx</DependentUpon>
