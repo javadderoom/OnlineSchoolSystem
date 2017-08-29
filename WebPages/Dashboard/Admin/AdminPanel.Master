@@ -17,7 +17,6 @@
                 <!-- bs-example-navbar-collapse-1 -->
 
                 <div class="navbar-header fixed-brand" style="margin-right: 20px;">
-
                     <a class="navbar-brand" href="http://localhost:4911/Dashboard/Admin/AddNews.aspx" id="brandIcon">
                         <i class="fa fa-rocket fa-4"></i>SEEGATESITE</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle">
@@ -64,6 +63,7 @@
                             <ul class="nav-pills nav-stacked" style="list-style-type: none; display: block;">
                                 <li>
 
+
                                     <a href="http://localhost:4911/Dashboard/Admin/AddNews.aspx" class="a-properties sub-menu">
                                         <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
                                         <asp:Literal runat="server" Text="<%$ Resources:Dashboard,AddNews%>" />
@@ -87,7 +87,7 @@
                                     <i class="fa fa-user fa-stack-1x " style="float: left;"></i></span>
                             </a>
                             <ul class="nav-pills nav-stacked" style="list-style-type: none;">
-                                <li><a href="http://localhost:4911/Dashboard/Dashboard.aspx" class="a-properties sub-menu">
+                                <li><a href="http://localhost:4911/Dashboard/Admin/Kartabl.aspx" class="a-properties sub-menu">
                                     <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
                                     <asp:Literal runat="server" Text="<%$ Resources:Dashboard,kartabl%>" />
                                     <span class="fa-stack fa-lg pull-left"></span>
@@ -117,6 +117,21 @@
                                 <li><a href="http://localhost:4911/Dashboard/Admin/Students.aspx" class="a-properties sub-menu">
                                     <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
                                     <asp:Literal runat="server" Text="<%$ Resources:Dashboard,Students%>" />
+                                    <span class="fa-stack fa-lg pull-left"></span>
+                                </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="#" class="a-properties ">
+                                <asp:Literal runat="server" Text=" <%$ Resources:Dashboard,ClassManagment%>" /><span class="fa-stack fa-lg pull-left">
+
+                                    <i class="glyphicon glyphicon-education fa-stack-1x " style="float: left;"></i></span>
+                            </a>
+                            <ul class="nav-pills nav-stacked" style="list-style-type: none;">
+                                <li><a href="http://localhost:4911/Dashboard/Admin/ClassManagment.aspx" class="a-properties sub-menu">
+                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
+                                    <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,ClassList%>" />
                                     <span class="fa-stack fa-lg pull-left"></span>
                                 </a>
                                 </li>

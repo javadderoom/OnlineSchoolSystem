@@ -637,6 +637,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مشخصات شخصی.
+        /// </summary>
+        internal static string PersonalInfo {
+            get {
+                return ResourceManager.GetString("PersonalInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to کد پستی محل سکونت.
         /// </summary>
         internal static string postal_code {

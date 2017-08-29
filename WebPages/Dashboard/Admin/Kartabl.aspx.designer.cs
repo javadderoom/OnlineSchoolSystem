@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPages.Dashboard {
+namespace WebPages.Dashboard.Admin {
     
     
     public partial class Kartabl {
@@ -22,22 +22,22 @@ namespace WebPages.Dashboard {
         protected global::System.Web.UI.HtmlControls.HtmlImage imgUserPic;
         
         /// <summary>
-        /// lblStuID control.
+        /// lblID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblStuID;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblID;
         
         /// <summary>
-        /// lblStudentCode control.
+        /// lblPersonalCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblStudentCode;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblPersonalCode;
         
         /// <summary>
         /// lblFirstName control.
@@ -58,24 +58,6 @@ namespace WebPages.Dashboard {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblLastName;
         
         /// <summary>
-        /// lblField control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblField;
-        
-        /// <summary>
-        /// lblFatherName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblFatherName;
-        
-        /// <summary>
         /// lblBirthYear control.
         /// </summary>
         /// <remarks>
@@ -83,15 +65,6 @@ namespace WebPages.Dashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblBirthYear;
-        
-        /// <summary>
-        /// lblIDNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblIDNumber;
         
         /// <summary>
         /// lblFixTel control.
@@ -112,15 +85,6 @@ namespace WebPages.Dashboard {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblMobile;
         
         /// <summary>
-        /// lblZipCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblZipCode;
-        
-        /// <summary>
         /// lblEmail control.
         /// </summary>
         /// <remarks>
@@ -128,14 +92,5 @@ namespace WebPages.Dashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblEmail;
-        
-        /// <summary>
-        /// lblAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAddress;
     }
 }

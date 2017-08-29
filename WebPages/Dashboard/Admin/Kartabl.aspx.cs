@@ -4,32 +4,31 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Common;
 using DataAccess;
 using DataAccess.Repository;
 
-namespace WebPages.Dashboard
+namespace WebPages.Dashboard.Admin
 {
     public partial class Kartabl : System.Web.UI.Page
     {
-        private vStudentRepository sr = new vStudentRepository();
+        private KarmandRepository kr = new KarmandRepository();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            vStudent stu = sr.GetStudentByUsername("javad");
+            Karmand stu = kr.FindByUserName("karim");
 
-            lblStuID.InnerText = stu.StuID.ToString();
-            lblStudentCode.InnerText = stu.StudentCode.ToString();
+            lblID.InnerText = stu.EID.ToString();
+            lblPersonalCode.InnerText = stu.PersonalCode.ToString();
             lblFirstName.InnerText = stu.FirstName;
             lblLastName.InnerText = stu.LastName;
-            lblFatherName.InnerText = stu.FathersFirstName;
+
             lblBirthYear.InnerText = stu.BirthDate.Substring(0, 4);
-            lblIDNumber.InnerText = stu.NationalCode.ToString();
+
             lblFixTel.InnerText = stu.PhoneNumber;
-            lblMobile.InnerText = stu.MobileNumber;
-            lblZipCode.InnerText = stu.ZipCode;
+            lblMobile.InnerText = stu.Mobile;
             lblEmail.InnerText = stu.Email;
-            lblAddress.InnerText = stu.Address;
+            lblEmail.InnerText = stu.Email;
+
             imgUserPic.Src = stu.Image;
         }
     }
