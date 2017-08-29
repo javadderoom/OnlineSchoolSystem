@@ -61,11 +61,155 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to گزارش کلاس ها.
+        /// </summary>
+        internal static string classreports {
+            get {
+                return ResourceManager.GetString("classreports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کد رهگیری.
+        /// </summary>
+        internal static string coderahgiri {
+            get {
+                return ResourceManager.GetString("coderahgiri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ.
+        /// </summary>
+        internal static string date {
+            get {
+                return ResourceManager.GetString("date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to توضیحات.
+        /// </summary>
+        internal static string desc {
+            get {
+                return ResourceManager.GetString("desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نام پدر.
+        /// </summary>
+        internal static string fathername {
+            get {
+                return ResourceManager.GetString("fathername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نام.
+        /// </summary>
+        internal static string fname {
+            get {
+                return ResourceManager.GetString("fname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to گزارش مقاطع.
+        /// </summary>
+        internal static string gradereports {
+            get {
+                return ResourceManager.GetString("gradereports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شناسه.
+        /// </summary>
+        internal static string id {
+            get {
+                return ResourceManager.GetString("id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نام خانوادگی.
+        /// </summary>
+        internal static string lname {
+            get {
+                return ResourceManager.GetString("lname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مبلغ.
+        /// </summary>
+        internal static string mablagh {
+            get {
+                return ResourceManager.GetString("mablagh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to پرداخت ها.
         /// </summary>
         internal static string payments {
             get {
                 return ResourceManager.GetString("payments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string report {
+            get {
+                return ResourceManager.GetString("report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to گزارشات.
+        /// </summary>
+        internal static string reports {
+            get {
+                return ResourceManager.GetString("reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شماره دانشجویی.
+        /// </summary>
+        internal static string stucode {
+            get {
+                return ResourceManager.GetString("stucode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to گزارش دانش آموزان.
+        /// </summary>
+        internal static string studentreports {
+            get {
+                return ResourceManager.GetString("studentreports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخچه ی پرداخت شهریه دانش آموزان.
+        /// </summary>
+        internal static string studentspaymenthistory {
+            get {
+                return ResourceManager.GetString("studentspaymenthistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ساعت.
+        /// </summary>
+        internal static string time {
+            get {
+                return ResourceManager.GetString("time", resourceCulture);
             }
         }
     }
