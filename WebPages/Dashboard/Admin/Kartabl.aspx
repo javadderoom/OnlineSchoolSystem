@@ -149,7 +149,7 @@
             <div class="ln_solid"></div>
             <div class="form-group">
                 <div class="col-xs-12 text-right">
-                    <a class="btn btn-auto-v btn-auto-h btn-primary goRight" href="http://localhost:4911/Dashboard/Admin/EditProfile.aspx">
+                    <a class="btn btn-auto-v btn-auto-h btn-primary goRight" href="http://localhost:4911/Dashboard/Admin/EditKartabl.aspx">
                         <asp:Literal runat="server" Text="<%$ Resources:Dashboard,edite%>" />
                         <span class="fa fa-edit"></span>
                     </a>
