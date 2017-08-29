@@ -20,12 +20,19 @@
         </h4>
     </div>
     <div class="row">
-        <div class="col-xs-2" style="float: right; direction: rtl">
+        <div class="col-xs-3" style="float: right; direction: rtl">
             <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,SessionNumber%>" />
             <asp:Literal runat="server" ID="SessionNumber" Text="" />
-
+            &nbsp&nbsp
+            <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,Grade%>" />
+            <asp:Literal runat="server" ID="Grade" Text="" />
 
         </div>
+
+
+
+
+
         <div class="col-xs-2" style="float: right; direction: rtl">
             <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,ClassNumber%>" />
             <asp:Literal runat="server" ID="ClassNumber" Text="" />
@@ -52,12 +59,16 @@
 
             <asp:TextBox ID="tbxSessionDate" runat="server"></asp:TextBox>
 
+
+
         </div>
 
     </div>
     <div class="ln_solid">
     </div>
-
+    <div class="pull-left">
+        <asp:Button ID="btnSabt" Width="40px" OnClick="btnSabt_Click" OnClientClick="if(!confirm('ایا مطمئن هستید؟')) return false;" runat="server" Text="<%$ Resources:Dashboard,sabt%>" />
+    </div>
     <div id="ContentPlaceHolder1_upGrid">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div>
@@ -71,7 +82,59 @@
                             <asp:BoundField DataField="FirstName" HeaderText="<%$ Resources:Dashboard,name%>" />
                             <asp:BoundField DataField="LastName" HeaderText="<%$ Resources:Dashboard,family%>" />
 
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <div class="pull-right">
+                                        <asp:TextBox ID="Score" runat="server"></asp:TextBox>
+                                    </div>
 
+                                </ItemTemplate>
+                                <HeaderTemplate>
+                                    <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,NewScore%>" />
+                                </HeaderTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <div class="pull-right">
+                                        <span>
+                                            <asp:CheckBox ID="RowChB" runat="server" /></span>
+
+                                    </div>
+
+                                </ItemTemplate>
+                                <HeaderTemplate>
+                                    <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,Present%>" />
+                                    <asp:CheckBox ID="HeadChB" runat="server" OnCheckedChanged="HeadChB_CheckedChanged" AutoPostBack="true" />
+
+                                </HeaderTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <div class="pull-right">
+                                        <span>
+                                            <asp:CheckBox ID="RowChB2" runat="server" /></span>
+
+                                    </div>
+
+                                </ItemTemplate>
+                                <HeaderTemplate>
+                                    <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,movajah%>" />
+
+                                </HeaderTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <div class="pull-right">
+
+                                        <asp:TextBox ID="DescriptionTbx" runat="server" TextMode="MultiLine" CssClass="DescriptionTbx"></asp:TextBox>
+                                    </div>
+
+                                </ItemTemplate>
+                                <HeaderTemplate>
+                                    <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,Description%>" />
+
+                                </HeaderTemplate>
+                            </asp:TemplateField>
                         </Columns>
 
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
@@ -87,7 +150,9 @@
             </asp:UpdatePanel>
         </div>
     </div>
-
+    <div class="pull-left">
+        <asp:Button ID="btnSabt2" Width="40px" OnClick="btnSabt2_Click" OnClientClick="if(!confirm('ایا مطمئن هستید؟')) return false;" runat="server" Text="<%$ Resources:Dashboard,sabt%>" />
+    </div>
 
     <div class="extra" style="height: 100px">
     </div>

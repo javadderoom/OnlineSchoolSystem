@@ -12,20 +12,16 @@ namespace DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Sessoin
+    public partial class vPaymentHistory
     {
-        public Sessoin()
-        {
-            this.Nomarats = new HashSet<Nomarat>();
-            this.Presences = new HashSet<Presence>();
-        }
-    
-        public int SessionID { get; set; }
+        public int HID { get; set; }
+        public string StuCode { get; set; }
+        public Nullable<int> Mablagh { get; set; }
+        public string CodeRahgiry { get; set; }
+        public string Description { get; set; }
         public string Date { get; set; }
-        public Nullable<int> LGID { get; set; }
-    
-        public virtual LessonGroup LessonGroup { get; set; }
-        public virtual ICollection<Nomarat> Nomarats { get; set; }
-        public virtual ICollection<Presence> Presences { get; set; }
+        public string Time { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

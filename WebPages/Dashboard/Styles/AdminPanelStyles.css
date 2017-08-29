@@ -161,3 +161,10 @@ dropdownlist {
 
 .StudentsButton {
 }
+
+.DescriptionTbx {
+    min-width: 200px !important;
+    min-height: 65px !important;
+    overflow-y: scroll;
+    resize: none;
+}

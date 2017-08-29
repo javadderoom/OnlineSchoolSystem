@@ -135,5 +135,13 @@ namespace DataAccess.Repository
 
             return Convert.ToBoolean(pb.SaveChanges());
         }
+        public int OzviatIDByLGIDAndStudentCode(int LGID, string SCode)
+        {
+            int result = 0;
+
+            result = db.Ozviats.Where(p => (p.LGID == LGID) && (p.StudentCode == SCode)).Single().OzviatID;
+
+            return result;
+        }
     }
 }

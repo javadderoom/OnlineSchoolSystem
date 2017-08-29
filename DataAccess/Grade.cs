@@ -22,6 +22,7 @@ namespace DataAccess
     
         public int GradeID { get; set; }
         public string GradeTitle { get; set; }
+        public Nullable<int> GradeSalary { get; set; }
     
         public virtual ICollection<LessonGroup> LessonGroups { get; set; }
         public virtual ICollection<Student> Students { get; set; }
