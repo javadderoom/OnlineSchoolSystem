@@ -16,11 +16,11 @@ namespace DataAccess
     {
         public int ID { get; set; }
         public Nullable<int> OzviatID { get; set; }
+        public Nullable<int> SessionID { get; set; }
         public string Date { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<bool> isMovajjah { get; set; }
         public string Description { get; set; }
-        public Nullable<int> SessionID { get; set; }
     
         public virtual Ozviat Ozviat { get; set; }
         public virtual Sessoin Sessoin { get; set; }
