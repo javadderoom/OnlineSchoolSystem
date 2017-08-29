@@ -67,7 +67,7 @@ namespace WebPages.Dashboard.Admin
                 int index = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = gvStudents.Rows[index];
 
-                Response.Redirect("http://localhost:4911/Dashboard/Admin/adminStudentsPayment.aspx?LGID=" + row.Cells[0].Text);
+                Response.Redirect("http://localhost:4911/Dashboard/Admin/adminStudentsPayment.aspx?stuCode=" + row.Cells[0].Text);
             }
 
         }

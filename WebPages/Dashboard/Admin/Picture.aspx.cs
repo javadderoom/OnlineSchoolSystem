@@ -7,21 +7,10 @@ using System.Web.UI.WebControls;
 using DataAccess;
 using DataAccess.Repository;
 
-namespace WebPages.Dashboard
+namespace WebPages.Dashboard.Admin
 {
-    public partial class ProfilePicture : System.Web.UI.Page
+    public partial class Picture : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                SchoolDBEntities db = new SchoolDBEntities();
-
-                Student stuu = db.Students.Where(p => p.UserName == "javad").Single();
-                imgUserPic.Src = stuu.Image;
-            }
-        }
-
         private void UpLoadAndDisplay()
         {
             string imgName = FileUpload1.FileName;
@@ -33,8 +22,15 @@ namespace WebPages.Dashboard
             }
         }
 
-        protected void btnSabtEditProfile_Click(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                SchoolDBEntities db = new SchoolDBEntities();
+
+                Karmand stuu = db.Karmands.Where(p => p.UserName == "karim").Single();
+                imgUserPic.Src = stuu.Image;
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -44,21 +40,25 @@ namespace WebPages.Dashboard
                 string strname = FileUpload1.FileName.ToString();
 
                 string FileName = System.IO.Path.GetFileName(FileUpload1.FileName);
-                string path = Server.MapPath("../Images/") + FileName;
+                string path = Server.MapPath("/Dashboard/Images/") + FileName;
                 FileUpload1.PostedFile.SaveAs(path);
-                imgUserPic.Src = "Images/" + FileName;
-                vStudentRepository sr = new vStudentRepository();
+                imgUserPic.Src = "/Dashboard/Images/" + FileName;
+                KarmandRepository sr = new KarmandRepository();
 
                 SchoolDBEntities db = new SchoolDBEntities();
 
-                Student stuu = db.Students.Where(p => p.UserName == "javad").Single();
+                Karmand stuu = db.Karmands.Where(p => p.UserName == "karim").Single();
 
-                stuu.Image = "../Images/" + strname;
+                stuu.Image = "/Dashboard/Images/" + strname;
                 db.SaveChanges();
             }
             else
             {
             }
+        }
+
+        protected void btnSabtEditProfile_Click(object sender, EventArgs e)
+        {
         }
     }
 }

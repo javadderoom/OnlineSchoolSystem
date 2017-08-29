@@ -98,7 +98,10 @@
     <Compile Include="Repository\vJTamrinRepository.cs" />
     <Compile Include="Repository\vLessonGroupRepository.cs" />
     <Compile Include="Repository\vNomratRepository.cs" />
-    <Compile Include="Repository\vPresenceRepository.cs" />
+
+    <Compile Include="Repository\vPresenceRepositorycs.cs" />
+    <Compile Include="Repository\vPaymentHistoryRepository.cs" />
+
     <Compile Include="Repository\vStudentRepository.cs" />
     <Compile Include="Repository\vTamrinRepository.cs" />
     <Compile Include="Salary.cs">
@@ -126,6 +129,9 @@
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="StuRegister.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Tamarin.cs">

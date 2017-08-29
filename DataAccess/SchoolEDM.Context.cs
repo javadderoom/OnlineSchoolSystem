@@ -41,6 +41,7 @@ namespace DataAccess
         public DbSet<Sessoin> Sessoins { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<StuRegister> StuRegisters { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Tamarin> Tamarins { get; set; }
         public DbSet<vbarnameHaftegi> vbarnameHaftegis { get; set; }
         public DbSet<vJTamrin> vJTamrins { get; set; }
@@ -52,13 +53,5 @@ namespace DataAccess
         public DbSet<vSessoin> vSessoins { get; set; }
         public DbSet<vStudent> vStudents { get; set; }
         public DbSet<vTamrin> vTamrins { get; set; }
-
-
-        public DbSet<LessonGroup> LessonGroups { get; set; }
-        public DbSet<vOzviat> vOzviats { get; set; }
-        public DbSet<vbarnameHaftegi> vbarnameHaftegis { get; set; }
-        public DbSet<Sessoin> Sessoins { get; set; }
-        public DbSet<vSessoin> vSessoins { get; set; }
-
     }
 }

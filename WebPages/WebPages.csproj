@@ -631,16 +631,22 @@
     <Content Include="Dashboard\Admin\ClassManagment.aspx" />
     <Content Include="Dashboard\Admin\ClassMembers.aspx" />
     <Content Include="Dashboard\Admin\ClassStudents.aspx" />
+    <Content Include="Dashboard\Admin\EditKartabl.aspx" />
     <Content Include="Dashboard\Admin\EditLessonGroup.aspx" />
     <Content Include="Dashboard\Admin\EditEmployee.aspx" />
     <Content Include="Dashboard\Admin\EditStudent.aspx" />
+    <Content Include="Dashboard\Admin\EmployeePassword.aspx" />
     <Content Include="Dashboard\Admin\Employees.aspx" />
-    <Content Include="Dashboard\Admin\Kartabl.aspx" />
     <Content Include="Dashboard\Admin\LessonGroups.aspx" />
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
+
+    <Content Include="Dashboard\Admin\reportsLessonGroups.aspx" />
+
     <Content Include="Dashboard\Admin\NewSesion.aspx" />
+    <Content Include="Dashboard\Admin\Picture.aspx" />
     <Content Include="Dashboard\Admin\SesionHistory.aspx" />
+
     <Content Include="Dashboard\Admin\Students.aspx" />
     <Content Include="Dashboard\Admin\studentsPayment.aspx" />
     <Content Include="Dashboard\Charts.aspx" />
@@ -803,12 +809,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dashboard.resx</DependentUpon>
     </Compile>
-
     <Compile Include="App_GlobalResources\sasanRes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sasanRes.resx</DependentUpon>
 
+    </Compile>
     <Compile Include="App_GlobalResources\HamoonResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -885,6 +891,13 @@
     <Compile Include="Dashboard\Admin\ClassStudents.aspx.designer.cs">
       <DependentUpon>ClassStudents.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Admin\EditKartabl.aspx.cs">
+      <DependentUpon>EditKartabl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\EditKartabl.aspx.designer.cs">
+      <DependentUpon>EditKartabl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Admin\EditLessonGroup.aspx.cs">
       <DependentUpon>EditLessonGroup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -906,19 +919,19 @@
     <Compile Include="Dashboard\Admin\EditStudent.aspx.designer.cs">
       <DependentUpon>EditStudent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Admin\EmployeePassword.aspx.cs">
+      <DependentUpon>EmployeePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\EmployeePassword.aspx.designer.cs">
+      <DependentUpon>EmployeePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Admin\Employees.aspx.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Dashboard\Admin\Employees.aspx.designer.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Dashboard\Admin\Kartabl.aspx.cs">
-      <DependentUpon>Kartabl.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Dashboard\Admin\Kartabl.aspx.designer.cs">
-      <DependentUpon>Kartabl.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\LessonGroups.aspx.cs">
       <DependentUpon>LessonGroups.aspx</DependentUpon>
@@ -941,12 +954,23 @@
     <Compile Include="Dashboard\Admin\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\Admin\NewSesion.aspx.cs">
-      <DependentUpon>NewSesion.aspx</DependentUpon>
+    <Compile Include="Dashboard\Admin\reportsLessonGroups.aspx.cs">
+      <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+
+    <Compile Include="Dashboard\Admin\reportsLessonGroups.aspx.designer.cs">
+      <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
+</Compile>
     <Compile Include="Dashboard\Admin\NewSesion.aspx.designer.cs">
       <DependentUpon>NewSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\Picture.aspx.cs">
+      <DependentUpon>Picture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\Picture.aspx.designer.cs">
+      <DependentUpon>Picture.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\SesionHistory.aspx.cs">
       <DependentUpon>SesionHistory.aspx</DependentUpon>
@@ -954,6 +978,7 @@
     </Compile>
     <Compile Include="Dashboard\Admin\SesionHistory.aspx.designer.cs">
       <DependentUpon>SesionHistory.aspx</DependentUpon>
+
     </Compile>
     <Compile Include="Dashboard\Admin\Students.aspx.cs">
       <DependentUpon>Students.aspx</DependentUpon>
@@ -1096,16 +1121,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-
     <Content Include="App_GlobalResources\sasanRes.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>sasanRes.Designer.cs</LastGenOutput>
     </Content>
+
     <Content Include="App_GlobalResources\HamoonResource.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>HamoonResource.Designer.cs</LastGenOutput>
-
     </Content>
+
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

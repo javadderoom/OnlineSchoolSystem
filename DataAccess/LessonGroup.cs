@@ -19,7 +19,6 @@ namespace DataAccess
             this.Ozviats = new HashSet<Ozviat>();
             this.Sessoins = new HashSet<Sessoin>();
             this.Tamarins = new HashSet<Tamarin>();
-            this.Sessoins = new HashSet<Sessoin>();
         }
     
         public int LGID { get; set; }
@@ -38,6 +37,5 @@ namespace DataAccess
         public virtual ICollection<Ozviat> Ozviats { get; set; }
         public virtual ICollection<Sessoin> Sessoins { get; set; }
         public virtual ICollection<Tamarin> Tamarins { get; set; }
-        public virtual ICollection<Sessoin> Sessoins { get; set; }
     }
 }
