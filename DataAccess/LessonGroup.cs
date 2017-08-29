@@ -21,12 +21,15 @@ public partial class LessonGroup
     public LessonGroup()
     {
 
+
         this.Ozviats = new HashSet<Ozviat>();
 
         this.Sessoins = new HashSet<Sessoin>();
 
         this.Tamarins = new HashSet<Tamarin>();
 
+
+      
     }
 
 

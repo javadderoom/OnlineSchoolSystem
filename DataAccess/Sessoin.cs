@@ -15,19 +15,22 @@ namespace DataAccess
 using System;
     using System.Collections.Generic;
     
-public partial class Sessoin
-{
 
-    public int SessionID { get; set; }
-
-    public string Date { get; set; }
-
-    public Nullable<int> LGID { get; set; }
-
-
-
-    public virtual LessonGroup LessonGroup { get; set; }
-
-}
+    public partial class Sessoin
+    {
+        public Sessoin()
+        {
+            this.Nomarats = new HashSet<Nomarat>();
+            this.Presences = new HashSet<Presence>();
+        }
+    
+        public int SessionID { get; set; }
+        public string Date { get; set; }
+        public Nullable<int> LGID { get; set; }
+    
+        public virtual LessonGroup LessonGroup { get; set; }
+        public virtual ICollection<Nomarat> Nomarats { get; set; }
+        public virtual ICollection<Presence> Presences { get; set; }
+    }
 
 }

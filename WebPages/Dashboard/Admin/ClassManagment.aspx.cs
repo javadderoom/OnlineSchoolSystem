@@ -80,7 +80,7 @@ namespace WebPages.Dashboard.Admin
 
                 Response.Redirect("http://localhost:4911/Dashboard/Admin/ClassStudents.aspx?LGID=" + row.Cells[0].Text);
             }
-            if (e.CommandName == "SesionHistory")
+            if (e.CommandName == "SessionHistory")
             {
                 // Retrieve the row index stored in the
                 // CommandArgument property.
@@ -92,7 +92,7 @@ namespace WebPages.Dashboard.Admin
 
                 Response.Redirect("http://localhost:4911/Dashboard/Admin/SesionHistory.aspx?LGID=" + row.Cells[0].Text);
             }
-            if (e.CommandName == "NewSesion")
+            if (e.CommandName == "NewSession")
             {
                 // Retrieve the row index stored in the
                 // CommandArgument property.
@@ -102,7 +102,7 @@ namespace WebPages.Dashboard.Admin
                 // from the Rows collection.
                 GridViewRow row = gvClasses.Rows[index];
 
-                Response.Redirect("http://localhost:4911/Dashboard/Admin/PresentOrAbsent.aspx?LGID=" + row.Cells[0].Text);
+                Response.Redirect("http://localhost:4911/Dashboard/Admin/NewSesion.aspx?LGID=" + row.Cells[0].Text);
             }
         }
     }

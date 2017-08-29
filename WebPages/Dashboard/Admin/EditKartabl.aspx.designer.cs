@@ -10,78 +10,87 @@
 namespace WebPages.Dashboard.Admin {
     
     
-    public partial class NewSesion {
+    public partial class EditKartabl {
         
         /// <summary>
-        /// SessionNumber control.
+        /// lblID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal SessionNumber;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblID;
         
         /// <summary>
-        /// ClassNumber control.
+        /// lblPersonalCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ClassNumber;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblPersonalCode;
         
         /// <summary>
-        /// LessonName control.
+        /// lblFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LessonName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblFirstName;
         
         /// <summary>
-        /// StudentCount control.
+        /// lblLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal StudentCount;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblLastName;
         
         /// <summary>
-        /// tbxSessionDate control.
+        /// tbxBirthYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxSessionDate;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText tbxBirthYear;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// tbxFixTel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText tbxFixTel;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// tbxMobile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText tbxMobile;
         
         /// <summary>
-        /// gvStudents control.
+        /// tbxEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvStudents;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText tbxEmail;
+        
+        /// <summary>
+        /// btnSabtEditkartabl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSabtEditkartabl;
     }
 }

@@ -21,10 +21,12 @@ public partial class Karmand
     public Karmand()
     {
 
+
         this.LessonGroups = new HashSet<LessonGroup>();
 
     }
-
+    
+    
 
     public int EID { get; set; }
 
@@ -33,7 +35,7 @@ public partial class Karmand
     public string LastName { get; set; }
 
     public string BirthDate { get; set; }
-
+  public string Email { get; set; }
     public string Mobile { get; set; }
 
     public string PhoneNumber { get; set; }

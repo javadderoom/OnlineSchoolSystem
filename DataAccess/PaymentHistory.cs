@@ -15,27 +15,17 @@ namespace DataAccess
 using System;
     using System.Collections.Generic;
     
-public partial class PaymentHistory
-{
 
-    public int HID { get; set; }
-
-    public string StuCode { get; set; }
-
-    public Nullable<int> Mablagh { get; set; }
-
-    public string CodeRahgiry { get; set; }
-
-    public string Description { get; set; }
-
-    public string date { get; set; }
-
-    public string time { get; set; }
-
-
-
-    public virtual Student Student { get; set; }
-
-}
-
+    public partial class PaymentHistory
+    {
+        public int HID { get; set; }
+        public string StuCode { get; set; }
+        public Nullable<int> Mablagh { get; set; }
+        public string CodeRahgiry { get; set; }
+        public string Description { get; set; }
+        public string Date { get; set; }
+        public string Time { get; set; }
+    
+        public virtual Student Student { get; set; }
+    }
 }

@@ -50,4 +50,6 @@
             </asp:UpdatePanel>
         </div>
     </div>
+    <div class="extra" style="height: 100px">
+    </div>
 </asp:Content>
