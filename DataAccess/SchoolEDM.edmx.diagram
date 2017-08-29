@@ -47,6 +47,10 @@
         <EntityTypeShape EntityType="SchoolDBModel.Sessoin" Width="1.5" PointX="5.25" PointY="25.875" />
         <EntityTypeShape EntityType="SchoolDBModel.vSessoin" Width="1.5" PointX="15.375" PointY="0.75" />
         <AssociationConnector Association="SchoolDBModel.FK_Sessoins_LessonGroups" />
+        <EntityTypeShape EntityType="SchoolDBModel.vPaymentHistory" Width="1.5" PointX="16.375" PointY="6.75" />
+        <AssociationConnector Association="SchoolDBModel.FK_Nomarat_Sessoins" />
+        <AssociationConnector Association="SchoolDBModel.FK_Presence_Sessoins" />
+        <EntityTypeShape EntityType="SchoolDBModel.sysdiagram" Width="1.5" PointX="13.375" PointY="13.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

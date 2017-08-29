@@ -51,5 +51,7 @@ namespace DataAccess
         public DbSet<vbarnameHaftegi> vbarnameHaftegis { get; set; }
         public DbSet<Sessoin> Sessoins { get; set; }
         public DbSet<vSessoin> vSessoins { get; set; }
+        public DbSet<vPaymentHistory> vPaymentHistories { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

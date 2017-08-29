@@ -12,17 +12,12 @@ namespace DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Presence
+    public partial class sysdiagram
     {
-        public int ID { get; set; }
-        public Nullable<int> OzviatID { get; set; }
-        public string Date { get; set; }
-        public Nullable<bool> Status { get; set; }
-        public Nullable<bool> isMovajjah { get; set; }
-        public string Description { get; set; }
-        public Nullable<int> SessionID { get; set; }
-    
-        public virtual Ozviat Ozviat { get; set; }
-        public virtual Sessoin Sessoin { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -127,6 +127,9 @@
     <Compile Include="StuRegister.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Tamarin.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
@@ -143,6 +146,9 @@
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="vOzviat.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vPaymentHistory.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="vPresence.cs">
