@@ -45,28 +45,41 @@ namespace DataAccess.Repository
         {
             List<string> los = new List<string>();
 
-            using (SchoolDBEntities sd = conn.GetContext())
-            {
-                var pl =
-                    from r in sd.vStudents
-                    where r.StudentCode.Contains(searchtxt)
-                    || r.FirstName.Contains(searchtxt)
-                    || r.LastName.Contains(searchtxt)
-                    || r.FathersFirstName.Contains(searchtxt)
-                    || r.GradeTitle.Contains(searchtxt)
-                    select r.StudentCode;
+            SchoolDBEntities sd = conn.GetContext();
+            var pl =
+                from r in sd.vStudents
+                where r.StudentCode.Contains(searchtxt)
+                || r.FirstName.Contains(searchtxt)
+                || r.LastName.Contains(searchtxt)
+                || r.FathersFirstName.Contains(searchtxt)
+                || r.GradeTitle.Contains(searchtxt)
+                select r.StudentCode;
 
-                los = pl.ToList().Except(stuCodes).ToList();
-            }
+            los = pl.ToList().Except(stuCodes).ToList();
 
-            using (SchoolDBEntities sd = conn.GetContext())
-            {
-                List<vStudent> lvs = new List<vStudent>();
-                var query = sd.vStudents.Where(v => los.Contains(v.StudentCode));
-                lvs = query.ToList();
+            List<vStudent> lvs = new List<vStudent>();
+            var query = sd.vStudents.Where(v => los.Contains(v.StudentCode));
+            lvs = query.ToList();
 
-                return OnlineTools.ToDataTable(lvs);
-            }
+            return OnlineTools.ToDataTable(lvs);
+        }
+
+        public DataTable searchStudents(string searchtxt)
+        {
+            List<vStudent> lvs = new List<vStudent>();
+
+            SchoolDBEntities sd = conn.GetContext();
+            var pl =
+                from r in sd.vStudents
+                where r.StudentCode.Contains(searchtxt)
+                || r.FirstName.Contains(searchtxt)
+                || r.LastName.Contains(searchtxt)
+                || r.FathersFirstName.Contains(searchtxt)
+                || r.GradeTitle.Contains(searchtxt)
+                select r;
+
+            lvs = pl.ToList();
+            return OnlineTools.ToDataTable(lvs);
         }
 
         public DataTable GetAllStudentsExcept(List<string> stuCodes)
@@ -221,17 +234,14 @@ namespace DataAccess.Repository
         {
             List<vStudent> result = new List<vStudent>();
 
-            using (SchoolDBEntities sd = conn.GetContext())
-            {
-                IEnumerable<vStudent> pl =
-                    from r in sd.vStudents
+            SchoolDBEntities sd = conn.GetContext();
 
-                    orderby r.LastName
-                    select r;
+            var pl =
+                from r in sd.vStudents
+                select r;
 
-                result = pl.ToList();
-                return OnlineTools.ToDataTable(result);
-            }
+            result = pl.ToList();
+            return OnlineTools.ToDataTable(result);
         }
 
         public void DeleteStudent(String stuCode)

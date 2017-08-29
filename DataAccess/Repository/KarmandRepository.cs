@@ -80,6 +80,13 @@ namespace DataAccess.Repository
             return db.Karmands.Where(p => p.PersonalCode == id).Single();
         }
 
+        public Karmand FindByUserName(string id)
+        {
+            SchoolDBEntities db = new SchoolDBEntities();
+
+            return db.Karmands.Where(p => p.UserName == id).Single();
+        }
+
         public DataTable FindByName(string Name)
         {
             List<Karmand> result = new List<Karmand>();

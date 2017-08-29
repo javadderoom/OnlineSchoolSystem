@@ -22,13 +22,13 @@ namespace WebPages.Dashboard.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlImage imgUserPic;
         
         /// <summary>
-        /// lblStuID control.
+        /// lblID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblStuID;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblID;
         
         /// <summary>
         /// lblPersonalCode control.
@@ -58,15 +58,6 @@ namespace WebPages.Dashboard.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblLastName;
         
         /// <summary>
-        /// lblFatherName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblFatherName;
-        
-        /// <summary>
         /// lblBirthYear control.
         /// </summary>
         /// <remarks>
@@ -74,15 +65,6 @@ namespace WebPages.Dashboard.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblBirthYear;
-        
-        /// <summary>
-        /// lblIDNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblIDNumber;
         
         /// <summary>
         /// lblFixTel control.
@@ -103,15 +85,6 @@ namespace WebPages.Dashboard.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblMobile;
         
         /// <summary>
-        /// lblZipCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblZipCode;
-        
-        /// <summary>
         /// lblEmail control.
         /// </summary>
         /// <remarks>
@@ -119,14 +92,5 @@ namespace WebPages.Dashboard.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblEmail;
-        
-        /// <summary>
-        /// lblAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAddress;
     }
 }
