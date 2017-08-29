@@ -795,7 +795,9 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_GlobalResources\Dashboard.designer.cs">
@@ -803,17 +805,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dashboard.resx</DependentUpon>
     </Compile>
-
     <Compile Include="App_GlobalResources\sasanRes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sasanRes.resx</DependentUpon>
-
+    </Compile>
     <Compile Include="App_GlobalResources\HamoonResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HamoonResource.resx</DependentUpon>
-
     </Compile>
     <Compile Include="Dashboard\Admin\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
@@ -1096,7 +1096,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-
     <Content Include="App_GlobalResources\sasanRes.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>sasanRes.Designer.cs</LastGenOutput>
@@ -1104,7 +1103,6 @@
     <Content Include="App_GlobalResources\HamoonResource.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>HamoonResource.Designer.cs</LastGenOutput>
-
     </Content>
   </ItemGroup>
   <PropertyGroup>

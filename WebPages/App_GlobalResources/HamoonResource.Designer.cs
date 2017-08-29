@@ -133,7 +133,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to حضور غیاب.
+        ///   Looks up a localized string similar to حاضر بوده است؟.
         /// </summary>
         internal static string Present {
             get {

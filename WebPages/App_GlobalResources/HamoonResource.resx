@@ -142,7 +142,7 @@
     <value>جلسه جدید</value>
   </data>
   <data name="Present" xml:space="preserve">
-    <value>حضور غیاب</value>
+    <value>حاضر بوده است؟</value>
   </data>
   <data name="SessionDate" xml:space="preserve">
     <value>تاریخ جلسه : </value>
