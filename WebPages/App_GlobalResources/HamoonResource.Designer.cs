@@ -70,6 +70,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to شماره ی کلاس : .
+        /// </summary>
+        internal static string ClassNumber {
+            get {
+                return ResourceManager.GetString("ClassNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نام درس : .
+        /// </summary>
+        internal static string LessonName {
+            get {
+                return ResourceManager.GetString("LessonName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نمره جدید.
         /// </summary>
         internal static string NewScore {
@@ -97,11 +115,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تاریخ جلسه : .
+        /// </summary>
+        internal static string SessionDate {
+            get {
+                return ResourceManager.GetString("SessionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to جلسات قبلی.
         /// </summary>
         internal static string SessionHistory {
             get {
                 return ResourceManager.GetString("SessionHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to جلسه ی : .
+        /// </summary>
+        internal static string SessionNumber {
+            get {
+                return ResourceManager.GetString("SessionNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعداد دانش آموزان : .
+        /// </summary>
+        internal static string StudentCount {
+            get {
+                return ResourceManager.GetString("StudentCount", resourceCulture);
             }
         }
     }
