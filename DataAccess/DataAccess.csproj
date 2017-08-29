@@ -98,6 +98,7 @@
     <Compile Include="Repository\vLessonGroupRepository.cs" />
     <Compile Include="Repository\vNomratRepository.cs" />
     <Compile Include="Repository\vPresenceRepositorycs.cs" />
+    <Compile Include="Repository\vPaymentHistoryRepository.cs" />
     <Compile Include="Repository\vStudentRepository.cs" />
     <Compile Include="Repository\vTamrinRepository.cs" />
     <Compile Include="Salary.cs">
@@ -117,6 +118,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SchoolEDM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Sessoin.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Student.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
@@ -142,7 +146,13 @@
     <Compile Include="vOzviat.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="vPaymentHistory.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="vPresence.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSessoin.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="vStudent.cs">

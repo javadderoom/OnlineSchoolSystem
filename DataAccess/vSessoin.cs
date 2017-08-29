@@ -15,14 +15,32 @@ namespace DataAccess
 using System;
     using System.Collections.Generic;
     
-public partial class Nomarat
+public partial class vSessoin
 {
 
-    public int NomreID { get; set; }
-
-    public Nullable<int> OzviatID { get; set; }
-
     public string Date { get; set; }
+
+    public string Class { get; set; }
+
+    public int LGID { get; set; }
+
+    public int SessionID { get; set; }
+
+    public Nullable<int> Day { get; set; }
+
+    public Nullable<int> Time { get; set; }
+
+    public string Year { get; set; }
+
+    public string StudentCode { get; set; }
+
+    public int OzviatID { get; set; }
+
+    public Nullable<bool> Status { get; set; }
+
+    public Nullable<bool> isMovajjah { get; set; }
+
+    public string Description { get; set; }
 
     public Nullable<int> ExamType { get; set; }
 
@@ -32,9 +50,7 @@ public partial class Nomarat
 
     public Nullable<int> NomrePercent { get; set; }
 
-
-
-    public virtual Ozviat Ozviat { get; set; }
+    public int NomreID { get; set; }
 
 }
 

@@ -15,28 +15,18 @@ namespace DataAccess
 using System;
     using System.Collections.Generic;
     
-public partial class Grade
+public partial class Sessoin
 {
 
-    public Grade()
-    {
+    public int SessionID { get; set; }
 
-        this.LessonGroups = new HashSet<LessonGroup>();
+    public string Date { get; set; }
 
-        this.Students = new HashSet<Student>();
-
-    }
-
-
-    public int GradeID { get; set; }
-
-    public string GradeTitle { get; set; }
+    public Nullable<int> LGID { get; set; }
 
 
 
-    public virtual ICollection<LessonGroup> LessonGroups { get; set; }
-
-    public virtual ICollection<Student> Students { get; set; }
+    public virtual LessonGroup LessonGroup { get; set; }
 
 }
 

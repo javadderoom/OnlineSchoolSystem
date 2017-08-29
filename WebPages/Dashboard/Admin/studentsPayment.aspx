@@ -38,7 +38,7 @@
             </div>
             <div class="col-md-4 col-xs-12 text-righ">
             </div>
-            <div class="col-md-4 col-xs-12 text-righ">
+            <div class="col-md-4 col-xs-12 text-righ" style="float: right">
                 <div class="input-group">
                     <span class="input-group-btn">
                         <button type="button" id="btnSearch" class="btn btn-primary" runat="server" onserverclick="btnSearch_Click">
@@ -306,7 +306,8 @@
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
-
+    <div class="extra" style="height: 100px">
+    </div>
     <script>
         function my() {
 
