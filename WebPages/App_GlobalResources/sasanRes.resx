@@ -117,7 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="classreports" xml:space="preserve">
+    <value>گزارش کلاس ها</value>
+  </data>
+  <data name="coderahgiri" xml:space="preserve">
+    <value>کد رهگیری</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="desc" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="fathername" xml:space="preserve">
+    <value>نام پدر</value>
+  </data>
+  <data name="fname" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="gradereports" xml:space="preserve">
+    <value>گزارش مقاطع</value>
+  </data>
+  <data name="id" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="lname" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
+  <data name="mablagh" xml:space="preserve">
+    <value>مبلغ</value>
+  </data>
   <data name="payments" xml:space="preserve">
     <value>پرداخت ها</value>
+  </data>
+  <data name="report" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reports" xml:space="preserve">
+    <value>گزارشات</value>
+  </data>
+  <data name="stucode" xml:space="preserve">
+    <value>شماره دانشجویی</value>
+  </data>
+  <data name="studentreports" xml:space="preserve">
+    <value>گزارش دانش آموزان</value>
+  </data>
+  <data name="studentspaymenthistory" xml:space="preserve">
+    <value>تاریخچه ی پرداخت شهریه دانش آموزان</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>ساعت</value>
   </data>
 </root>

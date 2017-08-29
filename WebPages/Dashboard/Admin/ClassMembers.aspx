@@ -65,11 +65,11 @@
                                 HorizontalAlign="Center" OnRowDataBound="gvSelectedStudents_RowDataBound" AllowCustomPaging="True" AllowPaging="True"
                                 OnSelectedIndexChanged="gvSelectedStudents_SelectedIndexChanged" OnRowEditing="gvSelectedStudents_RowEditing">
                                 <Columns>
-                                    <asp:BoundField DataField="OzviatID" HeaderText="شناسه " />
-                                    <asp:BoundField DataField="StudentCode" HeaderText="شماره دانش آموزی " />
-                                    <asp:BoundField DataField="FirstName" HeaderText="نام" />
-                                    <asp:BoundField DataField="LastName" HeaderText="نام خانوادگی" />
-                                    <asp:BoundField DataField="FatherName" HeaderText="نام پدر" />
+                                    <asp:BoundField DataField="OzviatID" HeaderText="<%$ Resources:sasaRes,id%>" />
+                                    <asp:BoundField DataField="StudentCode" HeaderText="<%$ Resources:sasaRes,stucode%>" />
+                                    <asp:BoundField DataField="FirstName" HeaderText="<%$ Resources:sasaRes,fname%>" />
+                                    <asp:BoundField DataField="LastName" HeaderText="<%$ Resources:sasaRes,lname%>" />
+                                    <asp:BoundField DataField="FatherName" HeaderText="<%$ Resources:sasaRes,fathername%>" />
 
                                     <asp:TemplateField>
                                         <ItemTemplate>
@@ -105,14 +105,16 @@
                     <div class="col-md-8 hidden-xs">
                         <label style="padding-top: 5px;">
                             نمایش
-                                <select name="ctl00$ContentPlaceHolder1$ddlValidPageSize" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlValidPageSize\',\'\')', 0)" id="ContentPlaceHolder1_ddlValidPageSize" style="font-weight: normal;">
-                                    <option selected="selected" value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="75">75</option>
-                                    <option value="100">100</option>
-                                </select>
+                               
+                            <select name="ctl00$ContentPlaceHolder1$ddlValidPageSize" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlValidPageSize\',\'\')', 0)" id="ContentPlaceHolder1_ddlValidPageSize" style="font-weight: normal;">
+                                <option selected="selected" value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="75">75</option>
+                                <option value="100">100</option>
+                            </select>
                             رکورد
+                       
                         </label>
                     </div>
                     <div class="col-md-4 col-xs-12" style="margin-left: -20px;">
@@ -201,6 +203,7 @@
                         <div class="col-md-4 hidden-xs">
                             <label style="padding-top: 5px;">
                                 نمایش
+                               
                                 <select name="ctl00$ContentPlaceHolder1$ddlPageSize" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlPageSize\',\'\')', 0)" id="ContentPlaceHolder1_ddlPageSize" style="font-weight: normal;">
                                     <option selected="selected" value="10">10</option>
                                     <option value="25">25</option>
@@ -209,6 +212,7 @@
                                     <option value="100">100</option>
                                 </select>
                                 رکورد
+                           
                             </label>
                         </div>
 
@@ -226,7 +230,9 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                         <h4 class="modal-title" id="modalAskSubmitUpdate-label">هشدار
 
-                                                    <span class="glyphicon glyphicon-warning-sign"></span>
+                                                   
+
+                                            <span class="glyphicon glyphicon-warning-sign"></span>
                                         </h4>
                                     </div>
                                     <div class="modal-body" id="divtoprint">
