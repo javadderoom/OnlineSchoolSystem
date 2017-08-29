@@ -961,7 +961,7 @@
 
     <Compile Include="Dashboard\Admin\reportsLessonGroups.aspx.designer.cs">
       <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
-
+</Compile>
     <Compile Include="Dashboard\Admin\NewSesion.aspx.designer.cs">
       <DependentUpon>NewSesion.aspx</DependentUpon>
     </Compile>
