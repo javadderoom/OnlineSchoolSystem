@@ -56,6 +56,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -636,16 +637,14 @@
     <Content Include="Dashboard\Admin\EditStudent.aspx" />
     <Content Include="Dashboard\Admin\EmployeePassword.aspx" />
     <Content Include="Dashboard\Admin\Employees.aspx" />
+    <Content Include="Dashboard\Admin\Kartabl.aspx" />
     <Content Include="Dashboard\Admin\LessonGroups.aspx" />
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
-
     <Content Include="Dashboard\Admin\reportsLessonGroups.aspx" />
-
     <Content Include="Dashboard\Admin\NewSesion.aspx" />
     <Content Include="Dashboard\Admin\Picture.aspx" />
     <Content Include="Dashboard\Admin\SesionHistory.aspx" />
-
     <Content Include="Dashboard\Admin\Students.aspx" />
     <Content Include="Dashboard\Admin\studentsPayment.aspx" />
     <Content Include="Dashboard\Charts.aspx" />
@@ -655,10 +654,20 @@
     <Content Include="Dashboard\font-awesome-4.3.0\css\font-awesome.min.css" />
     <Content Include="Dashboard\fonts\fontawesome-webfont.svg" />
     <Content Include="Dashboard\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Dashboard\fusioncharts\fusioncharts.charts.js" />
+    <Content Include="Dashboard\fusioncharts\fusioncharts.gantt.js" />
+    <Content Include="Dashboard\fusioncharts\fusioncharts.js" />
+    <Content Include="Dashboard\fusioncharts\fusioncharts.maps.js" />
+    <Content Include="Dashboard\fusioncharts\fusioncharts.powercharts.js" />
+    <Content Include="Dashboard\fusioncharts\fusioncharts.ssgrid.js" />
+    <Content Include="Dashboard\fusioncharts\fusioncharts.treemap.js" />
+    <Content Include="Dashboard\fusioncharts\fusioncharts.widgets.js" />
+    <Content Include="Dashboard\fusioncharts\fusioncharts.zoomscatter.js" />
     <Content Include="Dashboard\HomeWork.aspx" />
     <Content Include="Dashboard\HomeWorkHistory.aspx" />
     <Content Include="Dashboard\Images\3408.jpg" />
     <Content Include="Dashboard\JavaScript\bootstrap.min.js" />
+    <Content Include="Dashboard\JavaScript\Chart.min.js" />
     <Content Include="Dashboard\JavaScript\custom.min.js" />
     <Content Include="Dashboard\JavaScript\JavaScript.js" />
     <Content Include="Dashboard\JavaScript\jquery-1.11.2.min.js" />
@@ -673,9 +682,7 @@
     <Content Include="Dashboard\Scores.aspx" />
     <Content Include="Dashboard\Styles\bootstrap.css" />
     <Content Include="Dashboard\Styles\custom.min.css" />
-
     <Content Include="Dashboard\Styles\HamoonStyle.css" />
-
     <Content Include="Dashboard\Styles\sasanStyle.css" />
     <Content Include="Dashboard\Styles\simple-sidebar.css" />
     <Content Include="Dashboard\WeeklySchedule.aspx" />
@@ -813,13 +820,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sasanRes.resx</DependentUpon>
-
     </Compile>
     <Compile Include="App_GlobalResources\HamoonResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HamoonResource.resx</DependentUpon>
-
     </Compile>
     <Compile Include="Dashboard\Admin\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
@@ -933,6 +938,13 @@
     <Compile Include="Dashboard\Admin\Employees.aspx.designer.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Admin\Kartabl.aspx.cs">
+      <DependentUpon>Kartabl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\Kartabl.aspx.designer.cs">
+      <DependentUpon>Kartabl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Admin\LessonGroups.aspx.cs">
       <DependentUpon>LessonGroups.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -958,10 +970,9 @@
       <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-
     <Compile Include="Dashboard\Admin\reportsLessonGroups.aspx.designer.cs">
       <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
-</Compile>
+    </Compile>
     <Compile Include="Dashboard\Admin\NewSesion.aspx.designer.cs">
       <DependentUpon>NewSesion.aspx</DependentUpon>
     </Compile>
@@ -978,7 +989,6 @@
     </Compile>
     <Compile Include="Dashboard\Admin\SesionHistory.aspx.designer.cs">
       <DependentUpon>SesionHistory.aspx</DependentUpon>
-
     </Compile>
     <Compile Include="Dashboard\Admin\Students.aspx.cs">
       <DependentUpon>Students.aspx</DependentUpon>
@@ -1125,12 +1135,10 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>sasanRes.Designer.cs</LastGenOutput>
     </Content>
-
     <Content Include="App_GlobalResources\HamoonResource.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>HamoonResource.Designer.cs</LastGenOutput>
     </Content>
-
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
