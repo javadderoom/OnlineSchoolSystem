@@ -63,8 +63,7 @@
                             <asp:GridView ID="gvSelectedStudents" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
                                 CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" CssClass="dirRight table"
                                 HorizontalAlign="Center" OnRowDataBound="gvSelectedStudents_RowDataBound" AllowCustomPaging="True" AllowPaging="True"
-                                OnSelectedIndexChanged="gvSelectedStudents_SelectedIndexChanged" OnRowEditing="gvSelectedStudents_RowEditing"
-                                OnRowCommand="gvSelectedStudents_RowCommand">
+                                OnSelectedIndexChanged="gvSelectedStudents_SelectedIndexChanged" OnRowEditing="gvSelectedStudents_RowEditing">
                                 <Columns>
                                     <asp:BoundField DataField="OzviatID" HeaderText="<%$ Resources:sasaRes,id%>" />
                                     <asp:BoundField DataField="StudentCode" HeaderText="<%$ Resources:sasaRes,stucode%>" />

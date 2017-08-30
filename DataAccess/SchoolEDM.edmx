@@ -217,16 +217,6 @@
           <Property Name="RegDate" Type="nvarchar" MaxLength="8" />
           <Property Name="RegGrade" Type="int" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="Tamarin">
           <Key>
             <PropertyRef Name="TamrinID" />
@@ -238,6 +228,15 @@
           <Property Name="ExpirationDate" Type="nvarchar" MaxLength="10" />
           <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'SchoolDB.dbo.vBarname' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vBarname">
+          <Property Name="Class" Type="nvarchar" MaxLength="50" />
+          <Property Name="Day" Type="int" />
+          <Property Name="Time" Type="int" />
+          <Property Name="StudentCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="LessonTitle" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SchoolDB.dbo.vbarnameHaftegi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vbarnameHaftegi">
@@ -265,7 +264,7 @@ warning 6002: The table/view 'SchoolDB.dbo.vJTamrin' does not have a primary key
           </Key>
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-          <Property Name="StudentCode" Type="bigint" Nullable="false" />
+          <Property Name="StudentCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="FilePath" Type="nvarchar(max)" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="JavabID" Type="int" Nullable="false" />
@@ -305,7 +304,7 @@ warning 6002: The table/view 'SchoolDB.dbo.vNomarat' does not have a primary key
           </Key>
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-          <Property Name="StudentCode" Type="bigint" Nullable="false" />
+          <Property Name="StudentCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Nomre" Type="nvarchar" MaxLength="50" />
           <Property Name="ExamType" Type="int" />
           <Property Name="Date" Type="nvarchar" MaxLength="8" />
@@ -349,15 +348,16 @@ warning 6002: The table/view 'SchoolDB.dbo.vPresence' does not have a primary ke
         <EntityType Name="vPresence">
           <Key>
             <PropertyRef Name="StudentCode" />
+            <PropertyRef Name="Date" />
           </Key>
-          <Property Name="StudentCode" Type="bigint" Nullable="false" />
+          <Property Name="StudentCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
           <Property Name="FatherID" Type="int" />
           <Property Name="ParentUser" Type="nvarchar" MaxLength="50" />
           <Property Name="ParentPass" Type="nvarchar(max)" />
           <Property Name="Class" Type="nvarchar" MaxLength="50" />
-          <Property Name="Date" Type="nvarchar" MaxLength="10" />
+          <Property Name="Date" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Status" Type="bit" />
           <Property Name="LessonTitle" Type="nvarchar" MaxLength="50" />
           <Property Name="Day" Type="int" />
@@ -455,7 +455,7 @@ warning 6002: The table/view 'SchoolDB.dbo.vTamrin' does not have a primary key 
           </Key>
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-          <Property Name="StudentCode" Type="bigint" Nullable="false" />
+          <Property Name="StudentCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Class" Type="nvarchar" MaxLength="50" />
           <Property Name="TamrinTitle" Type="nvarchar" MaxLength="50" />
           <Property Name="StartDate" Type="nvarchar" MaxLength="10" />
@@ -699,7 +699,6 @@ warning 6002: The table/view 'SchoolDB.dbo.vTamrin' does not have a primary key 
           <EntitySet Name="Sessoins" EntityType="Self.Sessoins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StuRegister" EntityType="Self.StuRegister" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tamarin" EntityType="Self.Tamarin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vbarnameHaftegi" EntityType="Self.vbarnameHaftegi" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1212,16 +1211,6 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="RegGrade" Type="Int32" />
           <NavigationProperty Name="Student" Relationship="Self.FK_StuRegister_Students" FromRole="StuRegister" ToRole="Students" />
         </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="Tamarin">
           <Key>
             <PropertyRef Name="TamrinID" />
@@ -1258,7 +1247,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </Key>
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StudentCode" Type="Int64" Nullable="false" />
+          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="JavabID" Type="Int32" Nullable="false" />
@@ -1294,7 +1283,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </Key>
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StudentCode" Type="Int64" Nullable="false" />
+          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Nomre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ExamType" Type="Int32" />
           <Property Name="Date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
@@ -1332,15 +1321,16 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
         <EntityType Name="vPresence">
           <Key>
             <PropertyRef Name="StudentCode" />
+            <PropertyRef Name="Date" />
           </Key>
-          <Property Name="StudentCode" Type="Int64" Nullable="false" />
+          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="FatherID" Type="Int32" />
           <Property Name="ParentUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ParentPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="LessonTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Day" Type="Int32" />
@@ -1432,7 +1422,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </Key>
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StudentCode" Type="Int64" Nullable="false" />
+          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TamrinTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="StartDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1676,7 +1666,6 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <EntitySet Name="Sessoins" EntityType="Self.Sessoin" />
           <EntitySet Name="Students" EntityType="Self.Student" />
           <EntitySet Name="StuRegisters" EntityType="Self.StuRegister" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Tamarins" EntityType="Self.Tamarin" />
           <EntitySet Name="vbarnameHaftegis" EntityType="Self.vbarnameHaftegi" />
           <EntitySet Name="vJTamrins" EntityType="Self.vJTamrin" />
@@ -1992,17 +1981,6 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
                 <ScalarProperty Name="StuCode" ColumnName="StuCode" />
                 <ScalarProperty Name="RegDate" ColumnName="RegDate" />
                 <ScalarProperty Name="RegGrade" ColumnName="RegGrade" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="SchoolDBModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
