@@ -639,8 +639,17 @@
     <Content Include="Dashboard\Admin\LessonGroups.aspx" />
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
+
+    <Content Include="Dashboard\Admin\reportsStudentsChart.aspx" />
+    <Content Include="Dashboard\Admin\reportsStudents.aspx" />
+    <Content Include="Dashboard\Admin\reportsGradesChart.aspx" />
+    <Content Include="Dashboard\Admin\reportsGrades.aspx" />
+    <Content Include="Dashboard\Admin\reportsLessonGroups.aspx" />
+    <Content Include="Dashboard\Admin\reportsLessonGroupsChart.aspx" />
+
     <Content Include="Dashboard\Admin\NewSesion.aspx" />
     <Content Include="Dashboard\Admin\SesionHistory.aspx" />
+
     <Content Include="Dashboard\Admin\Students.aspx" />
     <Content Include="Dashboard\Admin\studentsPayment.aspx" />
     <Content Include="Dashboard\Charts.aspx" />
@@ -809,11 +818,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sasanRes.resx</DependentUpon>
+
     </Compile>
     <Compile Include="App_GlobalResources\HamoonResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HamoonResource.resx</DependentUpon>
+
     </Compile>
     <Compile Include="Dashboard\Admin\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
@@ -941,6 +952,49 @@
     <Compile Include="Dashboard\Admin\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
     </Compile>
+
+    <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.cs">
+      <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.designer.cs">
+      <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudents.aspx.cs">
+      <DependentUpon>reportsStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudents.aspx.designer.cs">
+      <DependentUpon>reportsStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGradesChart.aspx.cs">
+      <DependentUpon>reportsGradesChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGradesChart.aspx.designer.cs">
+      <DependentUpon>reportsGradesChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGrades.aspx.cs">
+      <DependentUpon>reportsGrades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGrades.aspx.designer.cs">
+      <DependentUpon>reportsGrades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsLessonGroups.aspx.cs">
+      <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsLessonGroups.aspx.designer.cs">
+      <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsLessonGroupsChart.aspx.cs">
+      <DependentUpon>reportsLessonGroupsChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsLessonGroupsChart.aspx.designer.cs">
+      <DependentUpon>reportsLessonGroupsChart.aspx</DependentUpon>
+
     <Compile Include="Dashboard\Admin\NewSesion.aspx.cs">
       <DependentUpon>NewSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -954,6 +1008,7 @@
     </Compile>
     <Compile Include="Dashboard\Admin\SesionHistory.aspx.designer.cs">
       <DependentUpon>SesionHistory.aspx</DependentUpon>
+
     </Compile>
     <Compile Include="Dashboard\Admin\Students.aspx.cs">
       <DependentUpon>Students.aspx</DependentUpon>
@@ -1100,10 +1155,12 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>sasanRes.Designer.cs</LastGenOutput>
     </Content>
+
     <Content Include="App_GlobalResources\HamoonResource.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>HamoonResource.Designer.cs</LastGenOutput>
     </Content>
+
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

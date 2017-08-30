@@ -133,7 +133,7 @@
         </EntityType>
         <EntityType Name="PaymentHistory">
           <Key>
-            <PropertyRef Name="StuCode" />
+            <PropertyRef Name="HID" />
           </Key>
           <Property Name="HID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StuCode" Type="nvarchar" MaxLength="10" Nullable="false" />
@@ -366,6 +366,19 @@ warning 6002: The table/view 'SchoolDB.dbo.vPresence' does not have a primary ke
           <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'SchoolDB.dbo.vReportLessongroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vReportLessongroup">
+          <Key>
+            <PropertyRef Name="SessionID" />
+          </Key>
+          <Property Name="Nomre" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Type" Type="bit" />
+          <Property Name="ExamType" Type="int" />
+          <Property Name="SessionDate" Type="nvarchar" MaxLength="8" />
+          <Property Name="LGID" Type="int" />
+          <Property Name="SessionID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'SchoolDB.dbo.vSessoins' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vSessoins">
           <Key>
@@ -576,7 +589,7 @@ warning 6002: The table/view 'SchoolDB.dbo.vTamrin' does not have a primary key 
         </Association>
         <Association Name="FK_PaymentHistory_Students">
           <End Role="Students" Type="Self.Students" Multiplicity="1" />
-          <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="0..1" />
+          <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Students">
               <PropertyRef Name="StudentCode" />
@@ -800,6 +813,16 @@ FROM [dbo].[vPaymentHistory] AS [vPaymentHistory]</DefiningQuery>
 [vPresence].[isMovajjah] AS [isMovajjah], 
 [vPresence].[Description] AS [Description]
 FROM [dbo].[vPresence] AS [vPresence]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vReportLessongroup" EntityType="Self.vReportLessongroup" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vReportLessongroup].[Nomre] AS [Nomre], 
+[vReportLessongroup].[Type] AS [Type], 
+[vReportLessongroup].[ExamType] AS [ExamType], 
+[vReportLessongroup].[SessionDate] AS [SessionDate], 
+[vReportLessongroup].[LGID] AS [LGID], 
+[vReportLessongroup].[SessionID] AS [SessionID]
+FROM [dbo].[vReportLessongroup] AS [vReportLessongroup]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vSessoins" EntityType="Self.vSessoins" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1114,7 +1137,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
         </EntityType>
         <EntityType Name="PaymentHistory">
           <Key>
-            <PropertyRef Name="StuCode" />
+            <PropertyRef Name="HID" />
           </Key>
           <Property Name="HID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StuCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
@@ -1198,7 +1221,9 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <NavigationProperty Name="Grade" Relationship="Self.FK_Students_Grades" FromRole="Students" ToRole="Grades" />
           <NavigationProperty Name="Mother" Relationship="Self.FK_Students_Mothers" FromRole="Students" ToRole="Mothers" />
           <NavigationProperty Name="Ozviats" Relationship="Self.FK_Ozviat_Students" FromRole="Students" ToRole="Ozviat" />
-          <NavigationProperty Name="PaymentHistory" Relationship="Self.FK_PaymentHistory_Students" FromRole="Students" ToRole="PaymentHistory" />
+
+          <NavigationProperty Name="PaymentHistories" Relationship="Self.FK_PaymentHistory_Students" FromRole="Students" ToRole="PaymentHistory" />
+
           <NavigationProperty Name="StuRegister" Relationship="Self.FK_StuRegister_Students" FromRole="Students" ToRole="StuRegister" />
         </EntityType>
         <EntityType Name="StuRegister">
@@ -1337,6 +1362,17 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="Time" Type="Int32" />
           <Property Name="isMovajjah" Type="Boolean" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vReportLessongroup">
+          <Key>
+            <PropertyRef Name="SessionID" />
+          </Key>
+          <Property Name="Nomre" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Type" Type="Boolean" />
+          <Property Name="ExamType" Type="Int32" />
+          <Property Name="SessionDate" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="LGID" Type="Int32" />
+          <Property Name="SessionID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vSessoin">
           <Key>
@@ -1615,7 +1651,9 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
         </Association>
         <Association Name="FK_PaymentHistory_Students">
           <End Role="Students" Type="Self.Student" Multiplicity="1" />
-          <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="0..1" />
+
+          <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="*" />
+
           <ReferentialConstraint>
             <Principal Role="Students">
               <PropertyRef Name="StudentCode" />
@@ -1674,6 +1712,9 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <EntitySet Name="vOzviats" EntityType="Self.vOzviat" />
           <EntitySet Name="vPaymentHistories" EntityType="Self.vPaymentHistory" />
           <EntitySet Name="vPresences" EntityType="Self.vPresence" />
+
+          <EntitySet Name="vReportLessongroups" EntityType="Self.vReportLessongroup" />
+
           <EntitySet Name="vSessoins" EntityType="Self.vSessoin" />
           <EntitySet Name="vStudents" EntityType="Self.vStudent" />
           <EntitySet Name="vTamrins" EntityType="Self.vTamrin" />
@@ -2111,6 +2152,20 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+
+          <EntitySetMapping Name="vReportLessongroups">
+            <EntityTypeMapping TypeName="SchoolDBModel.vReportLessongroup">
+              <MappingFragment StoreEntitySet="vReportLessongroup">
+                <ScalarProperty Name="Nomre" ColumnName="Nomre" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ExamType" ColumnName="ExamType" />
+                <ScalarProperty Name="SessionDate" ColumnName="SessionDate" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+
           <EntitySetMapping Name="vSessoins">
             <EntityTypeMapping TypeName="SchoolDBModel.vSessoin">
               <MappingFragment StoreEntitySet="vSessoins">

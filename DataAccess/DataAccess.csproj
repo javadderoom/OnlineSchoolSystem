@@ -102,6 +102,8 @@
     <Compile Include="Repository\vPresenceRepositorycs.cs" />
     <Compile Include="Repository\vPaymentHistoryRepository.cs" />
 
+    <Compile Include="Repository\vReportLessongroupRepository.cs" />
+
     <Compile Include="Repository\vStudentRepository.cs" />
     <Compile Include="Repository\vTamrinRepository.cs" />
     <Compile Include="Salary.cs">
@@ -156,6 +158,9 @@
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="vPresence.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vReportLessongroup.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="vSessoin.cs">
