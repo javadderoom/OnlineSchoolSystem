@@ -15,16 +15,17 @@ namespace WebPages.Dashboard.Admin
         {
             if (!Page.IsPostBack)
             {
-                setLabel();
+                // setLabel();
             }
         }
-        public void setLabel()
-        {
-            vReportLessongroupRepository v = new vReportLessongroupRepository();
 
-            string id = Request.QueryString["LGID"];
-            lblNomre.Text = v.getAverageLessonGroup(id.ToInt()).ToString();
+        // public void setLabel()
+        //{
+        //    vReportLessongroupRepository v = new vReportLessongroupRepository();
 
-        }
+        //    string id = Request.QueryString["LGID"];
+        //    lblNomre.Text = v.getAverageLessonGroup(id.ToInt()).ToString();
+
+        // }
     }
 }
