@@ -123,8 +123,17 @@
   <data name="ClassNumber" xml:space="preserve">
     <value>شماره ی کلاس : </value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>توضیح غیبت</value>
+  </data>
+  <data name="Grade" xml:space="preserve">
+    <value>مقطع : </value>
+  </data>
   <data name="LessonName" xml:space="preserve">
     <value>نام درس : </value>
+  </data>
+  <data name="movajah" xml:space="preserve">
+    <value>غیبت موجه است؟</value>
   </data>
   <data name="NewScore" xml:space="preserve">
     <value>نمره جدید</value>
@@ -133,7 +142,7 @@
     <value>جلسه جدید</value>
   </data>
   <data name="Present" xml:space="preserve">
-    <value>حظور غیاب</value>
+    <value>حاضر بوده است؟</value>
   </data>
   <data name="SessionDate" xml:space="preserve">
     <value>تاریخ جلسه : </value>

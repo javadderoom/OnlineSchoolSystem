@@ -1221,7 +1221,9 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <NavigationProperty Name="Grade" Relationship="Self.FK_Students_Grades" FromRole="Students" ToRole="Grades" />
           <NavigationProperty Name="Mother" Relationship="Self.FK_Students_Mothers" FromRole="Students" ToRole="Mothers" />
           <NavigationProperty Name="Ozviats" Relationship="Self.FK_Ozviat_Students" FromRole="Students" ToRole="Ozviat" />
+
           <NavigationProperty Name="PaymentHistories" Relationship="Self.FK_PaymentHistory_Students" FromRole="Students" ToRole="PaymentHistory" />
+
           <NavigationProperty Name="StuRegister" Relationship="Self.FK_StuRegister_Students" FromRole="Students" ToRole="StuRegister" />
         </EntityType>
         <EntityType Name="StuRegister">
@@ -1649,7 +1651,9 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
         </Association>
         <Association Name="FK_PaymentHistory_Students">
           <End Role="Students" Type="Self.Student" Multiplicity="1" />
+
           <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="*" />
+
           <ReferentialConstraint>
             <Principal Role="Students">
               <PropertyRef Name="StudentCode" />
@@ -1708,7 +1712,9 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <EntitySet Name="vOzviats" EntityType="Self.vOzviat" />
           <EntitySet Name="vPaymentHistories" EntityType="Self.vPaymentHistory" />
           <EntitySet Name="vPresences" EntityType="Self.vPresence" />
+
           <EntitySet Name="vReportLessongroups" EntityType="Self.vReportLessongroup" />
+
           <EntitySet Name="vSessoins" EntityType="Self.vSessoin" />
           <EntitySet Name="vStudents" EntityType="Self.vStudent" />
           <EntitySet Name="vTamrins" EntityType="Self.vTamrin" />
@@ -2146,6 +2152,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+
           <EntitySetMapping Name="vReportLessongroups">
             <EntityTypeMapping TypeName="SchoolDBModel.vReportLessongroup">
               <MappingFragment StoreEntitySet="vReportLessongroup">
@@ -2158,6 +2165,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+
           <EntitySetMapping Name="vSessoins">
             <EntityTypeMapping TypeName="SchoolDBModel.vSessoin">
               <MappingFragment StoreEntitySet="vSessoins">
