@@ -8,28 +8,29 @@ using System.Data;
 
 namespace DataAccess.Repository
 {
-    public class vNomratRepository
+    public class vPresenceRepository
     {
+
         private Connection conn;
 
-        public vNomratRepository()
+        public vPresenceRepository()
         {
             conn = new Connection();
         }
-        public void SaveNomre(Nomarat nomre)
+        public void SavePresenc(Presence presence)
         {
             using (SchoolDBEntities pb = conn.GetContext())
             {
-                if (nomre.NomreID > 0)
+                if (presence.ID > 0)
                 {
                     //==== UPDATE ====
-                    pb.Nomarats.Attach(nomre);
-                    pb.Entry(nomre).State = EntityState.Modified;
+                    pb.Presences.Attach(presence);
+                    pb.Entry(presence).State = EntityState.Modified;
                 }
                 else
                 {
                     //==== INSERT ====
-                    pb.Nomarats.Add(nomre);
+                    pb.Presences.Add(presence);
                 }
 
                 pb.SaveChanges();

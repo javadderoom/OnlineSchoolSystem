@@ -10,33 +10,24 @@
 namespace WebPages.Dashboard.Admin {
     
     
-    public partial class SesionHistory {
+    public partial class reportsLessonGroupsChart {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// lblMiangin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Label lblMiangin;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// lblNomre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// gvSessionHistory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvSessionHistory;
+        protected global::System.Web.UI.WebControls.Label lblNomre;
     }
 }

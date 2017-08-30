@@ -4,7 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="deadfd9dda5148ddb5f74c385df7cd5a" Name="Diagram1">
+
+      <Diagram DiagramId="3efd528941174d59a8a35e422e354bdf" Name="Diagram1">
+
         <EntityTypeShape EntityType="SchoolDBModel.AnjomanOlya" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.Father" Width="1.5" PointX="3.75" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.Grade" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
@@ -21,18 +23,20 @@
         <EntityTypeShape EntityType="SchoolDBModel.Sessoin" Width="1.5" PointX="5.25" PointY="20.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.Student" Width="1.5" PointX="6" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.StuRegister" Width="1.5" PointX="8.25" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.sysdiagram" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.Tamarin" Width="1.5" PointX="5.25" PointY="23.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.vbarnameHaftegi" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.vJTamrin" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.vLessonGroup" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.vNomarat" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.vOzviat" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.vPaymentHistory" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.vPresence" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.vJTamrin" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.vLessonGroup" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.vNomarat" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.vOzviat" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.vPaymentHistory" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.vPresence" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+
+        <EntityTypeShape EntityType="SchoolDBModel.vReportLessongroup" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.vSessoin" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.vStudent" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.vTamrin" Width="1.5" PointX="15.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.vTamrin" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+
         <AssociationConnector Association="SchoolDBModel.FK_Students_Fathers" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDBModel.FK_LessonGroups_Grades" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDBModel.FK_Students_Grades" ManuallyRouted="false" />
