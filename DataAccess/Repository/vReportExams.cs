@@ -10,17 +10,17 @@ using System.Configuration;
 
 namespace DataAccess.Repository
 {
-    public class vReportLessongroupRepository
+    public class vReportExams
     {
         private SchoolDBEntities db = new SchoolDBEntities();
         private Connection conn;
 
-        public vReportLessongroupRepository()
+        public vReportExams()
         {
             conn = new Connection();
         }
 
-        public decimal? getAverageLessonGroup(int id)
+        public decimal? getAverageLessonGroup(int id, int examtype)
         {
             //var query =
             //    from r in db.vReportLessongroups
@@ -46,8 +46,8 @@ namespace DataAccess.Repository
             //return query.Average(p => p.avg);
 
             decimal? query = (
-            from r in db.vReportLessongroups
-            where r.LGID == id
+            from r in db.vReportExams
+            where (r.LGID == id) && r.ExamType == examtype
             select r.Nomre).Average();
 
             return query;

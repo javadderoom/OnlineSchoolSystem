@@ -95,13 +95,15 @@
     <Compile Include="Repository\KarmandRepository.cs" />
     <Compile Include="Repository\LessonsRepository.cs" />
     <Compile Include="Repository\OzviatRepository.cs" />
+    <Compile Include="Repository\vJavabeTamrinRepository.cs" />
     <Compile Include="Repository\vJTamrinRepository.cs" />
     <Compile Include="Repository\vLessonGroupRepository.cs" />
     <Compile Include="Repository\vNomratRepository.cs" />
     <Compile Include="Repository\vPresenceRepositorycs.cs" />
     <Compile Include="Repository\vPaymentHistoryRepository.cs" />
-    <Compile Include="Repository\vReportLessongroupRepository.cs" />
+    <Compile Include="Repository\vReportExams.cs" />
     <Compile Include="Repository\vStudentRepository.cs" />
+    <Compile Include="Repository\TamrinRepository.cs" />
     <Compile Include="Repository\vTamrinRepository.cs" />
     <Compile Include="Salary.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
@@ -130,13 +132,13 @@
     <Compile Include="StuRegister.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>SchoolEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="Tamarin.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="vbarnameHaftegi.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vJavabeTamrin.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="vJTamrin.cs">
@@ -157,7 +159,7 @@
     <Compile Include="vPresence.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="vReportLessongroup.cs">
+    <Compile Include="vReportExam.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="vSessoin.cs">

@@ -58,47 +58,47 @@
                 </div>
 
                 <div>
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
-                            <asp:GridView ID="gvSelectedStudents" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
-                                CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" CssClass="dirRight table"
-                                HorizontalAlign="Center" OnRowDataBound="gvSelectedStudents_RowDataBound" AllowCustomPaging="True" AllowPaging="True"
-                                OnSelectedIndexChanged="gvSelectedStudents_SelectedIndexChanged" OnRowEditing="gvSelectedStudents_RowEditing"
-                                OnRowCommand="gvSelectedStudents_RowCommand">
-                                <Columns>
-                                    <asp:BoundField DataField="OzviatID" HeaderText="<%$ Resources:sasaRes,id%>" />
-                                    <asp:BoundField DataField="StudentCode" HeaderText="<%$ Resources:sasaRes,stucode%>" />
-                                    <asp:BoundField DataField="FirstName" HeaderText="<%$ Resources:sasaRes,fname%>" />
-                                    <asp:BoundField DataField="LastName" HeaderText="<%$ Resources:sasaRes,lname%>" />
-                                    <asp:BoundField DataField="FatherName" HeaderText="<%$ Resources:sasaRes,fathername%>" />
+                    <%-- <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>--%>
+                    <asp:GridView ID="gvSelectedStudents" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
+                        CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" CssClass="dirRight table"
+                        HorizontalAlign="Center" OnRowDataBound="gvSelectedStudents_RowDataBound" AllowCustomPaging="True" AllowPaging="True"
+                        OnSelectedIndexChanged="gvSelectedStudents_SelectedIndexChanged" OnRowEditing="gvSelectedStudents_RowEditing"
+                        OnRowCommand="gvSelectedStudents_RowCommand">
+                        <Columns>
+                            <asp:BoundField DataField="OzviatID" HeaderText="<%$ Resources:sasanRes,id%>" />
+                            <asp:BoundField DataField="StudentCode" HeaderText="<%$ Resources:sasanRes,stucode%>" />
+                            <asp:BoundField DataField="FirstName" HeaderText="<%$ Resources:sasanRes,fname%>" />
+                            <asp:BoundField DataField="LastName" HeaderText="<%$ Resources:sasanRes,lname%>" />
+                            <asp:BoundField DataField="FatherName" HeaderText="<%$ Resources:sasanRes,fathername%>" />
 
-                                    <asp:TemplateField>
-                                        <ItemTemplate>
+                            <asp:TemplateField>
+                                <ItemTemplate>
 
-                                            <asp:Button ID="Details" runat="server"
-                                                CommandName="Details"
-                                                CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                                Text="<%$ Resources:Dashboard,Details%>" />
+                                    <asp:Button ID="Details" runat="server"
+                                        CommandName="Details"
+                                        CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
+                                        Text="<%$ Resources:Dashboard,Details%>" />
 
-                                            <asp:Button OnClientClick="if(!confirm('ایا مطمئن هستید؟')) return false;" ID="Delet" runat="server"
-                                                CommandName="Delet"
-                                                CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                                Text="<%$ Resources:Dashboard,delete%>" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
+                                    <asp:Button OnClientClick="if(!confirm('ایا مطمئن هستید؟')) return false;" ID="Delet" runat="server"
+                                        CommandName="Delet"
+                                        CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
+                                        Text="<%$ Resources:Dashboard,delete%>" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
 
-                                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle" />
-                                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                                <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                                <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                                <SortedDescendingHeaderStyle BackColor="#242121" />
-                            </asp:GridView>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+                        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle" />
+                        <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                        <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                        <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                        <SortedDescendingHeaderStyle BackColor="#242121" />
+                    </asp:GridView>
+                    <%--</ContentTemplate>
+                    </asp:UpdatePanel>--%>
                 </div>
 
                 <div class="ln_solid"></div>

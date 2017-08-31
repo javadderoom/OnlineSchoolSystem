@@ -135,5 +135,16 @@ namespace DataAccess.Repository
 
             return Convert.ToBoolean(pb.SaveChanges());
         }
+
+        public int countStudentsOfLessonGroupByid(int lgid)
+        {
+            SchoolDBEntities pb = conn.GetContext();
+            int query =
+                (from r in pb.Ozviats
+                 where r.LGID == lgid
+                 select r).Count();
+
+            return query;
+        }
     }
 }

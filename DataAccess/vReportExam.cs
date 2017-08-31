@@ -12,12 +12,13 @@ namespace DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class vReportExam
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public Nullable<decimal> Nomre { get; set; }
+        public Nullable<bool> Type { get; set; }
+        public Nullable<int> ExamType { get; set; }
+        public string SessionDate { get; set; }
+        public Nullable<int> LGID { get; set; }
+        public int SessionID { get; set; }
     }
 }

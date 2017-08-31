@@ -13,21 +13,75 @@ namespace WebPages.Dashboard.Admin {
     public partial class reportsLessonGroupsChart {
         
         /// <summary>
-        /// lblMiangin control.
+        /// lblClassNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMiangin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblClassNum;
         
         /// <summary>
-        /// lblNomre control.
+        /// lblTeacharName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNomre;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTeacharName;
+        
+        /// <summary>
+        /// lblStuCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblStuCount;
+        
+        /// <summary>
+        /// lblLessonTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblLessonTitle;
+        
+        /// <summary>
+        /// lblmianginkatbi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblmianginkatbi;
+        
+        /// <summary>
+        /// lblmianginshafahi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblmianginshafahi;
+        
+        /// <summary>
+        /// lbltamrincount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbltamrincount;
+        
+        /// <summary>
+        /// lblanswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblanswer;
     }
 }
