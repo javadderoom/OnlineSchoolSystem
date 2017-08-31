@@ -16,9 +16,10 @@ namespace WebPages.Dashboard.Admin
         {
             if (!Page.IsPostBack)
             {
-                setLabel();
+                // setLabel();
             }
         }
+
         public void setLabel()
         {
 
@@ -47,7 +48,6 @@ namespace WebPages.Dashboard.Admin
             lblTeacharName.InnerText = lgg.FirstName + " " + lgg.LastName;
             lblClassNum.InnerText = lgg.Class;
             lblLessonTitle.InnerText = lgg.LessonTitle;
-
-        }
+}
     }
 }

@@ -16,14 +16,15 @@ namespace DataAccess
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
         public string StudentCode { get; set; }
-
         public string Nomre { get; set; }
         public Nullable<int> ExamType { get; set; }
         public string Date { get; set; }
         public string TeacherCode { get; set; }
         public Nullable<bool> Type { get; set; }
         public Nullable<int> NomrePercent { get; set; }
+        public Nullable<int> SessionID { get; set; }
+        public int NomreID { get; set; }
+        public int OzviatID { get; set; }
     }
 }

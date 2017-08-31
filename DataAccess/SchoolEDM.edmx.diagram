@@ -4,6 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+
       <Diagram DiagramId="3efd528941174d59a8a35e422e354bdf" Name="Diagram1">
         <EntityTypeShape EntityType="SchoolDBModel.AnjomanOlya" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="SchoolDBModel.Father" Width="1.5" PointX="0.75" PointY="17" />
@@ -17,10 +18,12 @@
         <EntityTypeShape EntityType="SchoolDBModel.Ozviat" Width="1.5" PointX="8.25" PointY="11.375" />
         <EntityTypeShape EntityType="SchoolDBModel.PaymentHistory" Width="1.5" PointX="5.25" PointY="17.75" />
         <EntityTypeShape EntityType="SchoolDBModel.Presence" Width="1.5" PointX="13.5" PointY="14.625" />
+
         <EntityTypeShape EntityType="SchoolDBModel.Salary" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="SchoolDBModel.Sessoin" Width="1.5" PointX="8.25" PointY="18.5" />
         <EntityTypeShape EntityType="SchoolDBModel.Student" Width="1.5" PointX="3" PointY="10.5" />
         <EntityTypeShape EntityType="SchoolDBModel.StuRegister" Width="1.5" PointX="5.25" PointY="9" />
+
         <EntityTypeShape EntityType="SchoolDBModel.Tamarin" Width="1.5" PointX="8.25" PointY="15.125" />
         <EntityTypeShape EntityType="SchoolDBModel.vbarnameHaftegi" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="SchoolDBModel.vJavabeTamrin" Width="1.5" PointX="6.75" PointY="0.75" />
@@ -34,6 +37,7 @@
         <EntityTypeShape EntityType="SchoolDBModel.vSessoin" Width="1.5" PointX="13.75" PointY="0.75" />
         <EntityTypeShape EntityType="SchoolDBModel.vStudent" Width="1.5" PointX="15.75" PointY="0.75" />
         <EntityTypeShape EntityType="SchoolDBModel.vTamrin" Width="1.5" PointX="12.75" PointY="9.75" />
+
         <AssociationConnector Association="SchoolDBModel.FK_Students_Fathers" />
         <AssociationConnector Association="SchoolDBModel.FK_LessonGroups_Grades" />
         <AssociationConnector Association="SchoolDBModel.FK_Students_Grades" />
