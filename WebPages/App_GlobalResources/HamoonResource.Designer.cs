@@ -79,11 +79,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to توضیح غیبت.
+        /// </summary>
+        internal static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مقطع : .
+        /// </summary>
+        internal static string Grade {
+            get {
+                return ResourceManager.GetString("Grade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نام درس : .
         /// </summary>
         internal static string LessonName {
             get {
                 return ResourceManager.GetString("LessonName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to غیبت موجه است؟.
+        /// </summary>
+        internal static string movajah {
+            get {
+                return ResourceManager.GetString("movajah", resourceCulture);
             }
         }
         
@@ -106,7 +133,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to حظور غیاب.
+        ///   Looks up a localized string similar to حاضر بوده است؟.
         /// </summary>
         internal static string Present {
             get {

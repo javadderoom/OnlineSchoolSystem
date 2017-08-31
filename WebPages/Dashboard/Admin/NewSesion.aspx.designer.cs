@@ -13,31 +13,31 @@ namespace WebPages.Dashboard.Admin {
     public partial class NewSesion {
         
         /// <summary>
-        /// SessionNumber control.
+        /// Span2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal SessionNumber;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Span2;
         
         /// <summary>
-        /// ClassNumber control.
+        /// tbxSessionDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ClassNumber;
+        protected global::System.Web.UI.WebControls.TextBox tbxSessionDate;
         
         /// <summary>
-        /// LessonName control.
+        /// Span1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LessonName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Span1;
         
         /// <summary>
         /// StudentCount control.
@@ -49,13 +49,85 @@ namespace WebPages.Dashboard.Admin {
         protected global::System.Web.UI.WebControls.Literal StudentCount;
         
         /// <summary>
-        /// tbxSessionDate control.
+        /// lblTeacherName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxSessionDate;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTeacherName;
+        
+        /// <summary>
+        /// LessonName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LessonName;
+        
+        /// <summary>
+        /// lblClass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblClass;
+        
+        /// <summary>
+        /// ClassNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ClassNumber;
+        
+        /// <summary>
+        /// lblLesson control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblLesson;
+        
+        /// <summary>
+        /// Grade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Grade;
+        
+        /// <summary>
+        /// lblStudentsCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblStudentsCount;
+        
+        /// <summary>
+        /// SessionNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal SessionNumber;
+        
+        /// <summary>
+        /// btnSabt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSabt;
         
         /// <summary>
         /// ScriptManager1 control.
@@ -83,5 +155,14 @@ namespace WebPages.Dashboard.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvStudents;
+        
+        /// <summary>
+        /// btnSabt2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSabt2;
     }
 }
