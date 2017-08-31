@@ -95,12 +95,17 @@
     <Compile Include="Repository\KarmandRepository.cs" />
     <Compile Include="Repository\LessonsRepository.cs" />
     <Compile Include="Repository\OzviatRepository.cs" />
+    <Compile Include="Repository\vJavabeTamrinRepository.cs" />
     <Compile Include="Repository\vJTamrinRepository.cs" />
     <Compile Include="Repository\vLessonGroupRepository.cs" />
     <Compile Include="Repository\vNomratRepository.cs" />
-    <Compile Include="Repository\vPresenceRepository.cs" />
+
+    <Compile Include="Repository\vPresenceRepositorycs.cs" />
     <Compile Include="Repository\vPaymentHistoryRepository.cs" />
+    <Compile Include="Repository\vReportExams.cs" />
+
     <Compile Include="Repository\vStudentRepository.cs" />
+    <Compile Include="Repository\TamrinRepository.cs" />
     <Compile Include="Repository\vTamrinRepository.cs" />
     <Compile Include="Salary.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>

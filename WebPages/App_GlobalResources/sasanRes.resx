@@ -120,6 +120,12 @@
   <data name="chart" xml:space="preserve">
     <value>نمودار</value>
   </data>
+  <data name="classcount" xml:space="preserve">
+    <value>تعداد دانش آموزان کلاس</value>
+  </data>
+  <data name="classnum" xml:space="preserve">
+    <value>شماره کلاس</value>
+  </data>
   <data name="classreports" xml:space="preserve">
     <value>گزارش کلاس ها</value>
   </data>
@@ -147,17 +153,29 @@
   <data name="id" xml:space="preserve">
     <value>شناسه</value>
   </data>
+  <data name="lessontitle" xml:space="preserve">
+    <value>عنوان درس</value>
+  </data>
   <data name="lname" xml:space="preserve">
     <value>نام خانوادگی</value>
   </data>
   <data name="mablagh" xml:space="preserve">
     <value>مبلغ</value>
   </data>
+  <data name="mianginkatbi" xml:space="preserve">
+    <value>میانگین کل امتحان های کتبی دانش آموزان</value>
+  </data>
+  <data name="mianginshafahi" xml:space="preserve">
+    <value>میانگین کل امتحان های شفاهی دانش آموزان</value>
+  </data>
   <data name="payments" xml:space="preserve">
     <value>پرداخت ها</value>
   </data>
+  <data name="percentamrinanswer" xml:space="preserve">
+    <value>درصد پاسخ به تمارین</value>
+  </data>
   <data name="report" xml:space="preserve">
-    <value />
+    <value>گزارش</value>
   </data>
   <data name="reports" xml:space="preserve">
     <value>گزارشات</value>
@@ -170,6 +188,12 @@
   </data>
   <data name="studentspaymenthistory" xml:space="preserve">
     <value>تاریخچه ی پرداخت شهریه دانش آموزان</value>
+  </data>
+  <data name="tamrincount" xml:space="preserve">
+    <value>تعداد تمرین های داده شده</value>
+  </data>
+  <data name="teacher" xml:space="preserve">
+    <value>مدرس</value>
   </data>
   <data name="time" xml:space="preserve">
     <value>ساعت</value>

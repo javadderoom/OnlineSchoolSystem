@@ -1792,8 +1792,10 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Nomarat_Ozviat">
+
           <End Type="SchoolDBModel.Ozviat" Role="Ozviat" Multiplicity="0..1" />
           <End Type="SchoolDBModel.Nomarat" Role="Nomarat" Multiplicity="*" />
+
           <ReferentialConstraint>
             <Principal Role="Ozviat">
               <PropertyRef Name="OzviatID" />
@@ -2205,9 +2207,11 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <EntitySetMapping Name="vNomarats">
             <EntityTypeMapping TypeName="SchoolDBModel.vNomarat">
               <MappingFragment StoreEntitySet="vNomarat">
+
                 <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
                 <ScalarProperty Name="NomreID" ColumnName="NomreID" />
                 <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+
                 <ScalarProperty Name="NomrePercent" ColumnName="NomrePercent" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="TeacherCode" ColumnName="TeacherCode" />
