@@ -16,5 +16,24 @@ namespace DataAccess.Repository
         {
             conn = new Connection();
         }
+        public void SaveNomre(Nomarat nomre)
+        {
+            using (SchoolDBEntities pb = conn.GetContext())
+            {
+                if (nomre.NomreID > 0)
+                {
+                    //==== UPDATE ====
+                    pb.Nomarats.Attach(nomre);
+                    pb.Entry(nomre).State = EntityState.Modified;
+                }
+                else
+                {
+                    //==== INSERT ====
+                    pb.Nomarats.Add(nomre);
+                }
+
+                pb.SaveChanges();
+            }
+        }
     }
 }

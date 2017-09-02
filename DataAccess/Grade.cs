@@ -16,14 +16,15 @@ namespace DataAccess
     {
         public Grade()
         {
-            this.Students = new HashSet<Student>();
             this.LessonGroups = new HashSet<LessonGroup>();
+            this.Students = new HashSet<Student>();
         }
     
         public int GradeID { get; set; }
         public string GradeTitle { get; set; }
+        public Nullable<int> GradeSalary { get; set; }
     
-        public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<LessonGroup> LessonGroups { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
     }
 }

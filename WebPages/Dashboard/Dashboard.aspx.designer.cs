@@ -10,7 +10,7 @@
 namespace WebPages.Dashboard {
     
     
-    public partial class Dashboard1 {
+    public partial class Kartabl {
         
         /// <summary>
         /// imgUserPic control.

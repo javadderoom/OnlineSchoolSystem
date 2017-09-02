@@ -44,7 +44,7 @@ namespace WebPages.Dashboard
                 string strname = FileUpload1.FileName.ToString();
 
                 string FileName = System.IO.Path.GetFileName(FileUpload1.FileName);
-                string path = Server.MapPath("/Dashboard/Images/") + FileName;
+                string path = Server.MapPath("../Images/") + FileName;
                 FileUpload1.PostedFile.SaveAs(path);
                 imgUserPic.Src = "Images/" + FileName;
                 vStudentRepository sr = new vStudentRepository();
@@ -53,7 +53,7 @@ namespace WebPages.Dashboard
 
                 Student stuu = db.Students.Where(p => p.UserName == "javad").Single();
 
-                stuu.Image = "Images/" + strname;
+                stuu.Image = "../Images/" + strname;
                 db.SaveChanges();
             }
             else

@@ -24,14 +24,16 @@
             <div class="col-md-4 hidden-xs">
                 <label style="padding-top: 5px;">
                     نمایش
-                                <select name="ctl00$ContentPlaceHolder1$ddlPageSize" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlPageSize\',\'\')', 0)" id="ContentPlaceHolder1_ddlPageSize" style="font-weight: normal;">
-                                    <option selected="selected" value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="75">75</option>
-                                    <option value="100">100</option>
-                                </select>
+                               
+                    <select name="ctl00$ContentPlaceHolder1$ddlPageSize" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlPageSize\',\'\')', 0)" id="ContentPlaceHolder1_ddlPageSize" style="font-weight: normal;">
+                        <option selected="selected" value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="75">75</option>
+                        <option value="100">100</option>
+                    </select>
                     رکورد
+               
                 </label>
             </div>
             <div class="col-md-4 col-xs-12 text-righ">
@@ -67,7 +69,7 @@
                                 <asp:BoundField DataField="LGID" HeaderText="<%$ Resources:Dashboard,ID%>" />
                                 <asp:BoundField DataField="Class" HeaderText="<%$ Resources:Dashboard,Class%>" />
                                 <asp:BoundField DataField="LessonTitle" HeaderText="<%$ Resources:Dashboard,LessonTitle%>" />
-                                <asp:BoundField DataField="Unit" HeaderText="<%$ Resources:Dashboard,LessonTitle%>" />
+                                <asp:BoundField DataField="Unit" HeaderText="<%$ Resources:Dashboard,Unit%>" />
                                 <asp:BoundField DataField="FirstName" HeaderText="<%$ Resources:Dashboard,TeacherFName%>" />
                                 <asp:BoundField DataField="LastName" HeaderText="<%$ Resources:Dashboard,TeacherLName%>" />
                                 <asp:BoundField DataField="GradeTitle" HeaderText="<%$ Resources:Dashboard,GradeTitle%>" />
@@ -94,7 +96,7 @@
                                             CommandName="Students"
                                             CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
                                             Text="<%$ Resources:Dashboard,Students%>"
-                                            Width="150px" />
+                                            Width="115px" />
                                     </ItemTemplate>
 
                                     <ItemStyle HorizontalAlign="Justify" VerticalAlign="Middle"></ItemStyle>

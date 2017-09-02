@@ -16,18 +16,18 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="c-title">
-        <h4>مشخصات شخصی</h4>
+        <h4>
+            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,PersonalInfo%>" /></h4>
     </div>
     <div class="c-content">
         <div id="demo-form2" class="form-horizontal form-label-right">
             <div class="col-md-6 col-md-offset-3 col-xs-12">
-                <%--ssasa--%>
-                <%--شسیشسی--%>
+
                 <div class="form-group">
                     <div class="row">
                         <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
                             <span id="ContentPlaceHolder1_lbl_StuID" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,shomare_daneshamozi%>" />
+                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,ID%>" />
                             </span>
                         </div>
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard/Dashboard.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="WebPages.Dashboard.Dashboard1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard/Dashboard.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="WebPages.Dashboard.Kartabl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta charset="utf-8" />
@@ -50,7 +50,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
                             <span id="ContentPlaceHolder1_lbl_StudentCode" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,shomare_daneshamozi%>" /></span>
+                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,StudentCode%>" /></span>
                         </div>
 
                         <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                            <span id="lblFirstName" runat="server" class="control-label formLabel">مجید</span>
+                            <span id="lblFirstName" runat="server" class="control-label formLabel"></span>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="row">
                         <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
@@ -97,19 +96,6 @@
                         </div>
                     </div>
                 </div>
-
-                <%-- <div class="form-group">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                            <span id="ContentPlaceHolder1_lbl_Level" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,maghta%>" /></span>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                            <span id="lblLevel" runat="server" class="control-label formLabel">کارشناسی پیوسته</span>
-                        </div>
-                    </div>
-                </div>--%>
                 <div class="ln_solid"></div>
 
                 <div class="form-group">
@@ -192,7 +178,7 @@
                         </div>
 
                         <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                            <span id="lblZipCode" runat="server" class="control-label formLabel">۴۴۱۸۷۹۴۳۵۹</span>
+                            <span id="lblZipCode" runat="server" class="control-label formLabel"></span>
                         </div>
                     </div>
                 </div>
