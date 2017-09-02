@@ -229,15 +229,6 @@
           <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'SchoolDB.dbo.vBarname' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="vBarname">
-          <Property Name="Class" Type="nvarchar" MaxLength="50" />
-          <Property Name="Day" Type="int" />
-          <Property Name="Time" Type="int" />
-          <Property Name="StudentCode" Type="nvarchar" MaxLength="10" />
-          <Property Name="LessonTitle" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'SchoolDB.dbo.vbarnameHaftegi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vbarnameHaftegi">
           <Key>
@@ -332,6 +323,8 @@ warning 6002: The table/view 'SchoolDB.dbo.vNomarat' does not have a primary key
         <EntityType Name="vNomarat">
           <Key>
             <PropertyRef Name="StudentCode" />
+            <PropertyRef Name="NomreID" />
+            <PropertyRef Name="OzviatID" />
           </Key>
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
@@ -342,6 +335,9 @@ warning 6002: The table/view 'SchoolDB.dbo.vNomarat' does not have a primary key
           <Property Name="TeacherCode" Type="nvarchar" MaxLength="50" />
           <Property Name="Type" Type="bit" />
           <Property Name="NomrePercent" Type="int" />
+          <Property Name="SessionID" Type="int" />
+          <Property Name="NomreID" Type="int" Nullable="false" />
+          <Property Name="OzviatID" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SchoolDB.dbo.vOzviat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -827,7 +823,10 @@ FROM [dbo].[vLessonGroups] AS [vLessonGroups]</DefiningQuery>
 [vNomarat].[Date] AS [Date], 
 [vNomarat].[TeacherCode] AS [TeacherCode], 
 [vNomarat].[Type] AS [Type], 
-[vNomarat].[NomrePercent] AS [NomrePercent]
+[vNomarat].[NomrePercent] AS [NomrePercent], 
+[vNomarat].[SessionID] AS [SessionID], 
+[vNomarat].[NomreID] AS [NomreID], 
+[vNomarat].[OzviatID] AS [OzviatID]
 FROM [dbo].[vNomarat] AS [vNomarat]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vOzviat" EntityType="Self.vOzviat" store:Type="Views" store:Schema="dbo">
@@ -1491,6 +1490,8 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
         <EntityType Name="vNomarat">
           <Key>
             <PropertyRef Name="StudentCode" />
+            <PropertyRef Name="NomreID" />
+            <PropertyRef Name="OzviatID" />
           </Key>
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1501,6 +1502,9 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="TeacherCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Type" Type="Boolean" />
           <Property Name="NomrePercent" Type="Int32" />
+          <Property Name="SessionID" Type="Int32" />
+          <Property Name="NomreID" Type="Int32" Nullable="false" />
+          <Property Name="OzviatID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vOzviat">
           <Key>
@@ -1788,10 +1792,10 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Nomarat_Ozviat">
-          <End Type="SchoolDBModel.Ozviat" Role="Ozviat" Multiplicity="0..1" >
-          </End>
-          <End Type="SchoolDBModel.Nomarat" Role="Nomarat" Multiplicity="*" >
-          </End>
+
+          <End Type="SchoolDBModel.Ozviat" Role="Ozviat" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Nomarat" Role="Nomarat" Multiplicity="*" />
+
           <ReferentialConstraint>
             <Principal Role="Ozviat">
               <PropertyRef Name="OzviatID" />
@@ -2203,6 +2207,11 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <EntitySetMapping Name="vNomarats">
             <EntityTypeMapping TypeName="SchoolDBModel.vNomarat">
               <MappingFragment StoreEntitySet="vNomarat">
+
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
+                <ScalarProperty Name="NomreID" ColumnName="NomreID" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+
                 <ScalarProperty Name="NomrePercent" ColumnName="NomrePercent" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="TeacherCode" ColumnName="TeacherCode" />
