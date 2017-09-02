@@ -22,7 +22,7 @@ namespace WebPages.Dashboard.Admin
         public void setLabel()
         {
 
-            vReportExams v = new vReportExams();
+            vReportExamsRepository v = new vReportExamsRepository();
             string id = Request.QueryString["LGID"];
             lblmianginkatbi.InnerText = Convert.ToDouble(v.getAverageLessonGroup(id.ToInt(), 0)).ToString();
             lblmianginshafahi.InnerText = Convert.ToDouble(v.getAverageLessonGroup(id.ToInt(), 1)).ToString();

@@ -13,7 +13,7 @@ namespace WebPages.Dashboard.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            gvSessionHistory.DataSource =
+            //gvSessionHistory.DataSource =
         }
 
         protected void gvSessionHistory_RowCommand(object sender, GridViewCommandEventArgs e)

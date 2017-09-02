@@ -994,7 +994,7 @@
     </Compile>
     <Compile Include="Dashboard\Admin\reportsLessonGroupsChart.aspx.designer.cs">
       <DependentUpon>reportsLessonGroupsChart.aspx</DependentUpon>
-
+	</Compile>
     <Compile Include="Dashboard\Admin\NewSesion.aspx.cs">
       <DependentUpon>NewSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

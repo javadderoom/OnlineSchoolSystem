@@ -10,12 +10,12 @@ using System.Configuration;
 
 namespace DataAccess.Repository
 {
-    public class vReportExams
+    public class vReportExamsRepository
     {
         private SchoolDBEntities db = new SchoolDBEntities();
         private Connection conn;
 
-        public vReportExams()
+        public vReportExamsRepository()
         {
             conn = new Connection();
         }
