@@ -19,7 +19,10 @@ namespace DataAccess.Repository
         {
             conn = new Connection();
         }
-
+        public int OzviatIDByLGIDAndStudentCode(int id, string stuCode)
+        {
+            return 1;
+        }
         public DataTable FindByLGID(int lgid)
         {
             List<vOzviat> result = new List<vOzviat>();
