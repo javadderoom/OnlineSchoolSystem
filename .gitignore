@@ -243,3 +243,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/WebPages/Dashboard/fusioncharts
+/WebPages/Dashboard/JavaScript

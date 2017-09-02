@@ -135,13 +135,16 @@ namespace DataAccess.Repository
 
             return Convert.ToBoolean(pb.SaveChanges());
         }
-        public int OzviatIDByLGIDAndStudentCode(int LGID, string SCode)
+
+        public int countStudentsOfLessonGroupByid(int lgid)
         {
-            int result = 0;
+            SchoolDBEntities pb = conn.GetContext();
+            int query =
+                (from r in pb.Ozviats
+                 where r.LGID == lgid
+                 select r).Count();
 
-            result = db.Ozviats.Where(p => (p.LGID == LGID) && (p.StudentCode == SCode)).Single().OzviatID;
-
-            return result;
+            return query;
         }
     }
 }
