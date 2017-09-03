@@ -6,14 +6,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Common;
 
 namespace WebPages.Dashboard.Admin
 {
     public partial class SesionHistory : System.Web.UI.Page
     {
+        private SessionRepository sr = new SessionRepository();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            gvSessionHistory.DataSource =
+            string id = Request.QueryString["LGID"];
+            gvSessionHistory.DataSource = sr.GetSessionsByLGID(id.ToInt());
+            gvSessionHistory.DataBind();
         }
 
         protected void gvSessionHistory_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -41,8 +46,7 @@ namespace WebPages.Dashboard.Admin
                 GridViewRow row = gvSessionHistory.Rows[index];
 
                 string id = row.Cells[0].Text;
-
-
+                Response.Redirect("http://localhost:4911/Dashboard/Admin/SessionDetails.aspx?userid=" + row.Cells[0].Text);
             }
             if (e.CommandName == "Delet")
             {

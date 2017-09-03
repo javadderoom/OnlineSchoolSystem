@@ -32,7 +32,7 @@
                                     <Columns>
                                         <asp:BoundField DataField="SessionID" HeaderText="<%$ Resources:Dashboard,ID%>" />
                                         <asp:BoundField DataField="Date" HeaderText="<%$ Resources:Dashboard,Date%>" />
-                                        <asp:BoundField DataField="LGID" HeaderText="<%$ Resources:Dashboard,name%>" />
+
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:Button ID="Edid" runat="server"
@@ -44,11 +44,6 @@
                                                     CommandName="Details"
                                                     CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
                                                     Text="<%$ Resources:Dashboard,Details%>" />
-
-                                                <asp:Button OnClientClick="if(!confirm('ایا مطمئن هستید؟')) return false;" ID="Delet" runat="server"
-                                                    CommandName="Delet"
-                                                    CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
-                                                    Text="<%$ Resources:Dashboard,delete%>" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>

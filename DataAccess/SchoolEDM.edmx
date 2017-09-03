@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SchoolDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SchoolDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AnjomanOlya">
           <Key>
             <PropertyRef Name="NationalCode" />
@@ -133,7 +133,7 @@
         </EntityType>
         <EntityType Name="PaymentHistory">
           <Key>
-            <PropertyRef Name="StuCode" />
+            <PropertyRef Name="HID" />
           </Key>
           <Property Name="HID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StuCode" Type="nvarchar" MaxLength="10" Nullable="false" />
@@ -229,15 +229,6 @@
           <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'SchoolDB.dbo.vBarname' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="vBarname">
-          <Property Name="Class" Type="nvarchar" MaxLength="50" />
-          <Property Name="Day" Type="int" />
-          <Property Name="Time" Type="int" />
-          <Property Name="StudentCode" Type="nvarchar" MaxLength="10" />
-          <Property Name="LessonTitle" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'SchoolDB.dbo.vbarnameHaftegi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vbarnameHaftegi">
           <Key>
@@ -251,6 +242,37 @@ warning 6002: The table/view 'SchoolDB.dbo.vbarnameHaftegi' does not have a prim
           <Property Name="LessonTitle" Type="nvarchar" MaxLength="50" />
           <Property Name="OzviatID" Type="int" Nullable="false" />
           <Property Name="LGID" Type="int" />
+          <Property Name="Year" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SchoolDB.dbo.vJavabeTamrin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vJavabeTamrin">
+          <Key>
+            <PropertyRef Name="JavabID" />
+            <PropertyRef Name="TamrinID" />
+            <PropertyRef Name="LGID" />
+          </Key>
+          <Property Name="JavabID" Type="int" Nullable="false" />
+          <Property Name="Expr1" Type="int" />
+          <Property Name="OzviatID" Type="int" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="Expr2" Type="nvarchar(max)" />
+          <Property Name="SendingTime" Type="nvarchar" MaxLength="15" />
+          <Property Name="SendingDate" Type="nvarchar" MaxLength="15" />
+          <Property Name="TamrinID" Type="int" Nullable="false" />
+          <Property Name="TamrinTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="StartDate" Type="nvarchar" MaxLength="10" />
+          <Property Name="ExpirationDate" Type="nvarchar" MaxLength="10" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="LGID" Type="int" Nullable="false" />
+          <Property Name="Class" Type="nvarchar" MaxLength="50" />
+          <Property Name="LessonID" Type="int" />
+          <Property Name="TeacherCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="GradeID" Type="int" />
+          <Property Name="Day" Type="int" />
+          <Property Name="Time" Type="int" />
+          <Property Name="FieldID" Type="int" />
           <Property Name="Year" Type="nvarchar" MaxLength="5" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -301,6 +323,8 @@ warning 6002: The table/view 'SchoolDB.dbo.vNomarat' does not have a primary key
         <EntityType Name="vNomarat">
           <Key>
             <PropertyRef Name="StudentCode" />
+            <PropertyRef Name="NomreID" />
+            <PropertyRef Name="OzviatID" />
           </Key>
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
@@ -311,6 +335,9 @@ warning 6002: The table/view 'SchoolDB.dbo.vNomarat' does not have a primary key
           <Property Name="TeacherCode" Type="nvarchar" MaxLength="50" />
           <Property Name="Type" Type="bit" />
           <Property Name="NomrePercent" Type="int" />
+          <Property Name="SessionID" Type="int" />
+          <Property Name="NomreID" Type="int" Nullable="false" />
+          <Property Name="OzviatID" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SchoolDB.dbo.vOzviat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -364,6 +391,19 @@ warning 6002: The table/view 'SchoolDB.dbo.vPresence' does not have a primary ke
           <Property Name="Time" Type="int" />
           <Property Name="isMovajjah" Type="bit" />
           <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SchoolDB.dbo.vReportExams' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vReportExams">
+          <Key>
+            <PropertyRef Name="SessionID" />
+          </Key>
+          <Property Name="Nomre" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Type" Type="bit" />
+          <Property Name="ExamType" Type="int" />
+          <Property Name="SessionDate" Type="nvarchar" MaxLength="8" />
+          <Property Name="LGID" Type="int" />
+          <Property Name="SessionID" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SchoolDB.dbo.vSessoins' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -576,7 +616,7 @@ warning 6002: The table/view 'SchoolDB.dbo.vTamrin' does not have a primary key 
         </Association>
         <Association Name="FK_PaymentHistory_Students">
           <End Role="Students" Type="Self.Students" Multiplicity="1" />
-          <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="0..1" />
+          <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Students">
               <PropertyRef Name="StudentCode" />
@@ -713,6 +753,32 @@ warning 6002: The table/view 'SchoolDB.dbo.vTamrin' does not have a primary key 
 [vbarnameHaftegi].[Year] AS [Year]
 FROM [dbo].[vbarnameHaftegi] AS [vbarnameHaftegi]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vJavabeTamrin" EntityType="Self.vJavabeTamrin" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vJavabeTamrin].[JavabID] AS [JavabID], 
+[vJavabeTamrin].[Expr1] AS [Expr1], 
+[vJavabeTamrin].[OzviatID] AS [OzviatID], 
+[vJavabeTamrin].[FilePath] AS [FilePath], 
+[vJavabeTamrin].[Expr2] AS [Expr2], 
+[vJavabeTamrin].[SendingTime] AS [SendingTime], 
+[vJavabeTamrin].[SendingDate] AS [SendingDate], 
+[vJavabeTamrin].[TamrinID] AS [TamrinID], 
+[vJavabeTamrin].[TamrinTitle] AS [TamrinTitle], 
+[vJavabeTamrin].[GroupID] AS [GroupID], 
+[vJavabeTamrin].[StartDate] AS [StartDate], 
+[vJavabeTamrin].[ExpirationDate] AS [ExpirationDate], 
+[vJavabeTamrin].[Description] AS [Description], 
+[vJavabeTamrin].[LGID] AS [LGID], 
+[vJavabeTamrin].[Class] AS [Class], 
+[vJavabeTamrin].[LessonID] AS [LessonID], 
+[vJavabeTamrin].[TeacherCode] AS [TeacherCode], 
+[vJavabeTamrin].[GradeID] AS [GradeID], 
+[vJavabeTamrin].[Day] AS [Day], 
+[vJavabeTamrin].[Time] AS [Time], 
+[vJavabeTamrin].[FieldID] AS [FieldID], 
+[vJavabeTamrin].[Year] AS [Year]
+FROM [dbo].[vJavabeTamrin] AS [vJavabeTamrin]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vJTamrin" EntityType="Self.vJTamrin" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [vJTamrin].[FirstName] AS [FirstName], 
@@ -757,7 +823,10 @@ FROM [dbo].[vLessonGroups] AS [vLessonGroups]</DefiningQuery>
 [vNomarat].[Date] AS [Date], 
 [vNomarat].[TeacherCode] AS [TeacherCode], 
 [vNomarat].[Type] AS [Type], 
-[vNomarat].[NomrePercent] AS [NomrePercent]
+[vNomarat].[NomrePercent] AS [NomrePercent], 
+[vNomarat].[SessionID] AS [SessionID], 
+[vNomarat].[NomreID] AS [NomreID], 
+[vNomarat].[OzviatID] AS [OzviatID]
 FROM [dbo].[vNomarat] AS [vNomarat]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vOzviat" EntityType="Self.vOzviat" store:Type="Views" store:Schema="dbo">
@@ -800,6 +869,16 @@ FROM [dbo].[vPaymentHistory] AS [vPaymentHistory]</DefiningQuery>
 [vPresence].[isMovajjah] AS [isMovajjah], 
 [vPresence].[Description] AS [Description]
 FROM [dbo].[vPresence] AS [vPresence]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vReportExams" EntityType="Self.vReportExams" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vReportExams].[Nomre] AS [Nomre], 
+[vReportExams].[Type] AS [Type], 
+[vReportExams].[ExamType] AS [ExamType], 
+[vReportExams].[SessionDate] AS [SessionDate], 
+[vReportExams].[LGID] AS [LGID], 
+[vReportExams].[SessionID] AS [SessionID]
+FROM [dbo].[vReportExams] AS [vReportExams]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vSessoins" EntityType="Self.vSessoins" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -960,11 +1039,113 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             <End Role="Tamarin" EntitySet="Tamarin" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SchoolDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SchoolDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AnjomanOlyas" EntityType="SchoolDBModel.AnjomanOlya" />
+          <EntitySet Name="Fathers" EntityType="SchoolDBModel.Father" />
+          <EntitySet Name="Grades" EntityType="SchoolDBModel.Grade" />
+          <EntitySet Name="JavabeTamrins" EntityType="SchoolDBModel.JavabeTamrin" />
+          <EntitySet Name="Karmands" EntityType="SchoolDBModel.Karmand" />
+          <EntitySet Name="LessonGroups" EntityType="SchoolDBModel.LessonGroup" />
+          <EntitySet Name="Lessons" EntityType="SchoolDBModel.Lesson" />
+          <EntitySet Name="Mothers" EntityType="SchoolDBModel.Mother" />
+          <EntitySet Name="Nomarats" EntityType="SchoolDBModel.Nomarat" />
+          <EntitySet Name="Ozviats" EntityType="SchoolDBModel.Ozviat" />
+          <EntitySet Name="PaymentHistories" EntityType="SchoolDBModel.PaymentHistory" />
+          <EntitySet Name="Presences" EntityType="SchoolDBModel.Presence" />
+          <EntitySet Name="Salaries" EntityType="SchoolDBModel.Salary" />
+          <EntitySet Name="Sessoins" EntityType="SchoolDBModel.Sessoin" />
+          <EntitySet Name="Students" EntityType="SchoolDBModel.Student" />
+          <EntitySet Name="StuRegisters" EntityType="SchoolDBModel.StuRegister" />
+          <EntitySet Name="Tamarins" EntityType="SchoolDBModel.Tamarin" />
+          <EntitySet Name="vbarnameHaftegis" EntityType="SchoolDBModel.vbarnameHaftegi" />
+          <EntitySet Name="vJavabeTamrins" EntityType="SchoolDBModel.vJavabeTamrin" />
+          <EntitySet Name="vJTamrins" EntityType="SchoolDBModel.vJTamrin" />
+          <EntitySet Name="vLessonGroups" EntityType="SchoolDBModel.vLessonGroup" />
+          <EntitySet Name="vNomarats" EntityType="SchoolDBModel.vNomarat" />
+          <EntitySet Name="vOzviats" EntityType="SchoolDBModel.vOzviat" />
+          <EntitySet Name="vPaymentHistories" EntityType="SchoolDBModel.vPaymentHistory" />
+          <EntitySet Name="vPresences" EntityType="SchoolDBModel.vPresence" />
+          <EntitySet Name="vReportExams" EntityType="SchoolDBModel.vReportExam" />
+          <EntitySet Name="vSessoins" EntityType="SchoolDBModel.vSessoin" />
+          <EntitySet Name="vStudents" EntityType="SchoolDBModel.vStudent" />
+          <EntitySet Name="vTamrins" EntityType="SchoolDBModel.vTamrin" />
+          <AssociationSet Name="FK_Students_Fathers" Association="SchoolDBModel.FK_Students_Fathers">
+            <End Role="Father" EntitySet="Fathers" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LessonGroups_Grades" Association="SchoolDBModel.FK_LessonGroups_Grades">
+            <End Role="Grade" EntitySet="Grades" />
+            <End Role="LessonGroup" EntitySet="LessonGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_Grades" Association="SchoolDBModel.FK_Students_Grades">
+            <End Role="Grade" EntitySet="Grades" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JavabeTamrin_Ozviat" Association="SchoolDBModel.FK_JavabeTamrin_Ozviat">
+            <End Role="Ozviat" EntitySet="Ozviats" />
+            <End Role="JavabeTamrin" EntitySet="JavabeTamrins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JavabeTamrin_Tamarin" Association="SchoolDBModel.FK_JavabeTamrin_Tamarin">
+            <End Role="Tamarin" EntitySet="Tamarins" />
+            <End Role="JavabeTamrin" EntitySet="JavabeTamrins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LessonGroups_Karmand" Association="SchoolDBModel.FK_LessonGroups_Karmand">
+            <End Role="Karmand" EntitySet="Karmands" />
+            <End Role="LessonGroup" EntitySet="LessonGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LessonGroups_Lessons" Association="SchoolDBModel.FK_LessonGroups_Lessons">
+            <End Role="Lesson" EntitySet="Lessons" />
+            <End Role="LessonGroup" EntitySet="LessonGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ozviat_LessonGroups" Association="SchoolDBModel.FK_Ozviat_LessonGroups">
+            <End Role="LessonGroup" EntitySet="LessonGroups" />
+            <End Role="Ozviat" EntitySet="Ozviats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sessoins_LessonGroups" Association="SchoolDBModel.FK_Sessoins_LessonGroups">
+            <End Role="LessonGroup" EntitySet="LessonGroups" />
+            <End Role="Sessoin" EntitySet="Sessoins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tamarin_LessonGroups" Association="SchoolDBModel.FK_Tamarin_LessonGroups">
+            <End Role="LessonGroup" EntitySet="LessonGroups" />
+            <End Role="Tamarin" EntitySet="Tamarins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_Mothers" Association="SchoolDBModel.FK_Students_Mothers">
+            <End Role="Mother" EntitySet="Mothers" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nomarat_Ozviat" Association="SchoolDBModel.FK_Nomarat_Ozviat">
+            <End Role="Ozviat" EntitySet="Ozviats" />
+            <End Role="Nomarat" EntitySet="Nomarats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nomarat_Sessoins" Association="SchoolDBModel.FK_Nomarat_Sessoins">
+            <End Role="Sessoin" EntitySet="Sessoins" />
+            <End Role="Nomarat" EntitySet="Nomarats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ozviat_Students" Association="SchoolDBModel.FK_Ozviat_Students">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Ozviat" EntitySet="Ozviats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Presence_Ozviat" Association="SchoolDBModel.FK_Presence_Ozviat">
+            <End Role="Ozviat" EntitySet="Ozviats" />
+            <End Role="Presence" EntitySet="Presences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentHistory_Students" Association="SchoolDBModel.FK_PaymentHistory_Students">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="PaymentHistory" EntitySet="PaymentHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Presence_Sessoins" Association="SchoolDBModel.FK_Presence_Sessoins">
+            <End Role="Sessoin" EntitySet="Sessoins" />
+            <End Role="Presence" EntitySet="Presences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StuRegister_Students" Association="SchoolDBModel.FK_StuRegister_Students">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="StuRegister" EntitySet="StuRegisters" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="AnjomanOlya">
           <Key>
             <PropertyRef Name="NationalCode" />
@@ -994,7 +1175,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="WorkPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Education" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Students" Relationship="Self.FK_Students_Fathers" FromRole="Fathers" ToRole="Students" />
+          <NavigationProperty Name="Students" Relationship="SchoolDBModel.FK_Students_Fathers" FromRole="Father" ToRole="Student" />
         </EntityType>
         <EntityType Name="Grade">
           <Key>
@@ -1003,8 +1184,8 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="GradeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="GradeTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GradeSalary" Type="Int32" />
-          <NavigationProperty Name="LessonGroups" Relationship="Self.FK_LessonGroups_Grades" FromRole="Grades" ToRole="LessonGroups" />
-          <NavigationProperty Name="Students" Relationship="Self.FK_Students_Grades" FromRole="Grades" ToRole="Students" />
+          <NavigationProperty Name="LessonGroups" Relationship="SchoolDBModel.FK_LessonGroups_Grades" FromRole="Grade" ToRole="LessonGroup" />
+          <NavigationProperty Name="Students" Relationship="SchoolDBModel.FK_Students_Grades" FromRole="Grade" ToRole="Student" />
         </EntityType>
         <EntityType Name="JavabeTamrin">
           <Key>
@@ -1017,8 +1198,8 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SendingTime" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="SendingDate" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Ozviat" Relationship="Self.FK_JavabeTamrin_Ozviat" FromRole="JavabeTamrin" ToRole="Ozviat" />
-          <NavigationProperty Name="Tamarin" Relationship="Self.FK_JavabeTamrin_Tamarin" FromRole="JavabeTamrin" ToRole="Tamarin" />
+          <NavigationProperty Name="Ozviat" Relationship="SchoolDBModel.FK_JavabeTamrin_Ozviat" FromRole="JavabeTamrin" ToRole="Ozviat" />
+          <NavigationProperty Name="Tamarin" Relationship="SchoolDBModel.FK_JavabeTamrin_Tamarin" FromRole="JavabeTamrin" ToRole="Tamarin" />
         </EntityType>
         <EntityType Name="Karmand">
           <Key>
@@ -1031,13 +1212,13 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
-          <Property Name="PersonalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PersonalCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="LessonGroups" Relationship="Self.FK_LessonGroups_Karmand" FromRole="Karmand" ToRole="LessonGroups" />
+          <NavigationProperty Name="LessonGroups" Relationship="SchoolDBModel.FK_LessonGroups_Karmand" FromRole="Karmand" ToRole="LessonGroup" />
         </EntityType>
         <EntityType Name="LessonGroup">
           <Key>
@@ -1052,12 +1233,12 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="Time" Type="Int32" />
           <Property Name="FieldID" Type="Int32" />
           <Property Name="Year" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Grade" Relationship="Self.FK_LessonGroups_Grades" FromRole="LessonGroups" ToRole="Grades" />
-          <NavigationProperty Name="Karmand" Relationship="Self.FK_LessonGroups_Karmand" FromRole="LessonGroups" ToRole="Karmand" />
-          <NavigationProperty Name="Lesson" Relationship="Self.FK_LessonGroups_Lessons" FromRole="LessonGroups" ToRole="Lessons" />
-          <NavigationProperty Name="Ozviats" Relationship="Self.FK_Ozviat_LessonGroups" FromRole="LessonGroups" ToRole="Ozviat" />
-          <NavigationProperty Name="Sessoins" Relationship="Self.FK_Sessoins_LessonGroups" FromRole="LessonGroups" ToRole="Sessoins" />
-          <NavigationProperty Name="Tamarins" Relationship="Self.FK_Tamarin_LessonGroups" FromRole="LessonGroups" ToRole="Tamarin" />
+          <NavigationProperty Name="Grade" Relationship="SchoolDBModel.FK_LessonGroups_Grades" FromRole="LessonGroup" ToRole="Grade" />
+          <NavigationProperty Name="Karmand" Relationship="SchoolDBModel.FK_LessonGroups_Karmand" FromRole="LessonGroup" ToRole="Karmand" />
+          <NavigationProperty Name="Lesson" Relationship="SchoolDBModel.FK_LessonGroups_Lessons" FromRole="LessonGroup" ToRole="Lesson" />
+          <NavigationProperty Name="Ozviats" Relationship="SchoolDBModel.FK_Ozviat_LessonGroups" FromRole="LessonGroup" ToRole="Ozviat" />
+          <NavigationProperty Name="Sessoins" Relationship="SchoolDBModel.FK_Sessoins_LessonGroups" FromRole="LessonGroup" ToRole="Sessoin" />
+          <NavigationProperty Name="Tamarins" Relationship="SchoolDBModel.FK_Tamarin_LessonGroups" FromRole="LessonGroup" ToRole="Tamarin" />
         </EntityType>
         <EntityType Name="Lesson">
           <Key>
@@ -1066,7 +1247,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="LessonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LessonTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Unit" Type="Int32" />
-          <NavigationProperty Name="LessonGroups" Relationship="Self.FK_LessonGroups_Lessons" FromRole="Lessons" ToRole="LessonGroups" />
+          <NavigationProperty Name="LessonGroups" Relationship="SchoolDBModel.FK_LessonGroups_Lessons" FromRole="Lesson" ToRole="LessonGroup" />
         </EntityType>
         <EntityType Name="Mother">
           <Key>
@@ -1082,7 +1263,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="WorkPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Education" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Students" Relationship="Self.FK_Students_Mothers" FromRole="Mothers" ToRole="Students" />
+          <NavigationProperty Name="Students" Relationship="SchoolDBModel.FK_Students_Mothers" FromRole="Mother" ToRole="Student" />
         </EntityType>
         <EntityType Name="Nomarat">
           <Key>
@@ -1096,8 +1277,8 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="Nomre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Type" Type="Boolean" />
           <Property Name="NomrePercent" Type="Int32" />
-          <NavigationProperty Name="Ozviat" Relationship="Self.FK_Nomarat_Ozviat" FromRole="Nomarat" ToRole="Ozviat" />
-          <NavigationProperty Name="Sessoin" Relationship="Self.FK_Nomarat_Sessoins" FromRole="Nomarat" ToRole="Sessoins" />
+          <NavigationProperty Name="Ozviat" Relationship="SchoolDBModel.FK_Nomarat_Ozviat" FromRole="Nomarat" ToRole="Ozviat" />
+          <NavigationProperty Name="Sessoin" Relationship="SchoolDBModel.FK_Nomarat_Sessoins" FromRole="Nomarat" ToRole="Sessoin" />
         </EntityType>
         <EntityType Name="Ozviat">
           <Key>
@@ -1106,24 +1287,24 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="OzviatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LGID" Type="Int32" />
           <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="JavabeTamrins" Relationship="Self.FK_JavabeTamrin_Ozviat" FromRole="Ozviat" ToRole="JavabeTamrin" />
-          <NavigationProperty Name="LessonGroup" Relationship="Self.FK_Ozviat_LessonGroups" FromRole="Ozviat" ToRole="LessonGroups" />
-          <NavigationProperty Name="Nomarats" Relationship="Self.FK_Nomarat_Ozviat" FromRole="Ozviat" ToRole="Nomarat" />
-          <NavigationProperty Name="Student" Relationship="Self.FK_Ozviat_Students" FromRole="Ozviat" ToRole="Students" />
-          <NavigationProperty Name="Presences" Relationship="Self.FK_Presence_Ozviat" FromRole="Ozviat" ToRole="Presence" />
+          <NavigationProperty Name="JavabeTamrins" Relationship="SchoolDBModel.FK_JavabeTamrin_Ozviat" FromRole="Ozviat" ToRole="JavabeTamrin" />
+          <NavigationProperty Name="LessonGroup" Relationship="SchoolDBModel.FK_Ozviat_LessonGroups" FromRole="Ozviat" ToRole="LessonGroup" />
+          <NavigationProperty Name="Nomarats" Relationship="SchoolDBModel.FK_Nomarat_Ozviat" FromRole="Ozviat" ToRole="Nomarat" />
+          <NavigationProperty Name="Student" Relationship="SchoolDBModel.FK_Ozviat_Students" FromRole="Ozviat" ToRole="Student" />
+          <NavigationProperty Name="Presences" Relationship="SchoolDBModel.FK_Presence_Ozviat" FromRole="Ozviat" ToRole="Presence" />
         </EntityType>
         <EntityType Name="PaymentHistory">
           <Key>
-            <PropertyRef Name="StuCode" />
+            <PropertyRef Name="HID" />
           </Key>
           <Property Name="HID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StuCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StuCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Mablagh" Type="Int32" />
           <Property Name="CodeRahgiry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Time" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Student" Relationship="Self.FK_PaymentHistory_Students" FromRole="PaymentHistory" ToRole="Students" />
+          <NavigationProperty Name="Student" Relationship="SchoolDBModel.FK_PaymentHistory_Students" FromRole="PaymentHistory" ToRole="Student" />
         </EntityType>
         <EntityType Name="Presence">
           <Key>
@@ -1132,12 +1313,12 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OzviatID" Type="Int32" />
           <Property Name="SessionID" Type="Int32" />
-          <Property Name="Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="isMovajjah" Type="Boolean" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Ozviat" Relationship="Self.FK_Presence_Ozviat" FromRole="Presence" ToRole="Ozviat" />
-          <NavigationProperty Name="Sessoin" Relationship="Self.FK_Presence_Sessoins" FromRole="Presence" ToRole="Sessoins" />
+          <NavigationProperty Name="Ozviat" Relationship="SchoolDBModel.FK_Presence_Ozviat" FromRole="Presence" ToRole="Ozviat" />
+          <NavigationProperty Name="Sessoin" Relationship="SchoolDBModel.FK_Presence_Sessoins" FromRole="Presence" ToRole="Sessoin" />
         </EntityType>
         <EntityType Name="Salary">
           <Key>
@@ -1155,9 +1336,9 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="SessionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
           <Property Name="LGID" Type="Int32" />
-          <NavigationProperty Name="LessonGroup" Relationship="Self.FK_Sessoins_LessonGroups" FromRole="Sessoins" ToRole="LessonGroups" />
-          <NavigationProperty Name="Nomarats" Relationship="Self.FK_Nomarat_Sessoins" FromRole="Sessoins" ToRole="Nomarat" />
-          <NavigationProperty Name="Presences" Relationship="Self.FK_Presence_Sessoins" FromRole="Sessoins" ToRole="Presence" />
+          <NavigationProperty Name="LessonGroup" Relationship="SchoolDBModel.FK_Sessoins_LessonGroups" FromRole="Sessoin" ToRole="LessonGroup" />
+          <NavigationProperty Name="Nomarats" Relationship="SchoolDBModel.FK_Nomarat_Sessoins" FromRole="Sessoin" ToRole="Nomarat" />
+          <NavigationProperty Name="Presences" Relationship="SchoolDBModel.FK_Presence_Sessoins" FromRole="Sessoin" ToRole="Presence" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -1166,7 +1347,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="StuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="SGarde" Type="Int32" />
           <Property Name="CGrade" Type="Int32" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1194,22 +1375,22 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ParentUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ParentPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Father" Relationship="Self.FK_Students_Fathers" FromRole="Students" ToRole="Fathers" />
-          <NavigationProperty Name="Grade" Relationship="Self.FK_Students_Grades" FromRole="Students" ToRole="Grades" />
-          <NavigationProperty Name="Mother" Relationship="Self.FK_Students_Mothers" FromRole="Students" ToRole="Mothers" />
-          <NavigationProperty Name="Ozviats" Relationship="Self.FK_Ozviat_Students" FromRole="Students" ToRole="Ozviat" />
-          <NavigationProperty Name="PaymentHistory" Relationship="Self.FK_PaymentHistory_Students" FromRole="Students" ToRole="PaymentHistory" />
-          <NavigationProperty Name="StuRegister" Relationship="Self.FK_StuRegister_Students" FromRole="Students" ToRole="StuRegister" />
+          <NavigationProperty Name="Father" Relationship="SchoolDBModel.FK_Students_Fathers" FromRole="Student" ToRole="Father" />
+          <NavigationProperty Name="Grade" Relationship="SchoolDBModel.FK_Students_Grades" FromRole="Student" ToRole="Grade" />
+          <NavigationProperty Name="Mother" Relationship="SchoolDBModel.FK_Students_Mothers" FromRole="Student" ToRole="Mother" />
+          <NavigationProperty Name="Ozviats" Relationship="SchoolDBModel.FK_Ozviat_Students" FromRole="Student" ToRole="Ozviat" />
+          <NavigationProperty Name="PaymentHistories" Relationship="SchoolDBModel.FK_PaymentHistory_Students" FromRole="Student" ToRole="PaymentHistory" />
+          <NavigationProperty Name="StuRegister" Relationship="SchoolDBModel.FK_StuRegister_Students" FromRole="Student" ToRole="StuRegister" />
         </EntityType>
         <EntityType Name="StuRegister">
           <Key>
             <PropertyRef Name="StuCode" />
           </Key>
           <Property Name="RegID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StuCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StuCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="RegDate" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
           <Property Name="RegGrade" Type="Int32" />
-          <NavigationProperty Name="Student" Relationship="Self.FK_StuRegister_Students" FromRole="StuRegister" ToRole="Students" />
+          <NavigationProperty Name="Student" Relationship="SchoolDBModel.FK_StuRegister_Students" FromRole="StuRegister" ToRole="Student" />
         </EntityType>
         <EntityType Name="Tamarin">
           <Key>
@@ -1221,8 +1402,8 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="StartDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="ExpirationDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="JavabeTamrin" Relationship="Self.FK_JavabeTamrin_Tamarin" FromRole="Tamarin" ToRole="JavabeTamrin" />
-          <NavigationProperty Name="LessonGroup" Relationship="Self.FK_Tamarin_LessonGroups" FromRole="Tamarin" ToRole="LessonGroups" />
+          <NavigationProperty Name="JavabeTamrin" Relationship="SchoolDBModel.FK_JavabeTamrin_Tamarin" FromRole="Tamarin" ToRole="JavabeTamrin" />
+          <NavigationProperty Name="LessonGroup" Relationship="SchoolDBModel.FK_Tamarin_LessonGroups" FromRole="Tamarin" ToRole="LessonGroup" />
         </EntityType>
         <EntityType Name="vbarnameHaftegi">
           <Key>
@@ -1238,6 +1419,35 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="LGID" Type="Int32" />
           <Property Name="Year" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="vJavabeTamrin">
+          <Key>
+            <PropertyRef Name="JavabID" />
+            <PropertyRef Name="TamrinID" />
+            <PropertyRef Name="LGID" />
+          </Key>
+          <Property Name="JavabID" Type="Int32" Nullable="false" />
+          <Property Name="Expr1" Type="Int32" />
+          <Property Name="OzviatID" Type="Int32" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Expr2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SendingTime" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SendingDate" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="TamrinID" Type="Int32" Nullable="false" />
+          <Property Name="TamrinTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GroupID" Type="Int32" />
+          <Property Name="StartDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ExpirationDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LGID" Type="Int32" Nullable="false" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LessonID" Type="Int32" />
+          <Property Name="TeacherCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GradeID" Type="Int32" />
+          <Property Name="Day" Type="Int32" />
+          <Property Name="Time" Type="Int32" />
+          <Property Name="FieldID" Type="Int32" />
+          <Property Name="Year" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="vJTamrin">
           <Key>
             <PropertyRef Name="StudentCode" />
@@ -1247,13 +1457,13 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </Key>
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="JavabID" Type="Int32" Nullable="false" />
           <Property Name="TeacherFName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TeacherLName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PersonalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PersonalCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TamrinID" Type="Int32" Nullable="false" />
           <Property Name="TamrinTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="StartDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1280,16 +1490,21 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
         <EntityType Name="vNomarat">
           <Key>
             <PropertyRef Name="StudentCode" />
+            <PropertyRef Name="NomreID" />
+            <PropertyRef Name="OzviatID" />
           </Key>
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Nomre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ExamType" Type="Int32" />
           <Property Name="Date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
           <Property Name="TeacherCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Type" Type="Boolean" />
           <Property Name="NomrePercent" Type="Int32" />
+          <Property Name="SessionID" Type="Int32" />
+          <Property Name="NomreID" Type="Int32" Nullable="false" />
+          <Property Name="OzviatID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vOzviat">
           <Key>
@@ -1298,7 +1513,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </Key>
           <Property Name="OzviatID" Type="Int32" Nullable="false" />
           <Property Name="LGID" Type="Int32" />
-          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1309,7 +1524,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             <PropertyRef Name="StuCode" />
           </Key>
           <Property Name="HID" Type="Int32" Nullable="false" />
-          <Property Name="StuCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StuCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Mablagh" Type="Int32" />
           <Property Name="CodeRahgiry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -1323,20 +1538,31 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             <PropertyRef Name="StudentCode" />
             <PropertyRef Name="Date" />
           </Key>
-          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="FatherID" Type="Int32" />
           <Property Name="ParentUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ParentPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="LessonTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Day" Type="Int32" />
           <Property Name="Time" Type="Int32" />
           <Property Name="isMovajjah" Type="Boolean" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vReportExam">
+          <Key>
+            <PropertyRef Name="SessionID" />
+          </Key>
+          <Property Name="Nomre" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Type" Type="Boolean" />
+          <Property Name="ExamType" Type="Int32" />
+          <Property Name="SessionDate" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="LGID" Type="Int32" />
+          <Property Name="SessionID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vSessoin">
           <Key>
@@ -1373,7 +1599,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="StuID" Type="Int32" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="SGarde" Type="Int32" />
           <Property Name="CGrade" Type="Int32" />
           <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1422,7 +1648,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </Key>
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TamrinTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="StartDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1434,44 +1660,44 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="GradeTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Students_Fathers">
-          <End Role="Fathers" Type="Self.Father" Multiplicity="0..1" />
-          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <End Type="SchoolDBModel.Father" Role="Father" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Student" Role="Student" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Fathers">
+            <Principal Role="Father">
               <PropertyRef Name="NationalCode" />
             </Principal>
-            <Dependent Role="Students">
+            <Dependent Role="Student">
               <PropertyRef Name="FatherID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LessonGroups_Grades">
-          <End Role="Grades" Type="Self.Grade" Multiplicity="0..1" />
-          <End Role="LessonGroups" Type="Self.LessonGroup" Multiplicity="*" />
+          <End Type="SchoolDBModel.Grade" Role="Grade" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.LessonGroup" Role="LessonGroup" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Grades">
+            <Principal Role="Grade">
               <PropertyRef Name="GradeID" />
             </Principal>
-            <Dependent Role="LessonGroups">
+            <Dependent Role="LessonGroup">
               <PropertyRef Name="GradeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Students_Grades">
-          <End Role="Grades" Type="Self.Grade" Multiplicity="0..1" />
-          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <End Type="SchoolDBModel.Grade" Role="Grade" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Student" Role="Student" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Grades">
+            <Principal Role="Grade">
               <PropertyRef Name="GradeID" />
             </Principal>
-            <Dependent Role="Students">
+            <Dependent Role="Student">
               <PropertyRef Name="CGrade" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JavabeTamrin_Ozviat">
-          <End Role="Ozviat" Type="Self.Ozviat" Multiplicity="0..1" />
-          <End Role="JavabeTamrin" Type="Self.JavabeTamrin" Multiplicity="*" />
+          <End Type="SchoolDBModel.Ozviat" Role="Ozviat" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.JavabeTamrin" Role="JavabeTamrin" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Ozviat">
               <PropertyRef Name="OzviatID" />
@@ -1482,8 +1708,8 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JavabeTamrin_Tamarin">
-          <End Role="Tamarin" Type="Self.Tamarin" Multiplicity="1" />
-          <End Role="JavabeTamrin" Type="Self.JavabeTamrin" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Tamarin" Role="Tamarin" Multiplicity="1" />
+          <End Type="SchoolDBModel.JavabeTamrin" Role="JavabeTamrin" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Tamarin">
               <PropertyRef Name="TamrinID" />
@@ -1494,34 +1720,34 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LessonGroups_Karmand">
-          <End Role="Karmand" Type="Self.Karmand" Multiplicity="0..1" />
-          <End Role="LessonGroups" Type="Self.LessonGroup" Multiplicity="*" />
+          <End Type="SchoolDBModel.Karmand" Role="Karmand" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.LessonGroup" Role="LessonGroup" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Karmand">
               <PropertyRef Name="PersonalCode" />
             </Principal>
-            <Dependent Role="LessonGroups">
+            <Dependent Role="LessonGroup">
               <PropertyRef Name="TeacherCode" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LessonGroups_Lessons">
-          <End Role="Lessons" Type="Self.Lesson" Multiplicity="0..1" />
-          <End Role="LessonGroups" Type="Self.LessonGroup" Multiplicity="*" />
+          <End Type="SchoolDBModel.Lesson" Role="Lesson" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.LessonGroup" Role="LessonGroup" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Lessons">
+            <Principal Role="Lesson">
               <PropertyRef Name="LessonID" />
             </Principal>
-            <Dependent Role="LessonGroups">
+            <Dependent Role="LessonGroup">
               <PropertyRef Name="LessonID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Ozviat_LessonGroups">
-          <End Role="LessonGroups" Type="Self.LessonGroup" Multiplicity="0..1" />
-          <End Role="Ozviat" Type="Self.Ozviat" Multiplicity="*" />
+          <End Type="SchoolDBModel.LessonGroup" Role="LessonGroup" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Ozviat" Role="Ozviat" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="LessonGroups">
+            <Principal Role="LessonGroup">
               <PropertyRef Name="LGID" />
             </Principal>
             <Dependent Role="Ozviat">
@@ -1530,22 +1756,22 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Sessoins_LessonGroups">
-          <End Role="LessonGroups" Type="Self.LessonGroup" Multiplicity="0..1" />
-          <End Role="Sessoins" Type="Self.Sessoin" Multiplicity="*" />
+          <End Type="SchoolDBModel.LessonGroup" Role="LessonGroup" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Sessoin" Role="Sessoin" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="LessonGroups">
+            <Principal Role="LessonGroup">
               <PropertyRef Name="LGID" />
             </Principal>
-            <Dependent Role="Sessoins">
+            <Dependent Role="Sessoin">
               <PropertyRef Name="LGID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tamarin_LessonGroups">
-          <End Role="LessonGroups" Type="Self.LessonGroup" Multiplicity="0..1" />
-          <End Role="Tamarin" Type="Self.Tamarin" Multiplicity="*" />
+          <End Type="SchoolDBModel.LessonGroup" Role="LessonGroup" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Tamarin" Role="Tamarin" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="LessonGroups">
+            <Principal Role="LessonGroup">
               <PropertyRef Name="LGID" />
             </Principal>
             <Dependent Role="Tamarin">
@@ -1554,20 +1780,22 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Students_Mothers">
-          <End Role="Mothers" Type="Self.Mother" Multiplicity="0..1" />
-          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <End Type="SchoolDBModel.Mother" Role="Mother" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Student" Role="Student" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Mothers">
+            <Principal Role="Mother">
               <PropertyRef Name="NationalCode" />
             </Principal>
-            <Dependent Role="Students">
+            <Dependent Role="Student">
               <PropertyRef Name="MotherID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Nomarat_Ozviat">
-          <End Role="Ozviat" Type="Self.Ozviat" Multiplicity="0..1" />
-          <End Role="Nomarat" Type="Self.Nomarat" Multiplicity="*" />
+
+          <End Type="SchoolDBModel.Ozviat" Role="Ozviat" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Nomarat" Role="Nomarat" Multiplicity="*" />
+
           <ReferentialConstraint>
             <Principal Role="Ozviat">
               <PropertyRef Name="OzviatID" />
@@ -1578,10 +1806,10 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Nomarat_Sessoins">
-          <End Role="Sessoins" Type="Self.Sessoin" Multiplicity="0..1" />
-          <End Role="Nomarat" Type="Self.Nomarat" Multiplicity="*" />
+          <End Type="SchoolDBModel.Sessoin" Role="Sessoin" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Nomarat" Role="Nomarat" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Sessoins">
+            <Principal Role="Sessoin">
               <PropertyRef Name="SessionID" />
             </Principal>
             <Dependent Role="Nomarat">
@@ -1590,10 +1818,10 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Ozviat_Students">
-          <End Role="Students" Type="Self.Student" Multiplicity="0..1" />
-          <End Role="Ozviat" Type="Self.Ozviat" Multiplicity="*" />
+          <End Type="SchoolDBModel.Student" Role="Student" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Ozviat" Role="Ozviat" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Students">
+            <Principal Role="Student">
               <PropertyRef Name="StudentCode" />
             </Principal>
             <Dependent Role="Ozviat">
@@ -1602,8 +1830,8 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Presence_Ozviat">
-          <End Role="Ozviat" Type="Self.Ozviat" Multiplicity="0..1" />
-          <End Role="Presence" Type="Self.Presence" Multiplicity="*" />
+          <End Type="SchoolDBModel.Ozviat" Role="Ozviat" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Presence" Role="Presence" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Ozviat">
               <PropertyRef Name="OzviatID" />
@@ -1614,10 +1842,10 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PaymentHistory_Students">
-          <End Role="Students" Type="Self.Student" Multiplicity="1" />
-          <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Student" Role="Student" Multiplicity="1" />
+          <End Type="SchoolDBModel.PaymentHistory" Role="PaymentHistory" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Students">
+            <Principal Role="Student">
               <PropertyRef Name="StudentCode" />
             </Principal>
             <Dependent Role="PaymentHistory">
@@ -1626,10 +1854,10 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Presence_Sessoins">
-          <End Role="Sessoins" Type="Self.Sessoin" Multiplicity="0..1" />
-          <End Role="Presence" Type="Self.Presence" Multiplicity="*" />
+          <End Type="SchoolDBModel.Sessoin" Role="Sessoin" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Presence" Role="Presence" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Sessoins">
+            <Principal Role="Sessoin">
               <PropertyRef Name="SessionID" />
             </Principal>
             <Dependent Role="Presence">
@@ -1638,10 +1866,10 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StuRegister_Students">
-          <End Role="Students" Type="Self.Student" Multiplicity="1" />
-          <End Role="StuRegister" Type="Self.StuRegister" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Student" Role="Student" Multiplicity="1" />
+          <End Type="SchoolDBModel.StuRegister" Role="StuRegister" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="Students">
+            <Principal Role="Student">
               <PropertyRef Name="StudentCode" />
             </Principal>
             <Dependent Role="StuRegister">
@@ -1649,107 +1877,6 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SchoolDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AnjomanOlyas" EntityType="Self.AnjomanOlya" />
-          <EntitySet Name="Fathers" EntityType="Self.Father" />
-          <EntitySet Name="Grades" EntityType="Self.Grade" />
-          <EntitySet Name="JavabeTamrins" EntityType="Self.JavabeTamrin" />
-          <EntitySet Name="Karmands" EntityType="Self.Karmand" />
-          <EntitySet Name="LessonGroups" EntityType="Self.LessonGroup" />
-          <EntitySet Name="Lessons" EntityType="Self.Lesson" />
-          <EntitySet Name="Mothers" EntityType="Self.Mother" />
-          <EntitySet Name="Nomarats" EntityType="Self.Nomarat" />
-          <EntitySet Name="Ozviats" EntityType="Self.Ozviat" />
-          <EntitySet Name="PaymentHistories" EntityType="Self.PaymentHistory" />
-          <EntitySet Name="Presences" EntityType="Self.Presence" />
-          <EntitySet Name="Salaries" EntityType="Self.Salary" />
-          <EntitySet Name="Sessoins" EntityType="Self.Sessoin" />
-          <EntitySet Name="Students" EntityType="Self.Student" />
-          <EntitySet Name="StuRegisters" EntityType="Self.StuRegister" />
-          <EntitySet Name="Tamarins" EntityType="Self.Tamarin" />
-          <EntitySet Name="vbarnameHaftegis" EntityType="Self.vbarnameHaftegi" />
-          <EntitySet Name="vJTamrins" EntityType="Self.vJTamrin" />
-          <EntitySet Name="vLessonGroups" EntityType="Self.vLessonGroup" />
-          <EntitySet Name="vNomarats" EntityType="Self.vNomarat" />
-          <EntitySet Name="vOzviats" EntityType="Self.vOzviat" />
-          <EntitySet Name="vPaymentHistories" EntityType="Self.vPaymentHistory" />
-          <EntitySet Name="vPresences" EntityType="Self.vPresence" />
-          <EntitySet Name="vSessoins" EntityType="Self.vSessoin" />
-          <EntitySet Name="vStudents" EntityType="Self.vStudent" />
-          <EntitySet Name="vTamrins" EntityType="Self.vTamrin" />
-          <AssociationSet Name="FK_Students_Fathers" Association="Self.FK_Students_Fathers">
-            <End Role="Fathers" EntitySet="Fathers" />
-            <End Role="Students" EntitySet="Students" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LessonGroups_Grades" Association="Self.FK_LessonGroups_Grades">
-            <End Role="Grades" EntitySet="Grades" />
-            <End Role="LessonGroups" EntitySet="LessonGroups" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Students_Grades" Association="Self.FK_Students_Grades">
-            <End Role="Grades" EntitySet="Grades" />
-            <End Role="Students" EntitySet="Students" />
-          </AssociationSet>
-          <AssociationSet Name="FK_JavabeTamrin_Ozviat" Association="Self.FK_JavabeTamrin_Ozviat">
-            <End Role="Ozviat" EntitySet="Ozviats" />
-            <End Role="JavabeTamrin" EntitySet="JavabeTamrins" />
-          </AssociationSet>
-          <AssociationSet Name="FK_JavabeTamrin_Tamarin" Association="Self.FK_JavabeTamrin_Tamarin">
-            <End Role="Tamarin" EntitySet="Tamarins" />
-            <End Role="JavabeTamrin" EntitySet="JavabeTamrins" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LessonGroups_Karmand" Association="Self.FK_LessonGroups_Karmand">
-            <End Role="Karmand" EntitySet="Karmands" />
-            <End Role="LessonGroups" EntitySet="LessonGroups" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LessonGroups_Lessons" Association="Self.FK_LessonGroups_Lessons">
-            <End Role="Lessons" EntitySet="Lessons" />
-            <End Role="LessonGroups" EntitySet="LessonGroups" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ozviat_LessonGroups" Association="Self.FK_Ozviat_LessonGroups">
-            <End Role="LessonGroups" EntitySet="LessonGroups" />
-            <End Role="Ozviat" EntitySet="Ozviats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Sessoins_LessonGroups" Association="Self.FK_Sessoins_LessonGroups">
-            <End Role="LessonGroups" EntitySet="LessonGroups" />
-            <End Role="Sessoins" EntitySet="Sessoins" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tamarin_LessonGroups" Association="Self.FK_Tamarin_LessonGroups">
-            <End Role="LessonGroups" EntitySet="LessonGroups" />
-            <End Role="Tamarin" EntitySet="Tamarins" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Students_Mothers" Association="Self.FK_Students_Mothers">
-            <End Role="Mothers" EntitySet="Mothers" />
-            <End Role="Students" EntitySet="Students" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Nomarat_Ozviat" Association="Self.FK_Nomarat_Ozviat">
-            <End Role="Ozviat" EntitySet="Ozviats" />
-            <End Role="Nomarat" EntitySet="Nomarats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Nomarat_Sessoins" Association="Self.FK_Nomarat_Sessoins">
-            <End Role="Sessoins" EntitySet="Sessoins" />
-            <End Role="Nomarat" EntitySet="Nomarats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ozviat_Students" Association="Self.FK_Ozviat_Students">
-            <End Role="Students" EntitySet="Students" />
-            <End Role="Ozviat" EntitySet="Ozviats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Presence_Ozviat" Association="Self.FK_Presence_Ozviat">
-            <End Role="Ozviat" EntitySet="Ozviats" />
-            <End Role="Presence" EntitySet="Presences" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PaymentHistory_Students" Association="Self.FK_PaymentHistory_Students">
-            <End Role="Students" EntitySet="Students" />
-            <End Role="PaymentHistory" EntitySet="PaymentHistories" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Presence_Sessoins" Association="Self.FK_Presence_Sessoins">
-            <End Role="Sessoins" EntitySet="Sessoins" />
-            <End Role="Presence" EntitySet="Presences" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StuRegister_Students" Association="Self.FK_StuRegister_Students">
-            <End Role="Students" EntitySet="Students" />
-            <End Role="StuRegister" EntitySet="StuRegisters" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1759,447 +1886,492 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <EntitySetMapping Name="AnjomanOlyas">
             <EntityTypeMapping TypeName="SchoolDBModel.AnjomanOlya">
               <MappingFragment StoreEntitySet="AnjomanOlya">
-                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
-                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
-                <ScalarProperty Name="Job" ColumnName="Job" />
-                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
-                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
-                <ScalarProperty Name="Education" ColumnName="Education" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Fathers">
             <EntityTypeMapping TypeName="SchoolDBModel.Father">
               <MappingFragment StoreEntitySet="Fathers">
-                <ScalarProperty Name="FatherID" ColumnName="FatherID" />
-                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
-                <ScalarProperty Name="Job" ColumnName="Job" />
-                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
-                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
-                <ScalarProperty Name="Education" ColumnName="Education" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="FatherID" ColumnName="FatherID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Grades">
             <EntityTypeMapping TypeName="SchoolDBModel.Grade">
               <MappingFragment StoreEntitySet="Grades">
-                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
-                <ScalarProperty Name="GradeTitle" ColumnName="GradeTitle" />
                 <ScalarProperty Name="GradeSalary" ColumnName="GradeSalary" />
+                <ScalarProperty Name="GradeTitle" ColumnName="GradeTitle" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JavabeTamrins">
             <EntityTypeMapping TypeName="SchoolDBModel.JavabeTamrin">
               <MappingFragment StoreEntitySet="JavabeTamrin">
-                <ScalarProperty Name="JavabID" ColumnName="JavabID" />
-                <ScalarProperty Name="TamrinID" ColumnName="TamrinID" />
-                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
-                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="SendingTime" ColumnName="SendingTime" />
                 <ScalarProperty Name="SendingDate" ColumnName="SendingDate" />
+                <ScalarProperty Name="SendingTime" ColumnName="SendingTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
+                <ScalarProperty Name="TamrinID" ColumnName="TamrinID" />
+                <ScalarProperty Name="JavabID" ColumnName="JavabID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Karmands">
             <EntityTypeMapping TypeName="SchoolDBModel.Karmand">
               <MappingFragment StoreEntitySet="Karmand">
-                <ScalarProperty Name="EID" ColumnName="EID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserPass" ColumnName="UserPass" />
                 <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LessonGroups">
             <EntityTypeMapping TypeName="SchoolDBModel.LessonGroup">
               <MappingFragment StoreEntitySet="LessonGroups">
-                <ScalarProperty Name="LGID" ColumnName="LGID" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="LessonID" ColumnName="LessonID" />
-                <ScalarProperty Name="TeacherCode" ColumnName="TeacherCode" />
-                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="FieldID" ColumnName="FieldID" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="FieldID" ColumnName="FieldID" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+                <ScalarProperty Name="TeacherCode" ColumnName="TeacherCode" />
+                <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Lessons">
             <EntityTypeMapping TypeName="SchoolDBModel.Lesson">
               <MappingFragment StoreEntitySet="Lessons">
-                <ScalarProperty Name="LessonID" ColumnName="LessonID" />
-                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
                 <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
+                <ScalarProperty Name="LessonID" ColumnName="LessonID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Mothers">
             <EntityTypeMapping TypeName="SchoolDBModel.Mother">
               <MappingFragment StoreEntitySet="Mothers">
-                <ScalarProperty Name="MotherID" ColumnName="MotherID" />
-                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
-                <ScalarProperty Name="Job" ColumnName="Job" />
-                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
-                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
-                <ScalarProperty Name="Education" ColumnName="Education" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="MotherID" ColumnName="MotherID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Nomarats">
             <EntityTypeMapping TypeName="SchoolDBModel.Nomarat">
               <MappingFragment StoreEntitySet="Nomarat">
-                <ScalarProperty Name="NomreID" ColumnName="NomreID" />
-                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
-                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="ExamType" ColumnName="ExamType" />
-                <ScalarProperty Name="Nomre" ColumnName="Nomre" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="NomrePercent" ColumnName="NomrePercent" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Nomre" ColumnName="Nomre" />
+                <ScalarProperty Name="ExamType" ColumnName="ExamType" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
+                <ScalarProperty Name="NomreID" ColumnName="NomreID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Ozviats">
             <EntityTypeMapping TypeName="SchoolDBModel.Ozviat">
               <MappingFragment StoreEntitySet="Ozviat">
-                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
-                <ScalarProperty Name="LGID" ColumnName="LGID" />
                 <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PaymentHistories">
             <EntityTypeMapping TypeName="SchoolDBModel.PaymentHistory">
               <MappingFragment StoreEntitySet="PaymentHistory">
-                <ScalarProperty Name="HID" ColumnName="HID" />
-                <ScalarProperty Name="StuCode" ColumnName="StuCode" />
-                <ScalarProperty Name="Mablagh" ColumnName="Mablagh" />
-                <ScalarProperty Name="CodeRahgiry" ColumnName="CodeRahgiry" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CodeRahgiry" ColumnName="CodeRahgiry" />
+                <ScalarProperty Name="Mablagh" ColumnName="Mablagh" />
+                <ScalarProperty Name="StuCode" ColumnName="StuCode" />
+                <ScalarProperty Name="HID" ColumnName="HID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Presences">
             <EntityTypeMapping TypeName="SchoolDBModel.Presence">
               <MappingFragment StoreEntitySet="Presence">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
-                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="isMovajjah" ColumnName="isMovajjah" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="isMovajjah" ColumnName="isMovajjah" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Salaries">
             <EntityTypeMapping TypeName="SchoolDBModel.Salary">
               <MappingFragment StoreEntitySet="Salaries">
-                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
-                <ScalarProperty Name="Grade" ColumnName="Grade" />
-                <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="Gheimat" ColumnName="Gheimat" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sessoins">
             <EntityTypeMapping TypeName="SchoolDBModel.Sessoin">
               <MappingFragment StoreEntitySet="Sessoins">
-                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="LGID" ColumnName="LGID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Students">
             <EntityTypeMapping TypeName="SchoolDBModel.Student">
               <MappingFragment StoreEntitySet="Students">
-                <ScalarProperty Name="StuID" ColumnName="StuID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
-                <ScalarProperty Name="SGarde" ColumnName="SGarde" />
-                <ScalarProperty Name="CGrade" ColumnName="CGrade" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="RemainedSalary" ColumnName="RemainedSalary" />
-                <ScalarProperty Name="FatherID" ColumnName="FatherID" />
-                <ScalarProperty Name="MotherID" ColumnName="MotherID" />
-                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
-                <ScalarProperty Name="IdentityCode" ColumnName="IdentityCode" />
-                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="BirthLocation" ColumnName="BirthLocation" />
-                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="RegisterLocation" ColumnName="RegisterLocation" />
-                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="PreviousSchool" ColumnName="PreviousSchool" />
-                <ScalarProperty Name="ArgentPhoneNumber" ColumnName="ArgentPhoneNumber" />
-                <ScalarProperty Name="Ilneses" ColumnName="Ilneses" />
-                <ScalarProperty Name="Hand" ColumnName="Hand" />
-                <ScalarProperty Name="Sarparast" ColumnName="Sarparast" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="CodeRahgiri" ColumnName="CodeRahgiri" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="ParentUser" ColumnName="ParentUser" />
                 <ScalarProperty Name="ParentPass" ColumnName="ParentPass" />
+                <ScalarProperty Name="ParentUser" ColumnName="ParentUser" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CodeRahgiri" ColumnName="CodeRahgiri" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Sarparast" ColumnName="Sarparast" />
+                <ScalarProperty Name="Hand" ColumnName="Hand" />
+                <ScalarProperty Name="Ilneses" ColumnName="Ilneses" />
+                <ScalarProperty Name="ArgentPhoneNumber" ColumnName="ArgentPhoneNumber" />
+                <ScalarProperty Name="PreviousSchool" ColumnName="PreviousSchool" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="RegisterLocation" ColumnName="RegisterLocation" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="BirthLocation" ColumnName="BirthLocation" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="IdentityCode" ColumnName="IdentityCode" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="MotherID" ColumnName="MotherID" />
+                <ScalarProperty Name="FatherID" ColumnName="FatherID" />
+                <ScalarProperty Name="RemainedSalary" ColumnName="RemainedSalary" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="CGrade" ColumnName="CGrade" />
+                <ScalarProperty Name="SGarde" ColumnName="SGarde" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="StuID" ColumnName="StuID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StuRegisters">
             <EntityTypeMapping TypeName="SchoolDBModel.StuRegister">
               <MappingFragment StoreEntitySet="StuRegister">
-                <ScalarProperty Name="RegID" ColumnName="RegID" />
-                <ScalarProperty Name="StuCode" ColumnName="StuCode" />
-                <ScalarProperty Name="RegDate" ColumnName="RegDate" />
                 <ScalarProperty Name="RegGrade" ColumnName="RegGrade" />
+                <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+                <ScalarProperty Name="StuCode" ColumnName="StuCode" />
+                <ScalarProperty Name="RegID" ColumnName="RegID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tamarins">
             <EntityTypeMapping TypeName="SchoolDBModel.Tamarin">
               <MappingFragment StoreEntitySet="Tamarin">
-                <ScalarProperty Name="TamrinID" ColumnName="TamrinID" />
-                <ScalarProperty Name="TamrinTitle" ColumnName="TamrinTitle" />
-                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="TamrinTitle" ColumnName="TamrinTitle" />
+                <ScalarProperty Name="TamrinID" ColumnName="TamrinID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vbarnameHaftegis">
             <EntityTypeMapping TypeName="SchoolDBModel.vbarnameHaftegi">
               <MappingFragment StoreEntitySet="vbarnameHaftegi">
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
-                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
-                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
-                <ScalarProperty Name="LGID" ColumnName="LGID" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
+                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vJavabeTamrins">
+            <EntityTypeMapping TypeName="SchoolDBModel.vJavabeTamrin">
+              <MappingFragment StoreEntitySet="vJavabeTamrin">
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="FieldID" ColumnName="FieldID" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+                <ScalarProperty Name="TeacherCode" ColumnName="TeacherCode" />
+                <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="TamrinTitle" ColumnName="TamrinTitle" />
+                <ScalarProperty Name="TamrinID" ColumnName="TamrinID" />
+                <ScalarProperty Name="SendingDate" ColumnName="SendingDate" />
+                <ScalarProperty Name="SendingTime" ColumnName="SendingTime" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="JavabID" ColumnName="JavabID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vJTamrins">
             <EntityTypeMapping TypeName="SchoolDBModel.vJTamrin">
               <MappingFragment StoreEntitySet="vJTamrin">
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
-                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="JavabID" ColumnName="JavabID" />
-                <ScalarProperty Name="TeacherFName" ColumnName="TeacherFName" />
-                <ScalarProperty Name="TeacherLName" ColumnName="TeacherLName" />
-                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
-                <ScalarProperty Name="TamrinID" ColumnName="TamrinID" />
-                <ScalarProperty Name="TamrinTitle" ColumnName="TamrinTitle" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
-                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
-                <ScalarProperty Name="SendingTime" ColumnName="SendingTime" />
                 <ScalarProperty Name="SendingDate" ColumnName="SendingDate" />
+                <ScalarProperty Name="SendingTime" ColumnName="SendingTime" />
+                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="TamrinTitle" ColumnName="TamrinTitle" />
+                <ScalarProperty Name="TamrinID" ColumnName="TamrinID" />
+                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
+                <ScalarProperty Name="TeacherLName" ColumnName="TeacherLName" />
+                <ScalarProperty Name="TeacherFName" ColumnName="TeacherFName" />
+                <ScalarProperty Name="JavabID" ColumnName="JavabID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vLessonGroups">
             <EntityTypeMapping TypeName="SchoolDBModel.vLessonGroup">
               <MappingFragment StoreEntitySet="vLessonGroups">
-                <ScalarProperty Name="LGID" ColumnName="LGID" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="GradeTitle" ColumnName="GradeTitle" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="GradeTitle" ColumnName="GradeTitle" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vNomarats">
             <EntityTypeMapping TypeName="SchoolDBModel.vNomarat">
               <MappingFragment StoreEntitySet="vNomarat">
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
-                <ScalarProperty Name="Nomre" ColumnName="Nomre" />
-                <ScalarProperty Name="ExamType" ColumnName="ExamType" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="TeacherCode" ColumnName="TeacherCode" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
+
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
+                <ScalarProperty Name="NomreID" ColumnName="NomreID" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+
                 <ScalarProperty Name="NomrePercent" ColumnName="NomrePercent" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="TeacherCode" ColumnName="TeacherCode" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ExamType" ColumnName="ExamType" />
+                <ScalarProperty Name="Nomre" ColumnName="Nomre" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vOzviats">
             <EntityTypeMapping TypeName="SchoolDBModel.vOzviat">
               <MappingFragment StoreEntitySet="vOzviat">
-                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
-                <ScalarProperty Name="LGID" ColumnName="LGID" />
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vPaymentHistories">
             <EntityTypeMapping TypeName="SchoolDBModel.vPaymentHistory">
               <MappingFragment StoreEntitySet="vPaymentHistory">
-                <ScalarProperty Name="HID" ColumnName="HID" />
-                <ScalarProperty Name="StuCode" ColumnName="StuCode" />
-                <ScalarProperty Name="Mablagh" ColumnName="Mablagh" />
-                <ScalarProperty Name="CodeRahgiry" ColumnName="CodeRahgiry" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CodeRahgiry" ColumnName="CodeRahgiry" />
+                <ScalarProperty Name="Mablagh" ColumnName="Mablagh" />
+                <ScalarProperty Name="StuCode" ColumnName="StuCode" />
+                <ScalarProperty Name="HID" ColumnName="HID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vPresences">
             <EntityTypeMapping TypeName="SchoolDBModel.vPresence">
               <MappingFragment StoreEntitySet="vPresence">
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FatherID" ColumnName="FatherID" />
-                <ScalarProperty Name="ParentUser" ColumnName="ParentUser" />
-                <ScalarProperty Name="ParentPass" ColumnName="ParentPass" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="isMovajjah" ColumnName="isMovajjah" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="isMovajjah" ColumnName="isMovajjah" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="ParentPass" ColumnName="ParentPass" />
+                <ScalarProperty Name="ParentUser" ColumnName="ParentUser" />
+                <ScalarProperty Name="FatherID" ColumnName="FatherID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vReportExams">
+            <EntityTypeMapping TypeName="SchoolDBModel.vReportExam">
+              <MappingFragment StoreEntitySet="vReportExams">
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
+                <ScalarProperty Name="SessionDate" ColumnName="SessionDate" />
+                <ScalarProperty Name="ExamType" ColumnName="ExamType" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Nomre" ColumnName="Nomre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vSessoins">
             <EntityTypeMapping TypeName="SchoolDBModel.vSessoin">
               <MappingFragment StoreEntitySet="vSessoins">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="LGID" ColumnName="LGID" />
-                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
-                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="isMovajjah" ColumnName="isMovajjah" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="ExamType" ColumnName="ExamType" />
-                <ScalarProperty Name="Nomre" ColumnName="Nomre" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="NomrePercent" ColumnName="NomrePercent" />
                 <ScalarProperty Name="NomreID" ColumnName="NomreID" />
+                <ScalarProperty Name="NomrePercent" ColumnName="NomrePercent" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Nomre" ColumnName="Nomre" />
+                <ScalarProperty Name="ExamType" ColumnName="ExamType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="isMovajjah" ColumnName="isMovajjah" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vStudents">
             <EntityTypeMapping TypeName="SchoolDBModel.vStudent">
               <MappingFragment StoreEntitySet="vStudent">
-                <ScalarProperty Name="StuID" ColumnName="StuID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
-                <ScalarProperty Name="SGarde" ColumnName="SGarde" />
-                <ScalarProperty Name="CGrade" ColumnName="CGrade" />
-                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
-                <ScalarProperty Name="IdentityCode" ColumnName="IdentityCode" />
-                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-                <ScalarProperty Name="BirthLocation" ColumnName="BirthLocation" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="RegisterLocation" ColumnName="RegisterLocation" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="PreviousSchool" ColumnName="PreviousSchool" />
-                <ScalarProperty Name="ArgentPhoneNumber" ColumnName="ArgentPhoneNumber" />
-                <ScalarProperty Name="Ilneses" ColumnName="Ilneses" />
-                <ScalarProperty Name="Hand" ColumnName="Hand" />
-                <ScalarProperty Name="Sarparast" ColumnName="Sarparast" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="CodeRahgiri" ColumnName="CodeRahgiri" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="FathersNationalCode" ColumnName="FathersNationalCode" />
-                <ScalarProperty Name="FathersFirstName" ColumnName="FathersFirstName" />
-                <ScalarProperty Name="FathersLastName" ColumnName="FathersLastName" />
-                <ScalarProperty Name="FathersPersonalCode" ColumnName="FathersPersonalCode" />
-                <ScalarProperty Name="FathersJob" ColumnName="FathersJob" />
-                <ScalarProperty Name="FathersMobileNumber" ColumnName="FathersMobileNumber" />
-                <ScalarProperty Name="FathersWorkPhone" ColumnName="FathersWorkPhone" />
-                <ScalarProperty Name="FathersEducation" ColumnName="FathersEducation" />
-                <ScalarProperty Name="MothersNationalCode" ColumnName="MothersNationalCode" />
-                <ScalarProperty Name="MothersFirstName" ColumnName="MothersFirstName" />
-                <ScalarProperty Name="MothersLastName" ColumnName="MothersLastName" />
-                <ScalarProperty Name="MothersPersonalCode" ColumnName="MothersPersonalCode" />
-                <ScalarProperty Name="MothersJob" ColumnName="MothersJob" />
-                <ScalarProperty Name="MothersMobileNumber" ColumnName="MothersMobileNumber" />
-                <ScalarProperty Name="MothersWorkPhone" ColumnName="MothersWorkPhone" />
-                <ScalarProperty Name="MothersEducation" ColumnName="MothersEducation" />
-                <ScalarProperty Name="GradeTitle" ColumnName="GradeTitle" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="ParentUser" ColumnName="ParentUser" />
-                <ScalarProperty Name="ParentPass" ColumnName="ParentPass" />
-                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
-                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="ParentPass" ColumnName="ParentPass" />
+                <ScalarProperty Name="ParentUser" ColumnName="ParentUser" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="GradeTitle" ColumnName="GradeTitle" />
+                <ScalarProperty Name="MothersEducation" ColumnName="MothersEducation" />
+                <ScalarProperty Name="MothersWorkPhone" ColumnName="MothersWorkPhone" />
+                <ScalarProperty Name="MothersMobileNumber" ColumnName="MothersMobileNumber" />
+                <ScalarProperty Name="MothersJob" ColumnName="MothersJob" />
+                <ScalarProperty Name="MothersPersonalCode" ColumnName="MothersPersonalCode" />
+                <ScalarProperty Name="MothersLastName" ColumnName="MothersLastName" />
+                <ScalarProperty Name="MothersFirstName" ColumnName="MothersFirstName" />
+                <ScalarProperty Name="MothersNationalCode" ColumnName="MothersNationalCode" />
+                <ScalarProperty Name="FathersEducation" ColumnName="FathersEducation" />
+                <ScalarProperty Name="FathersWorkPhone" ColumnName="FathersWorkPhone" />
+                <ScalarProperty Name="FathersMobileNumber" ColumnName="FathersMobileNumber" />
+                <ScalarProperty Name="FathersJob" ColumnName="FathersJob" />
+                <ScalarProperty Name="FathersPersonalCode" ColumnName="FathersPersonalCode" />
+                <ScalarProperty Name="FathersLastName" ColumnName="FathersLastName" />
+                <ScalarProperty Name="FathersFirstName" ColumnName="FathersFirstName" />
+                <ScalarProperty Name="FathersNationalCode" ColumnName="FathersNationalCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CodeRahgiri" ColumnName="CodeRahgiri" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Sarparast" ColumnName="Sarparast" />
+                <ScalarProperty Name="Hand" ColumnName="Hand" />
+                <ScalarProperty Name="Ilneses" ColumnName="Ilneses" />
+                <ScalarProperty Name="ArgentPhoneNumber" ColumnName="ArgentPhoneNumber" />
+                <ScalarProperty Name="PreviousSchool" ColumnName="PreviousSchool" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="RegisterLocation" ColumnName="RegisterLocation" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="BirthLocation" ColumnName="BirthLocation" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="IdentityCode" ColumnName="IdentityCode" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="CGrade" ColumnName="CGrade" />
+                <ScalarProperty Name="SGarde" ColumnName="SGarde" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="StuID" ColumnName="StuID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vTamrins">
             <EntityTypeMapping TypeName="SchoolDBModel.vTamrin">
               <MappingFragment StoreEntitySet="vTamrin">
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="TamrinTitle" ColumnName="TamrinTitle" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="teacherFName" ColumnName="teacherFName" />
-                <ScalarProperty Name="TeacherLName" ColumnName="TeacherLName" />
-                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
                 <ScalarProperty Name="GradeTitle" ColumnName="GradeTitle" />
+                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
+                <ScalarProperty Name="TeacherLName" ColumnName="TeacherLName" />
+                <ScalarProperty Name="teacherFName" ColumnName="teacherFName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="TamrinTitle" ColumnName="TamrinTitle" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
