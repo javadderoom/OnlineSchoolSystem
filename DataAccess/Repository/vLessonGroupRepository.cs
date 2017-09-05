@@ -251,6 +251,17 @@ namespace DataAccess.Repository
 
         }
 
+        public int? getLessonGroupgardeID(int lgid)
+        {
+            SchoolDBEntities pb = conn.GetContext();
+            int? id =
+                (from r in pb.LessonGroups
+                 where r.LGID == lgid
+                 select r.GradeID).FirstOrDefault();
+
+            return id;
+        }
+
 
     }
 }

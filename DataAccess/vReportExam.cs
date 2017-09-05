@@ -14,11 +14,36 @@ namespace DataAccess
     
     public partial class vReportExam
     {
+        public int NomreID { get; set; }
+        public Nullable<int> OzviatID { get; set; }
+        public Nullable<int> SessionID { get; set; }
+        public string Date { get; set; }
+        public Nullable<int> ExamType { get; set; }
         public Nullable<decimal> Nomre { get; set; }
         public Nullable<bool> Type { get; set; }
-        public Nullable<int> ExamType { get; set; }
+        public Nullable<int> NomrePercent { get; set; }
+        public int SessionsSessionID { get; set; }
         public string SessionDate { get; set; }
         public Nullable<int> LGID { get; set; }
-        public int SessionID { get; set; }
+        public int LessonGroupsLGID { get; set; }
+        public string Class { get; set; }
+        public Nullable<int> LessonID { get; set; }
+        public string TeacherCode { get; set; }
+        public Nullable<int> GradeID { get; set; }
+        public Nullable<int> Day { get; set; }
+        public Nullable<int> Time { get; set; }
+        public Nullable<int> FieldID { get; set; }
+        public string Year { get; set; }
+        public int OzviatOzviatID { get; set; }
+        public Nullable<int> OzviatLGID { get; set; }
+        public string StudentCode { get; set; }
+        public int StuID { get; set; }
+        public string FullName { get; set; }
+        public string StudentsStudentCode { get; set; }
+        public Nullable<int> SGarde { get; set; }
+        public Nullable<int> CGrade { get; set; }
+        public string Image { get; set; }
+        public string NationalCode { get; set; }
+        public string IdentityCode { get; set; }
     }
 }

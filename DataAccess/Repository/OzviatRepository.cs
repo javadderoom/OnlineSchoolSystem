@@ -19,7 +19,14 @@ namespace DataAccess.Repository
         {
             conn = new Connection();
         }
+        public int OzviatIDByLGIDAndStudentCode(int id, string stuCode)
+        {
+            int result = 0;
+            result = db.Ozviats.Where(p => p.LGID == id).Where(p => p.StudentCode == stuCode)
+                .Select(p => p.OzviatID).FirstOrDefault();
 
+            return result;
+        }
         public DataTable FindByLGID(int lgid)
         {
             List<vOzviat> result = new List<vOzviat>();
