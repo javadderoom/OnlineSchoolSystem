@@ -51,6 +51,10 @@
       <HintPath>C:\Users\Javad\Desktop\New Folder\bin\Release\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="Highcharts.Web.Mvc, Version=5.0.6455.11724, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Highsoft.Highcharts.5.0.6455.11724\lib\net40\Highcharts.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -639,26 +643,28 @@
     <Content Include="Dashboard\Admin\LessonGroups.aspx" />
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
-
     <Content Include="Dashboard\Admin\reportsStudentsChart.aspx" />
     <Content Include="Dashboard\Admin\reportsStudents.aspx" />
     <Content Include="Dashboard\Admin\reportsGradesChart.aspx" />
     <Content Include="Dashboard\Admin\reportsGrades.aspx" />
     <Content Include="Dashboard\Admin\reportsLessonGroups.aspx" />
     <Content Include="Dashboard\Admin\reportsLessonGroupsChart.aspx" />
-
     <Content Include="Dashboard\Admin\NewSesion.aspx" />
     <Content Include="Dashboard\Admin\SesionHistory.aspx" />
-
     <Content Include="Dashboard\Admin\Students.aspx" />
     <Content Include="Dashboard\Admin\studentsPayment.aspx" />
+    <Content Include="Dashboard\Admin\test.aspx" />
     <Content Include="Dashboard\Charts.aspx" />
     <Content Include="Dashboard\ClassScores.aspx" />
+    <Content Include="Dashboard\Controllers\HighChartsControl.ascx" />
+    <Content Include="Dashboard\Controllers\WebUserControl1.ascx" />
     <Content Include="Dashboard\Dashboard.aspx" />
     <Content Include="Dashboard\EditProfile.aspx" />
     <Content Include="Dashboard\font-awesome-4.3.0\css\font-awesome.min.css" />
     <Content Include="Dashboard\fonts\fontawesome-webfont.svg" />
     <Content Include="Dashboard\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Dashboard\HighCharts\exporting.js" />
+    <Content Include="Dashboard\HighCharts\highcharts.js" />
     <Content Include="Dashboard\HomeWork.aspx" />
     <Content Include="Dashboard\HomeWorkHistory.aspx" />
     <Content Include="Dashboard\Images\3408.jpg" />
@@ -818,13 +824,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sasanRes.resx</DependentUpon>
-
     </Compile>
     <Compile Include="App_GlobalResources\HamoonResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HamoonResource.resx</DependentUpon>
-
     </Compile>
     <Compile Include="Dashboard\Admin\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
@@ -952,7 +956,6 @@
     <Compile Include="Dashboard\Admin\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
     </Compile>
-
     <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.cs">
       <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -994,7 +997,7 @@
     </Compile>
     <Compile Include="Dashboard\Admin\reportsLessonGroupsChart.aspx.designer.cs">
       <DependentUpon>reportsLessonGroupsChart.aspx</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Dashboard\Admin\NewSesion.aspx.cs">
       <DependentUpon>NewSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1008,7 +1011,6 @@
     </Compile>
     <Compile Include="Dashboard\Admin\SesionHistory.aspx.designer.cs">
       <DependentUpon>SesionHistory.aspx</DependentUpon>
-
     </Compile>
     <Compile Include="Dashboard\Admin\Students.aspx.cs">
       <DependentUpon>Students.aspx</DependentUpon>
@@ -1024,6 +1026,13 @@
     <Compile Include="Dashboard\Admin\studentsPayment.aspx.designer.cs">
       <DependentUpon>studentsPayment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Admin\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Charts.aspx.cs">
       <DependentUpon>Charts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1037,6 +1046,20 @@
     </Compile>
     <Compile Include="Dashboard\ClassScores.aspx.designer.cs">
       <DependentUpon>ClassScores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\HighChartsControl.ascx.cs">
+      <DependentUpon>HighChartsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\HighChartsControl.ascx.designer.cs">
+      <DependentUpon>HighChartsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\WebUserControl1.ascx.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
@@ -1155,12 +1178,13 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>sasanRes.Designer.cs</LastGenOutput>
     </Content>
-
     <Content Include="App_GlobalResources\HamoonResource.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>HamoonResource.Designer.cs</LastGenOutput>
     </Content>
-
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dashboard\Controllers\NewFolder1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

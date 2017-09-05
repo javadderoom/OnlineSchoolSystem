@@ -123,5 +123,16 @@ namespace DataAccess.Repository
 
             return result;
         }
+
+        public int countSessionsByLGID(int id)
+        {
+            SchoolDBEntities pb = conn.GetContext();
+            int query =
+                (from r in pb.Sessoins
+                 where r.LGID == id
+                 select r).Count();
+
+            return query;
+        }
     }
 }

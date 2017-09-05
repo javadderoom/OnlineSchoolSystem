@@ -21,7 +21,11 @@ namespace DataAccess.Repository
         }
         public int OzviatIDByLGIDAndStudentCode(int id, string stuCode)
         {
-            return 1;
+            int result = 0;
+            result = db.Ozviats.Where(p => p.LGID == id).Where(p => p.StudentCode == stuCode)
+                .Select(p => p.OzviatID).FirstOrDefault();
+
+            return result;
         }
         public DataTable FindByLGID(int lgid)
         {

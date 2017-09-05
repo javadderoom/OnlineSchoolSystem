@@ -79,6 +79,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کلاس های برتر مقطع.
+        /// </summary>
+        internal static string classhayebartar {
+            get {
+                return ResourceManager.GetString("classhayebartar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to شماره کلاس.
         /// </summary>
         internal static string classnum {
@@ -169,6 +178,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تعداد امتحان های کتبی.
+        /// </summary>
+        internal static string katbiexamcount {
+            get {
+                return ResourceManager.GetString("katbiexamcount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to عنوان درس.
         /// </summary>
         internal static string lessontitle {
@@ -196,6 +214,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مقاطع.
+        /// </summary>
+        internal static string maghate {
+            get {
+                return ResourceManager.GetString("maghate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مقطع.
+        /// </summary>
+        internal static string maghta {
+            get {
+                return ResourceManager.GetString("maghta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to میانگین کل امتحان های کتبی دانش آموزان.
         /// </summary>
         internal static string mianginkatbi {
@@ -210,6 +246,15 @@ namespace Resources {
         internal static string mianginshafahi {
             get {
                 return ResourceManager.GetString("mianginshafahi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نفرات برتر کلاس.
+        /// </summary>
+        internal static string nafaratbartar {
+            get {
+                return ResourceManager.GetString("nafaratbartar", resourceCulture);
             }
         }
         
@@ -250,6 +295,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تعداد جلسات.
+        /// </summary>
+        internal static string sessionscount {
+            get {
+                return ResourceManager.GetString("sessionscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعداد امتحان های شفاهی.
+        /// </summary>
+        internal static string shafahiexamcount {
+            get {
+                return ResourceManager.GetString("shafahiexamcount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to شماره دانشجویی.
         /// </summary>
         internal static string stucode {
@@ -264,6 +327,15 @@ namespace Resources {
         internal static string studentreports {
             get {
                 return ResourceManager.GetString("studentreports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعداد دانش آموزان مقطع.
+        /// </summary>
+        internal static string studentsgradecount {
+            get {
+                return ResourceManager.GetString("studentsgradecount", resourceCulture);
             }
         }
         

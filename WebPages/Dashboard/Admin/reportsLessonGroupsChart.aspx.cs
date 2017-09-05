@@ -16,8 +16,18 @@ namespace WebPages.Dashboard.Admin
         {
             if (!Page.IsPostBack)
             {
-                // setLabel();
+                setGridView();
+                setLabel();
+
             }
+        }
+
+        private void setGridView()
+        {
+            string id = Request.QueryString["LGID"];
+            vReportExamsRepository vre = new vReportExamsRepository();
+            gvStudents.DataSource = vre.topStudentsAverageByLGID(id.ToInt());
+            gvStudents.DataBind();
         }
 
         public void setLabel()
@@ -27,6 +37,8 @@ namespace WebPages.Dashboard.Admin
             string id = Request.QueryString["LGID"];
             lblmianginkatbi.InnerText = Convert.ToDouble(v.getAverageLessonGroup(id.ToInt(), 0)).ToString();
             lblmianginshafahi.InnerText = Convert.ToDouble(v.getAverageLessonGroup(id.ToInt(), 1)).ToString();
+            lblKatbiExamCount.InnerText = v.ExamCountByLGID(id.ToInt(), 0).ToString();
+            lblShafahiExamCount.InnerText = v.ExamCountByLGID(id.ToInt(), 1).ToString();
 
             TamrinRepository tr = new TamrinRepository();
             int cnt = tr.countTamrinByid(id.ToInt());
@@ -35,10 +47,11 @@ namespace WebPages.Dashboard.Admin
             vJavabeTamrinRepository jt = new vJavabeTamrinRepository();
             OzviatRepository or = new OzviatRepository();
             int stucnt = or.countStudentsOfLessonGroupByid(id.ToInt());
+            int tjt = jt.TedadejavabeTamrin(id.ToInt());
             if (cnt == 0 || stucnt == 0)
                 lblanswer.InnerText = "0";
             else
-                lblanswer.InnerText = (((jt.TedadejavabeTamrin(id.ToInt()) /
+                lblanswer.InnerText = (((Convert.ToDouble(tjt) /
                     (stucnt * cnt) * 100))).ToString();
 
             vLessonGroupRepository lg = new vLessonGroupRepository();
@@ -48,6 +61,14 @@ namespace WebPages.Dashboard.Admin
             lblTeacharName.InnerText = lgg.FirstName + " " + lgg.LastName;
             lblClassNum.InnerText = lgg.Class;
             lblLessonTitle.InnerText = lgg.LessonTitle;
-}
+
+            SessionRepository sr = new SessionRepository();
+            lblSessionCount.InnerText = sr.countSessionsByLGID(id.ToInt()).ToString();
+        }
+
+        protected void gvStudents_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
     }
 }

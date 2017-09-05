@@ -14,6 +14,11 @@ namespace DataAccess
     
     public partial class Tamarin
     {
+        public Tamarin()
+        {
+            this.JavabeTamrins = new HashSet<JavabeTamrin>();
+        }
+    
         public int TamrinID { get; set; }
         public string TamrinTitle { get; set; }
         public Nullable<int> GroupID { get; set; }
@@ -23,5 +28,6 @@ namespace DataAccess
     
         public virtual JavabeTamrin JavabeTamrin { get; set; }
         public virtual LessonGroup LessonGroup { get; set; }
+        public virtual ICollection<JavabeTamrin> JavabeTamrins { get; set; }
     }
 }

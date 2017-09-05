@@ -12,14 +12,13 @@ namespace DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class StuRegister
+    public partial class vStudentsInfo
     {
-        public int RegID { get; set; }
-        public string StuCode { get; set; }
-        public string RegDate { get; set; }
-        public Nullable<int> RegGrade { get; set; }
-        public string EduYear { get; set; }
-    
-        public virtual Student Student { get; set; }
+        public string StudentCode { get; set; }
+        public string fullName { get; set; }
+        public string FirstName { get; set; }
+        public Nullable<int> CGrade { get; set; }
+        public string stuClass { get; set; }
+        public string gradeTitle { get; set; }
     }
 }
