@@ -223,6 +223,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تاریخ.
+        /// </summary>
+        internal static string Date {
+            get {
+                return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to روز.
         /// </summary>
         internal static string Day {
@@ -273,6 +282,15 @@ namespace Resources {
         internal static string EditeLessonGroup {
             get {
                 return ResourceManager.GetString("EditeLessonGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ویرایش جلسه.
+        /// </summary>
+        internal static string EditSession {
+            get {
+                return ResourceManager.GetString("EditSession", resourceCulture);
             }
         }
         
@@ -687,6 +705,15 @@ namespace Resources {
         internal static string salary_payment {
             get {
                 return ResourceManager.GetString("salary_payment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نمره.
+        /// </summary>
+        internal static string Score {
+            get {
+                return ResourceManager.GetString("Score", resourceCulture);
             }
         }
         

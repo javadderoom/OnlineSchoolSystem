@@ -387,4 +387,13 @@
   <data name="PersonalInfo" xml:space="preserve">
     <value>مشخصات شخصی</value>
   </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="EditSession" xml:space="preserve">
+    <value>ویرایش جلسه</value>
+  </data>
+  <data name="Score" xml:space="preserve">
+    <value>نمره</value>
+  </data>
 </root>

@@ -233,6 +233,7 @@ namespace DataAccess.Repository
                 }
             }
         }
+
         public DataTable searchLessonsGroups(string text)
         {
             SchoolDBEntities pb = conn.GetContext();
@@ -248,7 +249,6 @@ namespace DataAccess.Repository
 
             llg = query.ToList();
             return OnlineTools.ToDataTable(llg);
-
         }
     }
 }

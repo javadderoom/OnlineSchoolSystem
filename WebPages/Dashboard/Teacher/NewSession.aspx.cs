@@ -9,16 +9,14 @@ using DataAccess;
 using System.Transactions;
 using Common;
 
-
-namespace WebPages.Dashboard.Admin
+namespace WebPages.Dashboard.Teacher
 {
     public partial class NewSesion : System.Web.UI.Page
     {
-        int id;
+        private int id;
 
         private void loadSssions()
         {
-
             try
             {
                 if (!(string.IsNullOrEmpty(Request.QueryString["LGID"])))
@@ -36,24 +34,18 @@ namespace WebPages.Dashboard.Admin
                     StudentCount.Text = ozviatRep.StudentCountByLGID(id);
                     gvStudents.DataSource = ozviatRep.FindByLGID(id);
                     gvStudents.DataBind();
-
                 }
                 else
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Admin/News.aspx'", true);
                 }
-
             }
             catch (Exception)
             {
-
                 throw;
             }
-
-
-
-
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -66,7 +58,6 @@ namespace WebPages.Dashboard.Admin
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('لطفا تاریخ را وارد کنید! ');", true);
                 }
-
             }
         }
 
@@ -78,6 +69,7 @@ namespace WebPages.Dashboard.Admin
                 (Row.FindControl("RowChB") as CheckBox).Checked = chek;
             }
         }
+
         private bool saveChanges()
         {
             bool result = true;
@@ -96,8 +88,6 @@ namespace WebPages.Dashboard.Admin
                         newSes.LGID = id;
                         SessionRepository sRep = new SessionRepository();
                         sRep.SaveSession(newSes);
-
-
 
                         ////////////////// Save Score ///////////////////////
                         foreach (GridViewRow row in gvStudents.Rows)
@@ -124,16 +114,12 @@ namespace WebPages.Dashboard.Admin
                             vPresenceRepository PRep = new vPresenceRepository();
                             PRep.SavePresenc(presence);
                         }
-
-
-
                     }
                     else
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Admin/News.aspx'", true);
                     }
                     scope.Complete();
-
                 }
                 catch (Exception e)
                 {

@@ -31,7 +31,6 @@ namespace WebPages.Dashboard.Admin
             foreach (GridViewRow row in gvSelectedStudents.Rows)
             {
                 stuCodes.Add(row.Cells[1].Text);
-
             }
             gvStudents.DataSource = rep.GetAllStudentsExcept(stuCodes);
             gvStudents.DataBind();
@@ -178,7 +177,6 @@ namespace WebPages.Dashboard.Admin
                     "ModalScript", sb.ToString(), false);
                 }
             }
-
         }
 
         #endregion AllStudents
@@ -187,7 +185,6 @@ namespace WebPages.Dashboard.Admin
         {
             //int i = lblSelectedRecords.Text.IndexOf(':');
             //int num = lblSelectedRecords.Text.Substring(i + 1).ToInt();
-
 
             CheckBox ch = sender as CheckBox;
             // if (ch.Checked == true) num++;
@@ -221,12 +218,10 @@ namespace WebPages.Dashboard.Admin
                 or.SaveOzviat(oo);
             }
 
-
-
             LoadSelectedStudents();
             LoadStudents();
-
         }
+
         public string tabdiladadbehoruf(int adad)
         {
             string horuf = "";
@@ -279,23 +274,19 @@ namespace WebPages.Dashboard.Admin
                 case 12:
                     horuf = "دوازدهم";
                     break;
-
-
             }
             return horuf;
         }
+
         protected void func_search(object sender, EventArgs e)
         {
             List<string> stuCodes = new List<string>();
             foreach (GridViewRow row in gvSelectedStudents.Rows)
             {
                 stuCodes.Add(row.Cells[1].Text);
-
             }
             gvStudents.DataSource = rep.searchStudents(tbxSearch.Text, stuCodes);
             gvStudents.DataBind();
         }
     }
-
-
 }

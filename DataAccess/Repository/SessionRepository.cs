@@ -29,11 +29,34 @@ namespace DataAccess.Repository
             return (result + 1).ToString();
         }
 
+        public DataTable GetSessionByLGID(int lgid)
+        {
+            List<Sessoin> result = new List<Sessoin>();
 
+            SchoolDBEntities sd = conn.GetContext();
 
+            IEnumerable<Sessoin> pl =
+                from r in sd.Sessoins
+                where r.LGID == lgid
+                orderby r.SessionID
+                select r;
 
+            result = pl.ToList();
+            return OnlineTools.ToDataTable(result);
+        }
 
+        public Sessoin GetSessionsBySessionID(int id)
+        {
+            SchoolDBEntities sd = conn.GetContext();
 
+            Sessoin pl =
+                (from r in sd.Sessoins
+                 where r.SessionID == id
+                 orderby r.SessionID
+                 select r).FirstOrDefault();
+
+            return pl;
+        }
 
         public Boolean SaveSession(Sessoin Session)
         {
@@ -53,8 +76,6 @@ namespace DataAccess.Repository
 
             return Convert.ToBoolean(pb.SaveChanges());
         }
-
-
 
         public void DeleteSession(int SID)
         {
@@ -102,18 +123,16 @@ namespace DataAccess.Repository
                 }
             }
         }
+
         public int FindLastSessionID()
         {
             int result = 0;
-
 
             SchoolDBEntities pb = conn.GetContext();
 
             result = (from r in pb.Sessoins
                       orderby r.SessionID descending
                       select r.SessionID).FirstOrDefault();
-
-
 
             return result;
         }

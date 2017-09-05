@@ -47,10 +47,11 @@
       <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CKEditor.NET">
-      <HintPath>C:\Users\Javad\Desktop\New Folder\bin\Release\CKEditor.NET.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="Highcharts.Web.Mvc, Version=5.0.6455.11724, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Highsoft.Highcharts.5.0.6455.11724\lib\net40\Highcharts.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -75,6 +76,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controllers\HighChartsControl.ascx" />
     <Content Include="Dashboard\Admin\AddEmployee.aspx" />
     <Content Include="Dashboard\Admin\AddLesson.aspx" />
     <Content Include="Dashboard\Admin\AddLessonGroup.aspx" />
@@ -628,21 +630,27 @@
     <Content Include="Dashboard\Admin\ckeditor\skins\moono-lisa\images\refresh.png" />
     <Content Include="Dashboard\Admin\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="Dashboard\Admin\ckeditor\styles.js" />
-    <Content Include="Dashboard\Admin\ClassManagment.aspx" />
     <Content Include="Dashboard\Admin\ClassMembers.aspx" />
-    <Content Include="Dashboard\Admin\ClassStudents.aspx" />
+    <Content Include="Dashboard\Teacher\ClassStudents.aspx" />
+    <Content Include="Dashboard\Admin\EditKartabl.aspx" />
     <Content Include="Dashboard\Admin\EditLessonGroup.aspx" />
     <Content Include="Dashboard\Admin\EditEmployee.aspx" />
     <Content Include="Dashboard\Admin\EditStudent.aspx" />
+    <Content Include="Dashboard\Admin\EmployeePassword.aspx" />
     <Content Include="Dashboard\Admin\Employees.aspx" />
     <Content Include="Dashboard\Admin\Kartabl.aspx" />
     <Content Include="Dashboard\Admin\LessonGroups.aspx" />
     <Content Include="Dashboard\Admin\Lessons.aspx" />
     <Content Include="Dashboard\Admin\News.aspx" />
-    <Content Include="Dashboard\Admin\NewSesion.aspx" />
-    <Content Include="Dashboard\Admin\SesionHistory.aspx" />
+    <Content Include="Dashboard\Teacher\EditSession.aspx" />
+    <Content Include="Dashboard\Teacher\NewSession.aspx" />
+    <Content Include="Dashboard\Admin\Picture.aspx" />
+    <Content Include="Dashboard\Admin\reportsLessonGroups.aspx" />
+    <Content Include="Dashboard\Teacher\SessionDetails.aspx" />
+    <Content Include="Dashboard\Teacher\SessionHistory.aspx" />
     <Content Include="Dashboard\Admin\Students.aspx" />
     <Content Include="Dashboard\Admin\studentsPayment.aspx" />
+    <Content Include="Dashboard\Admin\test.aspx" />
     <Content Include="Dashboard\Charts.aspx" />
     <Content Include="Dashboard\ClassScores.aspx" />
     <Content Include="Dashboard\Dashboard.aspx" />
@@ -650,6 +658,10 @@
     <Content Include="Dashboard\font-awesome-4.3.0\css\font-awesome.min.css" />
     <Content Include="Dashboard\fonts\fontawesome-webfont.svg" />
     <Content Include="Dashboard\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Dashboard\HighCharts\data.js" />
+    <Content Include="Dashboard\HighCharts\data.src.js" />
+    <Content Include="Dashboard\HighCharts\exporting.src.js" />
+    <Content Include="Dashboard\HighCharts\highcharts.js" />
     <Content Include="Dashboard\HomeWork.aspx" />
     <Content Include="Dashboard\HomeWorkHistory.aspx" />
     <Content Include="Dashboard\Images\3408.jpg" />
@@ -670,6 +682,7 @@
     <Content Include="Dashboard\Styles\custom.min.css" />
     <Content Include="Dashboard\Styles\sasanStyle.css" />
     <Content Include="Dashboard\Styles\simple-sidebar.css" />
+    <Content Include="Dashboard\Teacher\ClassManagment.aspx" />
     <Content Include="Dashboard\WeeklySchedule.aspx" />
     <Content Include="packages.config" />
     <Content Include="Dashboard\fonts\glyphicons-halflings-regular.eot" />
@@ -783,6 +796,7 @@
     <Content Include="Dashboard\Admin\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="Dashboard\Admin\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Dashboard\Admin\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Dashboard\Teacher\TeacherPanel.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -814,6 +828,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HamoonResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\HighChartsControl.ascx.cs">
+      <DependentUpon>HighChartsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controllers\HighChartsControl.ascx.designer.cs">
+      <DependentUpon>HighChartsControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
@@ -864,13 +885,6 @@
     <Compile Include="Dashboard\Admin\adminStudentsPayment.aspx.designer.cs">
       <DependentUpon>adminStudentsPayment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\Admin\ClassManagment.aspx.cs">
-      <DependentUpon>ClassManagment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Dashboard\Admin\ClassManagment.aspx.designer.cs">
-      <DependentUpon>ClassManagment.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Dashboard\Admin\ClassMembers.aspx.cs">
       <DependentUpon>ClassMembers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -878,12 +892,19 @@
     <Compile Include="Dashboard\Admin\ClassMembers.aspx.designer.cs">
       <DependentUpon>ClassMembers.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\Admin\ClassStudents.aspx.cs">
+    <Compile Include="Dashboard\Teacher\ClassStudents.aspx.cs">
       <DependentUpon>ClassStudents.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Dashboard\Admin\ClassStudents.aspx.designer.cs">
+    <Compile Include="Dashboard\Teacher\ClassStudents.aspx.designer.cs">
       <DependentUpon>ClassStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\EditKartabl.aspx.cs">
+      <DependentUpon>EditKartabl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\EditKartabl.aspx.designer.cs">
+      <DependentUpon>EditKartabl.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\EditLessonGroup.aspx.cs">
       <DependentUpon>EditLessonGroup.aspx</DependentUpon>
@@ -905,6 +926,13 @@
     </Compile>
     <Compile Include="Dashboard\Admin\EditStudent.aspx.designer.cs">
       <DependentUpon>EditStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\EmployeePassword.aspx.cs">
+      <DependentUpon>EmployeePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\EmployeePassword.aspx.designer.cs">
+      <DependentUpon>EmployeePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\Employees.aspx.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
@@ -941,19 +969,47 @@
     <Compile Include="Dashboard\Admin\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\Admin\NewSesion.aspx.cs">
-      <DependentUpon>NewSesion.aspx</DependentUpon>
+    <Compile Include="Dashboard\Teacher\EditSession.aspx.cs">
+      <DependentUpon>EditSession.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Dashboard\Admin\NewSesion.aspx.designer.cs">
-      <DependentUpon>NewSesion.aspx</DependentUpon>
+    <Compile Include="Dashboard\Teacher\EditSession.aspx.designer.cs">
+      <DependentUpon>EditSession.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\Admin\SesionHistory.aspx.cs">
-      <DependentUpon>SesionHistory.aspx</DependentUpon>
+    <Compile Include="Dashboard\Teacher\NewSession.aspx.cs">
+      <DependentUpon>NewSession.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Dashboard\Admin\SesionHistory.aspx.designer.cs">
-      <DependentUpon>SesionHistory.aspx</DependentUpon>
+    <Compile Include="Dashboard\Teacher\NewSession.aspx.designer.cs">
+      <DependentUpon>NewSession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\Picture.aspx.cs">
+      <DependentUpon>Picture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\Picture.aspx.designer.cs">
+      <DependentUpon>Picture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsLessonGroups.aspx.cs">
+      <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsLessonGroups.aspx.designer.cs">
+      <DependentUpon>reportsLessonGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\SessionDetails.aspx.cs">
+      <DependentUpon>SessionDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\SessionDetails.aspx.designer.cs">
+      <DependentUpon>SessionDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\SessionHistory.aspx.cs">
+      <DependentUpon>SessionHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\SessionHistory.aspx.designer.cs">
+      <DependentUpon>SessionHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\Students.aspx.cs">
       <DependentUpon>Students.aspx</DependentUpon>
@@ -968,6 +1024,13 @@
     </Compile>
     <Compile Include="Dashboard\Admin\studentsPayment.aspx.designer.cs">
       <DependentUpon>studentsPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Charts.aspx.cs">
       <DependentUpon>Charts.aspx</DependentUpon>
@@ -1066,6 +1129,20 @@
     </Compile>
     <Compile Include="Dashboard\Scores.aspx.designer.cs">
       <DependentUpon>Scores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\ClassManagment.aspx.cs">
+      <DependentUpon>ClassManagment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\ClassManagment.aspx.designer.cs">
+      <DependentUpon>ClassManagment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherPanel.Master.cs">
+      <DependentUpon>TeacherPanel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherPanel.Master.designer.cs">
+      <DependentUpon>TeacherPanel.Master</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\WeeklySchedule.aspx.cs">
       <DependentUpon>WeeklySchedule.aspx</DependentUpon>

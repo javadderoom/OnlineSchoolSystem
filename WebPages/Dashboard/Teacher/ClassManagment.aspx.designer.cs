@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPages.Dashboard.Admin {
+namespace WebPages.Dashboard.Teacher {
     
     
     public partial class ClassManagment {

@@ -8,12 +8,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebPages.Dashboard.Admin
+namespace WebPages.Dashboard.Teacher
 {
     public partial class ClassStudents : System.Web.UI.Page
     {
-
-
         public void loadLessonGroup()
         {
             string id = Request.QueryString["LGID"];

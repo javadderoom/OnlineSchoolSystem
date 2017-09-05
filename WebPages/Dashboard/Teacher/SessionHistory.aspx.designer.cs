@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPages.Dashboard.Admin {
+namespace WebPages.Dashboard.Teacher {
     
     
-    public partial class ClassStudents {
+    public partial class SesionHistory {
         
         /// <summary>
         /// ScriptManager1 control.
@@ -31,12 +31,12 @@ namespace WebPages.Dashboard.Admin {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// gvClassStudents control.
+        /// gvSessionHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvClassStudents;
+        protected global::System.Web.UI.WebControls.GridView gvSessionHistory;
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using DataAccess.Repository;
 using DataAccess;
 
-namespace WebPages.Dashboard.Admin
+namespace WebPages.Dashboard.Teacher
 {
     public partial class ClassManagment : System.Web.UI.Page
     {
@@ -52,18 +52,17 @@ namespace WebPages.Dashboard.Admin
                 }
             }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
                 gvLoad();
             }
-
         }
 
         protected void gvClasses_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         protected void gvClasses_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -78,7 +77,7 @@ namespace WebPages.Dashboard.Admin
                 // from the Rows collection.
                 GridViewRow row = gvClasses.Rows[index];
 
-                Response.Redirect("http://localhost:4911/Dashboard/Admin/ClassStudents.aspx?LGID=" + row.Cells[0].Text);
+                Response.Redirect("http://localhost:4911/Dashboard/Teacher/ClassStudents.aspx?LGID=" + row.Cells[0].Text);
             }
             if (e.CommandName == "SessionHistory")
             {
@@ -90,7 +89,7 @@ namespace WebPages.Dashboard.Admin
                 // from the Rows collection.
                 GridViewRow row = gvClasses.Rows[index];
 
-                Response.Redirect("http://localhost:4911/Dashboard/Admin/SesionHistory.aspx?LGID=" + row.Cells[0].Text);
+                Response.Redirect("http://localhost:4911/Dashboard/Teacher/SessionHistory.aspx?LGID=" + row.Cells[0].Text);
             }
             if (e.CommandName == "NewSession")
             {
@@ -102,7 +101,7 @@ namespace WebPages.Dashboard.Admin
                 // from the Rows collection.
                 GridViewRow row = gvClasses.Rows[index];
 
-                Response.Redirect("http://localhost:4911/Dashboard/Admin/NewSesion.aspx?LGID=" + row.Cells[0].Text);
+                Response.Redirect("http://localhost:4911/Dashboard/Teacher/NewSession.aspx?LGID=" + row.Cells[0].Text);
             }
         }
     }
