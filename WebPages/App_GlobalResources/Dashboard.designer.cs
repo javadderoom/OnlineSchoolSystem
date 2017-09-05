@@ -727,6 +727,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to جزییات جلسه.
+        /// </summary>
+        internal static string SessionDetails {
+            get {
+                return ResourceManager.GetString("SessionDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مقطع تحصیلی.
         /// </summary>
         internal static string SGrade {

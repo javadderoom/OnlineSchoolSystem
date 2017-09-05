@@ -15,10 +15,10 @@ namespace DataAccess
     public partial class vJavabeTamrin
     {
         public int JavabID { get; set; }
-        public Nullable<int> Expr1 { get; set; }
+        public Nullable<int> TamrinTamrinID { get; set; }
         public Nullable<int> OzviatID { get; set; }
         public string FilePath { get; set; }
-        public string Expr2 { get; set; }
+        public string JavabeTamrinDescription { get; set; }
         public string SendingTime { get; set; }
         public string SendingDate { get; set; }
         public int TamrinID { get; set; }
@@ -36,5 +36,15 @@ namespace DataAccess
         public Nullable<int> Time { get; set; }
         public Nullable<int> FieldID { get; set; }
         public string Year { get; set; }
+        public string StudentCode { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public int OzviatOzviatID { get; set; }
+        public Nullable<int> OzviatLGID { get; set; }
+        public string OzviatStudentCode { get; set; }
+        public Nullable<int> Expr5 { get; set; }
+        public string Expr3 { get; set; }
+        public int Expr2 { get; set; }
+        public Nullable<int> CGrade { get; set; }
     }
 }

@@ -201,19 +201,19 @@
                                     <i class="fa fa-money fa-stack-1x " style="float: left;"></i></span>
                             </a>
                             <ul class="nav-pills nav-stacked" style="list-style-type: none;">
-                                <li><a href="http://localhost:4911/Dashboard/Admin/" class="a-properties sub-menu">
+                                <li><a href="http://localhost:4911/Dashboard/Admin/reportsGrades.aspx" class="a-properties sub-menu">
                                     <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
                                     <asp:Literal runat="server" Text="<%$ Resources:sasanRes,gradereports%>" />
                                     <span class="fa-stack fa-lg pull-left"></span>
                                 </a></li>
 
-                                <li><a href="http://localhost:4911/Dashboard/Admin/" class="a-properties sub-menu">
+                                <li><a href="http://localhost:4911/Dashboard/Admin/reportsLessonGroups.aspx" class="a-properties sub-menu">
                                     <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
                                     <asp:Literal runat="server" Text="<%$ Resources:sasanRes,classreports%>" />
                                     <span class="fa-stack fa-lg pull-left"></span>
                                 </a></li>
 
-                                <li><a href="http://localhost:4911/Dashboard/Admin/" class="a-properties sub-menu">
+                                <li><a href="http://localhost:4911/Dashboard/Admin/reportsStudents.aspx" class="a-properties sub-menu">
                                     <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
                                     <asp:Literal runat="server" Text="<%$ Resources:sasanRes,studentreports%>" />
                                     <span class="fa-stack fa-lg pull-left"></span>

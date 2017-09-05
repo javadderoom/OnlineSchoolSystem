@@ -7,6 +7,7 @@ using Common;
 using System.Data;
 using System.Web.Configuration;
 using System.Configuration;
+using System.Data.SqlClient;
 
 namespace DataAccess.Repository
 {
@@ -81,8 +82,22 @@ namespace DataAccess.Repository
             lvs = pl.ToList();
             return OnlineTools.ToDataTable(lvs);
         }
+        public DataTable searchStudentsInfo(string searchtxt)
+        {
 
-        public DataTable GetAllStudentsExcept(List<string> stuCodes)
+
+            string Command = (string.Format(" select* from vStudentsInfo v where v.StudentCode like N'%{0}%' or v.stuClass like N'%{1}%' or v.GradeTitle like N'%{2}%' or v.fullName like N'%{3}%' or v.FirstName like N'%{4}%'", searchtxt, searchtxt, searchtxt, searchtxt, searchtxt));
+
+            SqlConnection myConnection = new SqlConnection(vReportExamsRepository.conString);
+            SqlDataAdapter myDataAdapter = new SqlDataAdapter(Command, myConnection);
+            DataTable dtResult = new DataTable();
+            myDataAdapter.Fill(dtResult);
+
+
+            return dtResult;
+        }
+
+        public DataTable GetAllStudentsExceptByGradeID(List<string> stuCodes, int? gid)
         {
             List<string> result1 = new List<string>();
 
@@ -90,6 +105,7 @@ namespace DataAccess.Repository
             {
                 IEnumerable<string> pl =
                     from r in sd.vStudents
+                    where r.CGrade == gid
                     select r.StudentCode;
 
                 result1 = pl.ToList().Except(stuCodes).ToList();
@@ -291,6 +307,18 @@ namespace DataAccess.Repository
                     db.ExecuteCommand("TRUNCATE TABLE Students");
                 }
             }
+        }
+        public DataTable getStudentsInfo()
+        {
+            string Command = (string.Format("select s.StudentCode,s.FirstName + ' ' + s.LastName as fullName,Fathers.FirstName,s.CGrade, (select top 1 class from Students inner join Ozviat on Students.StudentCode = Ozviat.StudentCode inner join LessonGroups on Ozviat.LGID = LessonGroups.LGID where Students.StudentCode = s.StudentCode order by LessonGroups.LGID desc) as stuClass from Students s left outer join Fathers on s.FatherID = Fathers.FatherID inner join StuRegister on s.StudentCode = StuRegister.StuCode where StuRegister.EduYear = (select top 1 EduYear from StuRegister order by EduYear desc)"));
+
+            SqlConnection myConnection = new SqlConnection(vReportExamsRepository.conString);
+            SqlDataAdapter myDataAdapter = new SqlDataAdapter(Command, myConnection);
+            DataTable dtResult = new DataTable();
+            myDataAdapter.Fill(dtResult);
+
+
+            return dtResult;
         }
     }
 }

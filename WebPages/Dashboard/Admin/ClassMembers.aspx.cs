@@ -27,12 +27,13 @@ namespace WebPages.Dashboard.Admin
 
         public void LoadStudents()
         {
+            string id = Request.QueryString["LGID"];
             List<string> stuCodes = new List<string>();
             foreach (GridViewRow row in gvSelectedStudents.Rows)
             {
                 stuCodes.Add(row.Cells[1].Text);
             }
-            gvStudents.DataSource = rep.GetAllStudentsExcept(stuCodes);
+            gvStudents.DataSource = rep.GetAllStudentsExceptByGradeID(stuCodes, lg.getLessonGroupgardeID(id.ToInt()));
             gvStudents.DataBind();
         }
 

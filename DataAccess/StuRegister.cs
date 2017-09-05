@@ -18,6 +18,7 @@ namespace DataAccess
         public string StuCode { get; set; }
         public string RegDate { get; set; }
         public Nullable<int> RegGrade { get; set; }
+        public string EduYear { get; set; }
     
         public virtual Student Student { get; set; }
     }

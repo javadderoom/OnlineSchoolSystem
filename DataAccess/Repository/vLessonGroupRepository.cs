@@ -250,5 +250,18 @@ namespace DataAccess.Repository
             llg = query.ToList();
             return OnlineTools.ToDataTable(llg);
         }
+
+        public int? getLessonGroupgardeID(int lgid)
+        {
+            SchoolDBEntities pb = conn.GetContext();
+            int? id =
+                (from r in pb.LessonGroups
+                 where r.LGID == lgid
+                 select r.GradeID).FirstOrDefault();
+
+            return id;
+        }
+
+
     }
 }

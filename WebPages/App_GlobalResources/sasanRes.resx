@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="chart" xml:space="preserve">
+    <value>نمودار</value>
+  </data>
+  <data name="classcount" xml:space="preserve">
+    <value>تعداد دانش آموزان کلاس</value>
+  </data>
+  <data name="classhayebartar" xml:space="preserve">
+    <value>کلاس های برتر مقطع</value>
+  </data>
+  <data name="classnum" xml:space="preserve">
+    <value>شماره کلاس</value>
+  </data>
   <data name="classreports" xml:space="preserve">
     <value>گزارش کلاس ها</value>
   </data>
@@ -128,6 +140,9 @@
   </data>
   <data name="desc" xml:space="preserve">
     <value>توضیحات</value>
+  </data>
+  <data name="details" xml:space="preserve">
+    <value>جزییات</value>
   </data>
   <data name="fathername" xml:space="preserve">
     <value>نام پدر</value>
@@ -141,20 +156,50 @@
   <data name="id" xml:space="preserve">
     <value>شناسه</value>
   </data>
+  <data name="katbiexamcount" xml:space="preserve">
+    <value>تعداد امتحان های کتبی</value>
+  </data>
+  <data name="lessontitle" xml:space="preserve">
+    <value>عنوان درس</value>
+  </data>
   <data name="lname" xml:space="preserve">
     <value>نام خانوادگی</value>
   </data>
   <data name="mablagh" xml:space="preserve">
     <value>مبلغ</value>
   </data>
+  <data name="maghate" xml:space="preserve">
+    <value>مقاطع</value>
+  </data>
+  <data name="maghta" xml:space="preserve">
+    <value>مقطع</value>
+  </data>
+  <data name="mianginkatbi" xml:space="preserve">
+    <value>میانگین کل امتحان های کتبی دانش آموزان</value>
+  </data>
+  <data name="mianginshafahi" xml:space="preserve">
+    <value>میانگین کل امتحان های شفاهی دانش آموزان</value>
+  </data>
+  <data name="nafaratbartar" xml:space="preserve">
+    <value>نفرات برتر کلاس</value>
+  </data>
   <data name="payments" xml:space="preserve">
     <value>پرداخت ها</value>
   </data>
+  <data name="percentamrinanswer" xml:space="preserve">
+    <value>درصد پاسخ به تمارین</value>
+  </data>
   <data name="report" xml:space="preserve">
-    <value />
+    <value>گزارش</value>
   </data>
   <data name="reports" xml:space="preserve">
     <value>گزارشات</value>
+  </data>
+  <data name="sessionscount" xml:space="preserve">
+    <value>تعداد جلسات</value>
+  </data>
+  <data name="shafahiexamcount" xml:space="preserve">
+    <value>تعداد امتحان های شفاهی</value>
   </data>
   <data name="stucode" xml:space="preserve">
     <value>شماره دانشجویی</value>
@@ -162,8 +207,17 @@
   <data name="studentreports" xml:space="preserve">
     <value>گزارش دانش آموزان</value>
   </data>
+  <data name="studentsgradecount" xml:space="preserve">
+    <value>تعداد دانش آموزان مقطع</value>
+  </data>
   <data name="studentspaymenthistory" xml:space="preserve">
     <value>تاریخچه ی پرداخت شهریه دانش آموزان</value>
+  </data>
+  <data name="tamrincount" xml:space="preserve">
+    <value>تعداد تمرین های داده شده</value>
+  </data>
+  <data name="teacher" xml:space="preserve">
+    <value>مدرس</value>
   </data>
   <data name="time" xml:space="preserve">
     <value>ساعت</value>

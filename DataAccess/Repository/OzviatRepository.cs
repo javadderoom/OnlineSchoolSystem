@@ -19,7 +19,14 @@ namespace DataAccess.Repository
         {
             conn = new Connection();
         }
+        public int OzviatIDByLGIDAndStudentCode(int id, string stuCode)
+        {
+            int result = 0;
+            result = db.Ozviats.Where(p => p.LGID == id).Where(p => p.StudentCode == stuCode)
+                .Select(p => p.OzviatID).FirstOrDefault();
 
+            return result;
+        }
         public DataTable FindByLGID(int lgid)
         {
             List<vOzviat> result = new List<vOzviat>();
@@ -34,6 +41,14 @@ namespace DataAccess.Repository
 
             result = pl.ToList();
             return OnlineTools.ToDataTable(result);
+        }
+        public int OzviatIDByLGIDAndStudentCode(int LGID, string SCode)
+        {
+            int result = 0;
+
+            result = db.Ozviats.Where(p => (p.LGID == LGID) && (p.StudentCode == SCode)).Single().OzviatID;
+
+            return result;
         }
 
         public List<string> FindStudentCodeByLGID(int lgid)
@@ -135,13 +150,16 @@ namespace DataAccess.Repository
 
             return Convert.ToBoolean(pb.SaveChanges());
         }
-        public int OzviatIDByLGIDAndStudentCode(int LGID, string SCode)
+
+        public int countStudentsOfLessonGroupByid(int lgid)
         {
-            int result = 0;
+            SchoolDBEntities pb = conn.GetContext();
+            int query =
+                (from r in pb.Ozviats
+                 where r.LGID == lgid
+                 select r).Count();
 
-            result = db.Ozviats.Where(p => (p.LGID == LGID) && (p.StudentCode == SCode)).Single().OzviatID;
-
-            return result;
+            return query;
         }
     }
 }
