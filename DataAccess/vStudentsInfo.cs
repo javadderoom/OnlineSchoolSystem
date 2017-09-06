@@ -12,12 +12,13 @@ namespace DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class vStudentsInfo
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string StudentCode { get; set; }
+        public string fullName { get; set; }
+        public string FirstName { get; set; }
+        public Nullable<int> CGrade { get; set; }
+        public string gradeTitle { get; set; }
+        public string stuClass { get; set; }
     }
 }

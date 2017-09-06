@@ -24,6 +24,5 @@ namespace DataAccess
     
         public virtual Ozviat Ozviat { get; set; }
         public virtual Tamarin Tamarin { get; set; }
-        public virtual Tamarin Tamarin1 { get; set; }
     }
 }

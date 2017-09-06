@@ -165,6 +165,9 @@
     <Compile Include="vStudent.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="vStudentsInfo.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="vTamrin.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>

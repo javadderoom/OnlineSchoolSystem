@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard/Admin/AdminPanel.Master" AutoEventWireup="true" CodeBehind="test.aspx.cs" Inherits="WebPages.Dashboard.Admin.test" %>
 
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+
+<%@ Register Assembly="Telerik.ReportViewer.Html5.WebForms, Version=11.1.17.614, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" Namespace="Telerik.ReportViewer.Html5.WebForms" TagPrefix="telerik" %>
+
 <%@ Register Src="~/Controllers/HighChartsControl.ascx" TagPrefix="hc" TagName="chart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -24,5 +28,7 @@
                 <hc:chart runat="server"></hc:chart>
             </div>
         </div>
+        <telerik:ReportViewer runat="server"></telerik:ReportViewer>
+        <rsweb:ReportViewer runat="server"></rsweb:ReportViewer>
     </div>
 </asp:Content>

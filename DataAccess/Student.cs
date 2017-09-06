@@ -18,6 +18,7 @@ namespace DataAccess
         {
             this.Ozviats = new HashSet<Ozviat>();
             this.PaymentHistories = new HashSet<PaymentHistory>();
+            this.StuRegisters = new HashSet<StuRegister>();
         }
     
         public int StuID { get; set; }
@@ -57,6 +58,6 @@ namespace DataAccess
         public virtual Mother Mother { get; set; }
         public virtual ICollection<Ozviat> Ozviats { get; set; }
         public virtual ICollection<PaymentHistory> PaymentHistories { get; set; }
-        public virtual StuRegister StuRegister { get; set; }
+        public virtual ICollection<StuRegister> StuRegisters { get; set; }
     }
 }

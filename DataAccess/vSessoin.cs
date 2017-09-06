@@ -31,6 +31,5 @@ namespace DataAccess
         public Nullable<bool> Type { get; set; }
         public Nullable<int> NomrePercent { get; set; }
         public int NomreID { get; set; }
-        public Nullable<int> SessionNum { get; set; }
     }
 }

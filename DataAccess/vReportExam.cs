@@ -12,22 +12,20 @@ namespace DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class vJavabeTamrin
+    public partial class vReportExam
     {
-        public int JavabID { get; set; }
-        public Nullable<int> TamrinTamrinID { get; set; }
-        public Nullable<int> Expr5 { get; set; }
-        public string FilePath { get; set; }
-        public string JavabeTamrinDescription { get; set; }
-        public string SendingTime { get; set; }
-        public string SendingDate { get; set; }
-        public int TamrinID { get; set; }
-        public string TamrinTitle { get; set; }
-        public Nullable<int> GroupID { get; set; }
-        public string StartDate { get; set; }
-        public string ExpirationDate { get; set; }
-        public string Expr3 { get; set; }
-        public int Expr2 { get; set; }
+        public int NomreID { get; set; }
+        public Nullable<int> OzviatID { get; set; }
+        public Nullable<int> SessionID { get; set; }
+        public string Date { get; set; }
+        public Nullable<int> ExamType { get; set; }
+        public Nullable<decimal> Nomre { get; set; }
+        public Nullable<bool> Type { get; set; }
+        public Nullable<int> NomrePercent { get; set; }
+        public int SessionsSessionID { get; set; }
+        public string SessionDate { get; set; }
+        public Nullable<int> LGID { get; set; }
+        public int LessonGroupsLGID { get; set; }
         public string Class { get; set; }
         public Nullable<int> LessonID { get; set; }
         public string TeacherCode { get; set; }
@@ -36,12 +34,16 @@ namespace DataAccess
         public Nullable<int> Time { get; set; }
         public Nullable<int> FieldID { get; set; }
         public string Year { get; set; }
-        public string StudentCode { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
         public int OzviatOzviatID { get; set; }
         public Nullable<int> OzviatLGID { get; set; }
-        public string OzviatStudentCode { get; set; }
+        public string StudentCode { get; set; }
+        public int StuID { get; set; }
+        public string FullName { get; set; }
+        public string StudentsStudentCode { get; set; }
+        public Nullable<int> SGarde { get; set; }
         public Nullable<int> CGrade { get; set; }
+        public string Image { get; set; }
+        public string NationalCode { get; set; }
+        public string IdentityCode { get; set; }
     }
 }

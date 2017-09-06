@@ -57,6 +57,21 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,6 +82,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -74,6 +97,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Reporting, Version=11.1.17.614, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.Reporting.Services.WebApi, Version=11.1.17.614, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.Reporting.XpsRendering, Version=11.1.17.614, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.ReportViewer.Html5.WebForms, Version=11.1.17.614, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controllers\HighChartsControl.ascx" />
@@ -631,6 +658,13 @@
     <Content Include="Dashboard\Admin\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="Dashboard\Admin\ckeditor\styles.js" />
     <Content Include="Dashboard\Admin\ClassMembers.aspx" />
+    <Content Include="Dashboard\Admin\reportsGrades.aspx" />
+    <Content Include="Dashboard\Admin\reportsGradesChart.aspx" />
+    <Content Include="Dashboard\Admin\reportsLessonGroupsChart.aspx" />
+    <Content Include="Dashboard\Admin\reportsStudents.aspx" />
+    <Content Include="Dashboard\Admin\reportsStudentsChart.aspx" />
+    <Content Include="Dashboard\Controllers\HighChartsControl.ascx" />
+    <Content Include="Dashboard\Controllers\WebUserControl1.ascx" />
     <Content Include="Dashboard\Teacher\ClassStudents.aspx" />
     <Content Include="Dashboard\Admin\EditKartabl.aspx" />
     <Content Include="Dashboard\Admin\EditLessonGroup.aspx" />
@@ -683,6 +717,9 @@
     <Content Include="Dashboard\Styles\sasanStyle.css" />
     <Content Include="Dashboard\Styles\simple-sidebar.css" />
     <Content Include="Dashboard\Teacher\ClassManagment.aspx" />
+    <Content Include="Dashboard\Teacher\TeacherKartabl.aspx" />
+    <Content Include="Dashboard\Teacher\TeacherPass.aspx" />
+    <Content Include="Dashboard\Teacher\TeacherPicture.aspx" />
     <Content Include="Dashboard\WeeklySchedule.aspx" />
     <Content Include="packages.config" />
     <Content Include="Dashboard\fonts\glyphicons-halflings-regular.eot" />
@@ -836,6 +873,7 @@
     <Compile Include="Controllers\HighChartsControl.ascx.designer.cs">
       <DependentUpon>HighChartsControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Dashboard\Admin\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -891,6 +929,55 @@
     </Compile>
     <Compile Include="Dashboard\Admin\ClassMembers.aspx.designer.cs">
       <DependentUpon>ClassMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGrades.aspx.cs">
+      <DependentUpon>reportsGrades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGrades.aspx.designer.cs">
+      <DependentUpon>reportsGrades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGradesChart.aspx.cs">
+      <DependentUpon>reportsGradesChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsGradesChart.aspx.designer.cs">
+      <DependentUpon>reportsGradesChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsLessonGroupsChart.aspx.cs">
+      <DependentUpon>reportsLessonGroupsChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsLessonGroupsChart.aspx.designer.cs">
+      <DependentUpon>reportsLessonGroupsChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudents.aspx.cs">
+      <DependentUpon>reportsStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudents.aspx.designer.cs">
+      <DependentUpon>reportsStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.cs">
+      <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.designer.cs">
+      <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\HighChartsControl.ascx.cs">
+      <DependentUpon>HighChartsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\HighChartsControl.ascx.designer.cs">
+      <DependentUpon>HighChartsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\WebUserControl1.ascx.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Teacher\ClassStudents.aspx.cs">
       <DependentUpon>ClassStudents.aspx</DependentUpon>
@@ -1137,12 +1224,33 @@
     <Compile Include="Dashboard\Teacher\ClassManagment.aspx.designer.cs">
       <DependentUpon>ClassManagment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherKartabl.aspx.cs">
+      <DependentUpon>TeacherKartabl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherKartabl.aspx.designer.cs">
+      <DependentUpon>TeacherKartabl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Teacher\TeacherPanel.Master.cs">
       <DependentUpon>TeacherPanel.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Dashboard\Teacher\TeacherPanel.Master.designer.cs">
       <DependentUpon>TeacherPanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherPass.aspx.cs">
+      <DependentUpon>TeacherPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherPass.aspx.designer.cs">
+      <DependentUpon>TeacherPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherPicture.aspx.cs">
+      <DependentUpon>TeacherPicture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherPicture.aspx.designer.cs">
+      <DependentUpon>TeacherPicture.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\WeeklySchedule.aspx.cs">
       <DependentUpon>WeeklySchedule.aspx</DependentUpon>
@@ -1181,6 +1289,9 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>HamoonResource.Designer.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
