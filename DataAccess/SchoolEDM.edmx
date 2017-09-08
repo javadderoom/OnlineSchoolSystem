@@ -171,6 +171,7 @@
           <Property Name="SessionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Date" Type="nvarchar" MaxLength="8" />
           <Property Name="LGID" Type="int" />
+          <Property Name="SessionNum" Type="int" />
         </EntityType>
         <EntityType Name="Students">
           <Key>
@@ -230,15 +231,6 @@
           <Property Name="ExpirationDate" Type="nvarchar" MaxLength="10" />
           <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'SchoolDB.dbo.vBarname' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="vBarname">
-          <Property Name="Class" Type="nvarchar" MaxLength="50" />
-          <Property Name="Day" Type="int" />
-          <Property Name="Time" Type="int" />
-          <Property Name="StudentCode" Type="nvarchar" MaxLength="10" />
-          <Property Name="LessonTitle" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SchoolDB.dbo.vbarnameHaftegi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vbarnameHaftegi">
@@ -1439,6 +1431,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <NavigationProperty Name="LessonGroup" Relationship="SchoolDBModel.FK_Sessoins_LessonGroups" FromRole="Sessoin" ToRole="LessonGroup" />
           <NavigationProperty Name="Nomarats" Relationship="SchoolDBModel.FK_Nomarat_Sessoins" FromRole="Sessoin" ToRole="Nomarat" />
           <NavigationProperty Name="Presences" Relationship="SchoolDBModel.FK_Presence_Sessoins" FromRole="Sessoin" ToRole="Presence" />
+          <Property Name="SessionNum" Type="Int32" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -2205,6 +2198,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <EntitySetMapping Name="Sessoins">
             <EntityTypeMapping TypeName="SchoolDBModel.Sessoin">
               <MappingFragment StoreEntitySet="Sessoins">
+                <ScalarProperty Name="SessionNum" ColumnName="SessionNum" />
                 <ScalarProperty Name="LGID" ColumnName="LGID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="SessionID" ColumnName="SessionID" />

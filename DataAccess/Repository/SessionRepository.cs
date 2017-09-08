@@ -45,6 +45,17 @@ namespace DataAccess.Repository
             return OnlineTools.ToDataTable(result);
         }
 
+        public int countSessionsByLGID(int id)
+        {
+            SchoolDBEntities pb = conn.GetContext();
+            int query =
+                (from r in pb.Sessoins
+                 where r.LGID == id
+                 select r).Count();
+
+            return query;
+        }
+
         public Sessoin GetSessionsBySessionID(int id)
         {
             SchoolDBEntities sd = conn.GetContext();

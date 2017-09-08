@@ -87,6 +87,7 @@ namespace WebPages.Dashboard.Teacher
                         newSes.Date = tbxSessionDate.Text;
                         newSes.LGID = id;
                         SessionRepository sRep = new SessionRepository();
+                        newSes.SessionNum = sRep.CountSessionsByLGID(id).ToInt();
                         sRep.SaveSession(newSes);
 
                         ////////////////// Save Score ///////////////////////
