@@ -16,9 +16,17 @@ namespace WebPages.Dashboard.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id = Request.QueryString["LGID"];
-            gvSessionHistory.DataSource = sr.GetSessionsByLGID(id.ToInt());
-            gvSessionHistory.DataBind();
+            string id = Session["LGIDforSessionHistory"].ToString();
+            if (!(string.IsNullOrEmpty(id)))
+            {
+                gvSessionHistory.DataSource = sr.GetSessionsByLGID(id.ToInt());
+                gvSessionHistory.DataBind();
+            }
+            else
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='Request.UrlReferrer.ToString()'", true);
+            }
+
         }
 
         protected void gvSessionHistory_RowCommand(object sender, GridViewCommandEventArgs e)

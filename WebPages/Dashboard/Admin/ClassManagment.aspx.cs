@@ -89,8 +89,9 @@ namespace WebPages.Dashboard.Admin
                 // Retrieve the row that contains the button
                 // from the Rows collection.
                 GridViewRow row = gvClasses.Rows[index];
-
-                Response.Redirect("http://localhost:4911/Dashboard/Admin/SesionHistory.aspx?LGID=" + row.Cells[0].Text);
+                Session.Add("LGIDforSessionHistory", row.Cells[0].Text);
+                Session.Timeout = 60;
+                Response.Redirect("http://localhost:4911/Dashboard/Admin/SesionHistory.aspx ");
             }
             if (e.CommandName == "NewSession")
             {
@@ -101,8 +102,9 @@ namespace WebPages.Dashboard.Admin
                 // Retrieve the row that contains the button
                 // from the Rows collection.
                 GridViewRow row = gvClasses.Rows[index];
-
-                Response.Redirect("http://localhost:4911/Dashboard/Admin/NewSesion.aspx?LGID=" + row.Cells[0].Text);
+                Session.Add("LGIDforNewSession", row.Cells[0].Text);
+                Session.Timeout = 60;
+                Response.Redirect("http://localhost:4911/Dashboard/Admin/NewSesion.aspx");
             }
         }
     }
