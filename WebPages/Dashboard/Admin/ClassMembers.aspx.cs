@@ -81,7 +81,6 @@ namespace WebPages.Dashboard.Admin
                 // from the Rows collection.
                 GridViewRow row = gvSelectedStudents.Rows[index];
 
-                //Response.Redirect("http://localhost:4911/Dashboard/Admin/Details.aspx?LGID=" + row.Cells[0].Text);
                 string id = row.Cells[1].Text;
 
                 if (id != "" || id != null)
@@ -152,7 +151,6 @@ namespace WebPages.Dashboard.Admin
                 // from the Rows collection.
                 GridViewRow row = gvStudents.Rows[index];
 
-                //Response.Redirect("http://localhost:4911/Dashboard/Admin/Details.aspx?LGID=" + row.Cells[0].Text);
                 string id = row.Cells[0].Text;
 
                 if (id != "" || id != null)
