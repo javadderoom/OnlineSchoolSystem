@@ -30,9 +30,10 @@ namespace WebPages.Dashboard.Teacher
         {
             try
             {
-                if (!(string.IsNullOrEmpty(Request.QueryString["SessionId"])))
+                if (Session["SessionIdForSessionDetails"] != null)
                 {
-                    id = Convert.ToInt32(Request.QueryString["SessionId"]);
+                    id = Convert.ToInt32(Session["SessionIdForSessionDetails"].ToString());
+                    Session.Remove("SessionIdForSessionDetails");
                     Sessoin session = sr.GetSessionsBySessionID(id);
                     SessionNumber.Text = session.SessionNum.ToString();
 
@@ -56,7 +57,7 @@ namespace WebPages.Dashboard.Teacher
                 }
                 else
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Admin/News.aspx'", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Teacher/News.aspx'", true);
                 }
             }
             catch (Exception e)

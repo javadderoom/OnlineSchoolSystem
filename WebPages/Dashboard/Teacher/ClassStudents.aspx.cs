@@ -14,13 +14,18 @@ namespace WebPages.Dashboard.Teacher
     {
         public void loadLessonGroup()
         {
-            string id = Request.QueryString["LGID"];
 
-            if (id != "" || id != null)
+            if (Session["LGIDforStudentsFromClassManagment"] != null)
             {
+                string id = Session["LGIDforStudentsFromClassManagment"].ToString();
+                Session.Remove("LGIDforStudentsFromClassManagment");
                 OzviatRepository rep = new OzviatRepository();
                 gvClassStudents.DataSource = rep.FindByLGID(id.ToInt());
                 gvClassStudents.DataBind();
+            }
+            else
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Teacher/News.aspx'", true);
             }
         }
 
