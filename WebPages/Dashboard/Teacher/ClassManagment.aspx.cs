@@ -76,8 +76,9 @@ namespace WebPages.Dashboard.Teacher
                 // Retrieve the row that contains the button
                 // from the Rows collection.
                 GridViewRow row = gvClasses.Rows[index];
-
-                Response.Redirect("http://localhost:4911/Dashboard/Teacher/ClassStudents.aspx?LGID=" + row.Cells[0].Text);
+                Session.Add("LGIDforStudentsFromClassManagment", row.Cells[0].Text);
+                Session.Timeout = 60;
+                Response.Redirect("http://localhost:4911/Dashboard/Teacher/ClassStudents.aspx");
             }
             if (e.CommandName == "SessionHistory")
             {
@@ -89,7 +90,9 @@ namespace WebPages.Dashboard.Teacher
                 // from the Rows collection.
                 GridViewRow row = gvClasses.Rows[index];
 
-                Response.Redirect("http://localhost:4911/Dashboard/Teacher/SessionHistory.aspx?LGID=" + row.Cells[0].Text);
+                Session.Add("LGIDforSessionHistory", row.Cells[0].Text);
+                Session.Timeout = 60;
+                Response.Redirect("http://localhost:4911/Dashboard/Teacher/SessionHistory.aspx");
             }
             if (e.CommandName == "NewSession")
             {
@@ -100,8 +103,9 @@ namespace WebPages.Dashboard.Teacher
                 // Retrieve the row that contains the button
                 // from the Rows collection.
                 GridViewRow row = gvClasses.Rows[index];
-
-                Response.Redirect("http://localhost:4911/Dashboard/Teacher/NewSession.aspx?LGID=" + row.Cells[0].Text);
+                Session.Add("LGIDforNewSession", row.Cells[0].Text);
+                Session.Timeout = 60;
+                Response.Redirect("http://localhost:4911/Dashboard/Teacher/NewSession.aspx");
             }
         }
     }

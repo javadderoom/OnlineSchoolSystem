@@ -17,11 +17,13 @@ namespace WebPages.Dashboard.Teacher
 
         private void loadSssions()
         {
+
+
             try
             {
-                if (!(string.IsNullOrEmpty(Request.QueryString["LGID"])))
+                if (Session["LGIDforSessionHistory"] != null)
                 {
-                    id = Convert.ToInt32(Request.QueryString["LGID"]);
+                    id = Convert.ToInt32(Session["LGIDforSessionHistory"].ToString());
 
                     SessionRepository Sesrep = new SessionRepository();
                     SessionNumber.Text = Sesrep.CountSessionsByLGID(id);
@@ -37,7 +39,7 @@ namespace WebPages.Dashboard.Teacher
                 }
                 else
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Admin/News.aspx'", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Teacher/News.aspx'", true);
                 }
             }
             catch (Exception)
@@ -79,9 +81,9 @@ namespace WebPages.Dashboard.Teacher
             {
                 try
                 {
-                    if (!(string.IsNullOrEmpty(Request.QueryString["LGID"])))
+                    if (Session["LGIDforSessionHistory"] != null)
                     {
-                        id = Convert.ToInt32(Request.QueryString["LGID"]);
+                        id = Convert.ToInt32(Session["LGIDforSessionHistory"].ToString());
                         ///////////////// Save session ////////////////
                         Sessoin newSes = new Sessoin();
                         newSes.Date = tbxSessionDate.Text;
@@ -118,7 +120,7 @@ namespace WebPages.Dashboard.Teacher
                     }
                     else
                     {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Admin/News.aspx'", true);
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Teacher/News.aspx'", true);
                     }
                     scope.Complete();
                 }

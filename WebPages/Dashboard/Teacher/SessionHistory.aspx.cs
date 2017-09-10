@@ -18,9 +18,19 @@ namespace WebPages.Dashboard.Teacher
         {
             if (!IsPostBack)
             {
-                string id = Request.QueryString["LGID"];
-                gvSessionHistory.DataSource = sr.GetSessionByLGID(id.ToInt());
-                gvSessionHistory.DataBind();
+
+                if (Session["LGIDforSessionHistory"] != null)
+                {
+                    string id = Session["LGIDforSessionHistory"].ToString();
+                    Session.Remove("LGIDforSessionHistory");
+                    gvSessionHistory.DataSource = sr.GetSessionByLGID(id.ToInt());
+                    gvSessionHistory.DataBind();
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Teacher/News.aspx'", true);
+                }
+
             }
         }
 
@@ -35,8 +45,9 @@ namespace WebPages.Dashboard.Teacher
                 // Retrieve the row that contains the button
                 // from the Rows collection.
                 GridViewRow row = gvSessionHistory.Rows[index];
-
-                Response.Redirect("http://localhost:4911/Dashboard/Teacher/EditSession.aspx?SessionId=" + row.Cells[0].Text);
+                Session.Add("SessionIdForEditSession", row.Cells[0].Text);
+                Session.Timeout = 60;
+                Response.Redirect("http://localhost:4911/Dashboard/Teacher/EditSession.aspx");
             }
             if (e.CommandName == "Details")
             {
@@ -47,7 +58,10 @@ namespace WebPages.Dashboard.Teacher
                 // Retrieve the row that contains the button
                 // from the Rows collection.
                 GridViewRow row = gvSessionHistory.Rows[index];
-                Response.Redirect("http://localhost:4911/Dashboard/Teacher/SessionDetails.aspx?SessionId=" + row.Cells[0].Text);
+
+                Session.Add("SessionIdForSessionDetails", row.Cells[0].Text);
+                Session.Timeout = 60;
+                Response.Redirect("http://localhost:4911/Dashboard/Teacher/SessionDetails.aspx");
             }
         }
     }
