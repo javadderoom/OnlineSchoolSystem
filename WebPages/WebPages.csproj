@@ -669,6 +669,7 @@
     <Content Include="Dashboard\Admin\reportsStudentsChart.aspx" />
     <Content Include="Dashboard\Controllers\HighChartsControl.ascx" />
     <Content Include="Dashboard\Controllers\WebUserControl1.ascx" />
+    <Content Include="Dashboard\HighCharts\exporting.js" />
     <Content Include="Dashboard\Teacher\ClassStudents.aspx" />
     <Content Include="Dashboard\Admin\EditKartabl.aspx" />
     <Content Include="Dashboard\Admin\EditLessonGroup.aspx" />
@@ -722,6 +723,7 @@
     <Content Include="Dashboard\Styles\simple-sidebar.css" />
     <Content Include="Dashboard\Teacher\ClassManagment.aspx" />
     <Content Include="Dashboard\Teacher\TeacherKartabl.aspx" />
+    <Content Include="Dashboard\Teacher\TeacherNews.aspx" />
     <Content Include="Dashboard\Teacher\TeacherPass.aspx" />
     <Content Include="Dashboard\Teacher\TeacherPicture.aspx" />
     <Content Include="Dashboard\WeeklySchedule.aspx" />
@@ -1235,6 +1237,13 @@
     </Compile>
     <Compile Include="Dashboard\Teacher\TeacherKartabl.aspx.designer.cs">
       <DependentUpon>TeacherKartabl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherNews.aspx.cs">
+      <DependentUpon>TeacherNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherNews.aspx.designer.cs">
+      <DependentUpon>TeacherNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Teacher\TeacherPanel.Master.cs">
       <DependentUpon>TeacherPanel.Master</DependentUpon>

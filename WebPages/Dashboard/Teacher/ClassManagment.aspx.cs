@@ -14,7 +14,7 @@ namespace WebPages.Dashboard.Teacher
         public void gvLoad()
         {
             vLessonGroupRepository vRep = new vLessonGroupRepository();
-            List<int> ClassesOfTeacherList = vRep.GetClassesOfTeacher("1");
+            List<int> ClassesOfTeacherList = vRep.GetClassesOfTeacher("11111");
 
             gvClasses.DataSource = vRep.GetLessonGroupsByLGIDList(ClassesOfTeacherList);
             gvClasses.DataBind();
