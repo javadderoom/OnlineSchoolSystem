@@ -18,11 +18,10 @@ namespace WebPages.Dashboard.Teacher
         {
             if (!IsPostBack)
             {
-
                 if (Session["LGIDforSessionHistory"] != null)
                 {
                     string id = Session["LGIDforSessionHistory"].ToString();
-                    Session.Remove("LGIDforSessionHistory");
+                    //Session.Remove("LGIDforSessionHistory");
                     gvSessionHistory.DataSource = sr.GetSessionByLGID(id.ToInt());
                     gvSessionHistory.DataBind();
                 }
@@ -30,7 +29,6 @@ namespace WebPages.Dashboard.Teacher
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Teacher/News.aspx'", true);
                 }
-
             }
         }
 
@@ -46,7 +44,7 @@ namespace WebPages.Dashboard.Teacher
                 // from the Rows collection.
                 GridViewRow row = gvSessionHistory.Rows[index];
                 Session.Add("SessionIdForEditSession", row.Cells[0].Text);
-                Session.Timeout = 60;
+                Session.Timeout = 10;
                 Response.Redirect("http://localhost:4911/Dashboard/Teacher/EditSession.aspx");
             }
             if (e.CommandName == "Details")
@@ -60,7 +58,7 @@ namespace WebPages.Dashboard.Teacher
                 GridViewRow row = gvSessionHistory.Rows[index];
 
                 Session.Add("SessionIdForSessionDetails", row.Cells[0].Text);
-                Session.Timeout = 60;
+                Session.Timeout = 10;
                 Response.Redirect("http://localhost:4911/Dashboard/Teacher/SessionDetails.aspx");
             }
         }

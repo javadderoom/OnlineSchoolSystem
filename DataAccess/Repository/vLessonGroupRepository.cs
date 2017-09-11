@@ -67,6 +67,19 @@ namespace DataAccess.Repository
             return pl.ToList();
         }
 
+        public List<int> GetClassesOfTeacherInYear(string id, string year)
+        {
+            SchoolDBEntities sd = conn.GetContext();
+
+            IEnumerable<int> pl =
+                from r in sd.LessonGroups
+                where r.TeacherCode == id && r.Year == year
+
+                select r.LGID;
+
+            return pl.ToList();
+        }
+
         public List<string> GetlistOfAllYears()
         {
             List<string> result = new List<string>();
@@ -261,7 +274,5 @@ namespace DataAccess.Repository
 
             return id;
         }
-
-
     }
 }
