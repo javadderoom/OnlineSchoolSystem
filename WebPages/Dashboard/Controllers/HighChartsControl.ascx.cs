@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using Highsoft.Web.Mvc.Charts;
 using DataAccess.Repository;
 
-
 namespace WebPages.Dashboard.Controllers
 {
     public partial class HighChartsControl : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             vReportExamsRepository rep = new vReportExamsRepository();
+            vLessonGroupRepository lgr = new vLessonGroupRepository();
 
             List<decimal?> l = rep.getStudentNomreByStuCode("93125019", 0, 3);
             List<string> s = rep.getSessionDates(3);
 
+            string year = lgr.GetLastYear();
+            int classCount = lgr.GetCountOfClassesOfGrade(6, year);
+            List<List<decimal>> datalist = new List<List<decimal>>();
 
             List<LineSeriesData> studentData = new List<LineSeriesData>();
 
@@ -78,6 +80,15 @@ namespace WebPages.Dashboard.Controllers
                 }
             }
             };
+
+            Title t = new Title();
+            t.Text = "Monthly Average Temperature";
+            t.X = -20;
+            higcharts.Title = t;
+
+            Subtitle sub = new Subtitle();
+            sub.Text = "Source: WorldClimate.com";
+            sub.X = -20;
             HighsoftNamespace Highsoft = new HighsoftNamespace();
 
             //string result = Highsoft.Highcharts(higcharts, "chart").ToHtmlString(); //For version 5.0.6326 or older

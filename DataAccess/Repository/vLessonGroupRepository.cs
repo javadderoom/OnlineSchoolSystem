@@ -80,6 +80,37 @@ namespace DataAccess.Repository
             return pl.ToList();
         }
 
+        public int GetCountOfClassesOfGrade(int grade, string year)
+        {
+            int result = 0;
+
+            SchoolDBEntities sd = conn.GetContext();
+
+            IQueryable<string> pl =
+                from r in sd.LessonGroups
+                where r.GradeID == grade && r.Year == year
+                select r.Class;
+
+            result = pl.Count();
+            return result;
+        }
+
+        public string GetLastYear()
+        {
+            string result = "";
+
+            using (SchoolDBEntities sd = conn.GetContext())
+            {
+                string pl =
+                    (from r in sd.vLessonGroups
+
+                     orderby r.Year descending
+                     select r.Year).Take(1).FirstOrDefault();
+
+                return pl;
+            }
+        }
+
         public List<string> GetlistOfAllYears()
         {
             List<string> result = new List<string>();
