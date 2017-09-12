@@ -57,6 +57,9 @@
     <Compile Include="Father.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Field.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Grade.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>

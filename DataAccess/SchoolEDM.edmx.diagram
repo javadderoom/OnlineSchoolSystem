@@ -22,7 +22,6 @@
         <EntityTypeShape EntityType="SchoolDBModel.Student" Width="1.5" PointX="3" PointY="10.625" />
         <EntityTypeShape EntityType="SchoolDBModel.StuRegister" Width="1.5" PointX="5.25" PointY="18.125" />
         <EntityTypeShape EntityType="SchoolDBModel.Tamarin" Width="1.5" PointX="8.25" PointY="15.125" />
-        <EntityTypeShape EntityType="SchoolDBModel.vbarnameHaftegi" Width="1.5" PointX="0.75" PointY="4.75" />
         <EntityTypeShape EntityType="SchoolDBModel.vJavabeTamrin" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="SchoolDBModel.vJTamrin" Width="1.5" PointX="7.75" PointY="0.75" />
         <EntityTypeShape EntityType="SchoolDBModel.vLessonGroup" Width="1.5" PointX="7.75" PointY="5.75" />
@@ -53,6 +52,9 @@
         <AssociationConnector Association="SchoolDBModel.FK_PaymentHistory_Students" />
         <AssociationConnector Association="SchoolDBModel.FK_Presence_Sessoins" />
         <AssociationConnector Association="SchoolDBModel.FK_StuRegister_Students" />
+        <EntityTypeShape EntityType="SchoolDBModel.Field" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="SchoolDBModel.vbarnameHaftegi" Width="1.5" PointX="16.75" PointY="17.75" />
+        <AssociationConnector Association="SchoolDBModel.FK_StuRegister_Fields" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

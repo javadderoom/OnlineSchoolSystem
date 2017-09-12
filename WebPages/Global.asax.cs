@@ -40,6 +40,7 @@ namespace WebPages
 
         protected void Session_End(object sender, EventArgs e)
         {
+            Response.Redirect("http://localhost:4911/Dashboard/Teacher/NewSession.aspx");
         }
 
         protected void Application_End(object sender, EventArgs e)
