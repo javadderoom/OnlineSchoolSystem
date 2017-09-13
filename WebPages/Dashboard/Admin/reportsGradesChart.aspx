@@ -116,7 +116,7 @@
     </asp:UpdatePanel>
     <div class="row">
         <div class="col-md-5 col-md-push-7 col-xs-6 col-xs-push-6">
-            <button type="button" id="btnViewAll" class="btn btn-auto-h btn-info goRight" runat="server" style="margin-right: 5px;">
+            <button type="button" id="btnViewAll" class="btn btn-auto-h btn-info goRight" runat="server" onserverclick="btnViewAll_ServerClick" style="margin-right: 5px;">
                 <asp:Literal runat="server" Text="گزارشات نموداری" />
                 <span class="fa fa-list"></span>
             </button>

@@ -56,5 +56,8 @@ namespace DataAccess
         public DbSet<vTamrin> vTamrins { get; set; }
         public DbSet<Field> Fields { get; set; }
         public DbSet<vbarnameHaftegi> vbarnameHaftegis { get; set; }
+        public DbSet<Month> Months { get; set; }
+        public DbSet<vAvgPerMonth> vAvgPerMonths { get; set; }
+        public DbSet<vAvgStudentPerMonth> vAvgStudentPerMonths { get; set; }
     }
 }

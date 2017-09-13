@@ -80,9 +80,9 @@ namespace DataAccess.Repository
             return pl.ToList();
         }
 
-        public int GetCountOfClassesOfGrade(int grade, string year)
+        public List<string> GetClassesOfGrade(int grade, string year)
         {
-            int result = 0;
+            List<string> result = new List<string>();
 
             SchoolDBEntities sd = conn.GetContext();
 
@@ -91,24 +91,21 @@ namespace DataAccess.Repository
                 where r.GradeID == grade && r.Year == year
                 select r.Class;
 
-            result = pl.Count();
+            result = pl.ToList();
             return result;
         }
 
-        public string GetLastYear()
+        public string GetLastestYear()
         {
-            string result = "";
+            SchoolDBEntities sd = conn.GetContext();
 
-            using (SchoolDBEntities sd = conn.GetContext())
-            {
-                string pl =
-                    (from r in sd.vLessonGroups
+            string pl =
+                (from r in sd.vLessonGroups
 
-                     orderby r.Year descending
-                     select r.Year).Take(1).FirstOrDefault();
+                 orderby r.Year descending
+                 select r.Year).Take(1).FirstOrDefault();
 
-                return pl;
-            }
+            return pl;
         }
 
         public List<string> GetlistOfAllYears()

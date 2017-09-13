@@ -732,11 +732,13 @@
     <Content Include="Dashboard\Admin\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="Dashboard\Admin\ckeditor\styles.js" />
     <Content Include="Dashboard\Admin\ClassMembers.aspx" />
+    <Content Include="Dashboard\Admin\GradeChart.aspx" />
     <Content Include="Dashboard\Admin\reportsGrades.aspx" />
     <Content Include="Dashboard\Admin\reportsGradesChart.aspx" />
     <Content Include="Dashboard\Admin\reportsLessonGroupsChart.aspx" />
     <Content Include="Dashboard\Admin\reportsStudents.aspx" />
     <Content Include="Dashboard\Admin\reportsStudentsChart.aspx" />
+    <Content Include="Dashboard\Controllers\GradeChart.ascx" />
     <Content Include="Dashboard\Controllers\HighChartsControl.ascx" />
     <Content Include="Dashboard\Controllers\WebUserControl1.ascx" />
     <Content Include="Dashboard\HighCharts\exporting.js" />
@@ -1010,6 +1012,13 @@
     <Compile Include="Dashboard\Admin\ClassMembers.aspx.designer.cs">
       <DependentUpon>ClassMembers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Admin\GradeChart.aspx.cs">
+      <DependentUpon>GradeChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\GradeChart.aspx.designer.cs">
+      <DependentUpon>GradeChart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Admin\reportsGrades.aspx.cs">
       <DependentUpon>reportsGrades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1044,6 +1053,13 @@
     </Compile>
     <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.designer.cs">
       <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\GradeChart.ascx.cs">
+      <DependentUpon>GradeChart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\GradeChart.ascx.designer.cs">
+      <DependentUpon>GradeChart.ascx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Controllers\HighChartsControl.ascx.cs">
       <DependentUpon>HighChartsControl.ascx</DependentUpon>

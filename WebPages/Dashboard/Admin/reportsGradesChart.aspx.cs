@@ -11,7 +11,8 @@ namespace WebPages.Dashboard.Admin
 {
     public partial class reportsGradesChart : System.Web.UI.Page
     {
-        string id = "";
+        private string id = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             id = Request.QueryString["GradeID"];
@@ -20,7 +21,6 @@ namespace WebPages.Dashboard.Admin
                 fillDropDownList();
                 setLabels(ddlYear.SelectedItem.Text.ToString());
                 setGrid(ddlYear.SelectedItem.Text.ToString());
-
             }
         }
 
@@ -56,7 +56,6 @@ namespace WebPages.Dashboard.Admin
 
         protected void gvClasses_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
         }
 
         protected void ddlYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,6 +63,11 @@ namespace WebPages.Dashboard.Admin
             setLabels(ddlYear.SelectedValue.ToString());
             setGrid(ddlYear.SelectedValue.ToString());
             //Page_Load(null, null);
+        }
+
+        protected void btnViewAll_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("http://localhost:4911/Dashboard/Admin/GradeChart.aspx");
         }
     }
 }

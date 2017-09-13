@@ -55,6 +55,9 @@
         <EntityTypeShape EntityType="SchoolDBModel.Field" Width="1.5" PointX="0.75" PointY="4.875" />
         <EntityTypeShape EntityType="SchoolDBModel.vbarnameHaftegi" Width="1.5" PointX="16.75" PointY="17.75" />
         <AssociationConnector Association="SchoolDBModel.FK_StuRegister_Fields" />
+        <EntityTypeShape EntityType="SchoolDBModel.Month" Width="1.5" PointX="18.375" PointY="8.75" />
+        <EntityTypeShape EntityType="SchoolDBModel.vAvgPerMonth" Width="1.5" PointX="18.375" PointY="11.75" />
+        <EntityTypeShape EntityType="SchoolDBModel.vAvgStudentPerMonth" Width="1.5" PointX="13.375" PointY="18.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
