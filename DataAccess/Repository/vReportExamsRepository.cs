@@ -57,11 +57,11 @@ namespace DataAccess.Repository
 
         public int ExamCountByLGID(int id, int katbiOrShafahi)
         {
-
             var v = db.vReportExams.Where(p => p.LGID == id).Where(p => p.ExamType == katbiOrShafahi).Select(p => p.SessionID);
             List<int?> l = v.ToList();
             return l.Distinct().Count();
         }
+
         public DataTable topStudentsAverageByLGID(int id)
         {
             //var query =
@@ -94,7 +94,6 @@ namespace DataAccess.Repository
             DataTable dtResult = new DataTable();
             myDataAdapter.Fill(dtResult);
 
-
             return dtResult;
         }
 
@@ -116,6 +115,35 @@ namespace DataAccess.Repository
             DataTable dtResult = new DataTable();
             myDataAdapter.Fill(dtResult);
             return dtResult;
+        }
+
+        public List<decimal?> GetAvgOfClassPerMonth(string cls)
+        {
+            List<decimal?> result = new List<decimal?>();
+
+            SchoolDBEntities sd = conn.GetContext();
+            IQueryable<decimal?> pl =
+                from r in sd.vAvgPerMonths
+                where r.Class == cls
+                orderby r.ID
+                select r.miangin;
+
+            result = pl.ToList();
+            return result;
+        }
+
+        public List<string> GetMonthForChart(string cls)
+        {
+            List<string> result = new List<string>();
+
+            SchoolDBEntities sd = conn.GetContext();
+            IQueryable<string> pl =
+                from r in sd.vAvgPerMonths
+                where r.Class == cls
+                orderby r.ID
+                select r.mnth;
+            result = pl.ToList();
+            return result;
         }
 
         public List<decimal?> getStudentNomreByStuCode(string id, int examType, int lgid)

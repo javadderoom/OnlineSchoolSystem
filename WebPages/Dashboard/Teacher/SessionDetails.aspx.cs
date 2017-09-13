@@ -30,9 +30,10 @@ namespace WebPages.Dashboard.Teacher
         {
             try
             {
-                if (!(string.IsNullOrEmpty(Request.QueryString["SessionId"])))
+                if (Session["SessionIdForSessionDetails"] != null)
                 {
-                    id = Convert.ToInt32(Request.QueryString["SessionId"]);
+                    id = Convert.ToInt32(Session["SessionIdForSessionDetails"].ToString());
+                    Session.Remove("SessionIdForSessionDetails");
                     Sessoin session = sr.GetSessionsBySessionID(id);
                     SessionNumber.Text = session.SessionNum.ToString();
 
@@ -50,13 +51,16 @@ namespace WebPages.Dashboard.Teacher
                         int ozvID = row.Cells[0].Text.ToInt();
                         row.Cells[4].Text = nr.GetNomreBySessionIDandOzviatID(id, ozvID);
                         row.Cells[5].Text = ((bool)(pr.GetPreseceBySessionIDandOzviatID(id, ozvID))).ToString();
-                        row.Cells[6].Text = ((bool)(pr.GetisMovajjahBySessionIDandOzviatID(id, ozvID))).ToString();
-                        row.Cells[7].Text = pr.GetDescriptionBySessionIDandOzviatID(id, ozvID);
+                        if (pr.GetPreseceBySessionIDandOzviatID(id, ozvID) == false)
+                        {
+                            row.Cells[6].Text = ((bool)(pr.GetisMovajjahBySessionIDandOzviatID(id, ozvID))).ToString();
+                            row.Cells[7].Text = pr.GetDescriptionBySessionIDandOzviatID(id, ozvID);
+                        }
                     }
                 }
                 else
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Admin/News.aspx'", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('شما با آدرس اشتباه وارد شده اید ! ');window.location ='http://localhost:4911/Dashboard/Teacher/News.aspx'", true);
                 }
             }
             catch (Exception e)

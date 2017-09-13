@@ -42,7 +42,6 @@ namespace DataAccess
         public DbSet<Student> Students { get; set; }
         public DbSet<StuRegister> StuRegisters { get; set; }
         public DbSet<Tamarin> Tamarins { get; set; }
-        public DbSet<vbarnameHaftegi> vbarnameHaftegis { get; set; }
         public DbSet<vJavabeTamrin> vJavabeTamrins { get; set; }
         public DbSet<vJTamrin> vJTamrins { get; set; }
         public DbSet<vLessonGroup> vLessonGroups { get; set; }
@@ -55,5 +54,10 @@ namespace DataAccess
         public DbSet<vStudent> vStudents { get; set; }
         public DbSet<vStudentsInfo> vStudentsInfoes { get; set; }
         public DbSet<vTamrin> vTamrins { get; set; }
+        public DbSet<Field> Fields { get; set; }
+        public DbSet<vbarnameHaftegi> vbarnameHaftegis { get; set; }
+        public DbSet<Month> Months { get; set; }
+        public DbSet<vAvgPerMonth> vAvgPerMonths { get; set; }
+        public DbSet<vAvgStudentPerMonth> vAvgStudentPerMonths { get; set; }
     }
 }

@@ -62,7 +62,7 @@
                             <ul class="nav-pills nav-stacked" style="list-style-type: none; display: block;">
                                 <li>
 
-                                    <a href="http://localhost:4911/Dashboard/Admin/AddNews.aspx" class="a-properties sub-menu">
+                                    <a href="http://localhost:4911/Dashboard/Admin/TeacherAddNews.aspx" class="a-properties sub-menu">
                                         <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
                                         <asp:Literal runat="server" Text="<%$ Resources:Dashboard,AddNews%>" />
                                         <span class="fa-stack fa-lg pull-left"></span>
@@ -70,7 +70,7 @@
                                 </li>
                                 <li>
 
-                                    <a href="http://localhost:4911/Dashboard/Admin/News.aspx" class="a-properties sub-menu">
+                                    <a href="http://localhost:4911/Dashboard/Teacher/TeacherNews.aspx" class="a-properties sub-menu">
                                         <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
                                         <asp:Literal runat="server" Text="<%$ Resources:Dashboard,news%>" />
                                         <span class="fa-stack fa-lg pull-left"></span>

@@ -48,6 +48,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="FarsiLibrary.Resources">
+      <HintPath>D:\Multi media\Work\IT-Bonyad Training\Web Design Training_Yousefifard\Session-07-p1-p2\Persian-Calendar\FarsiLibrary.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Utils">
+      <HintPath>D:\Multi media\Work\IT-Bonyad Training\Web Design Training_Yousefifard\Session-07-p1-p2\Persian-Calendar\FarsiLibrary.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Win">
+      <HintPath>D:\Multi media\Work\IT-Bonyad Training\Web Design Training_Yousefifard\Session-07-p1-p2\Persian-Calendar\FarsiLibrary.Win.dll</HintPath>
+    </Reference>
     <Reference Include="Highcharts.Web.Mvc, Version=5.0.6455.11724, Culture=neutral, PublicKeyToken=90b74bd27a557bd3, processorArchitecture=MSIL">
       <HintPath>..\packages\Highsoft.Highcharts.5.0.6455.11724\lib\net40\Highcharts.Web.Mvc.dll</HintPath>
       <Private>True</Private>
@@ -65,6 +74,9 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="PersianCalander">
+      <HintPath>D:\Multi media\Work\IT-Bonyad Training\Web Design Training_Yousefifard\Session-07-p1-p2\Persian-Calendar\PersianCalander.dll</HintPath>
     </Reference>
     <Reference Include="PrintControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -105,8 +117,66 @@
     <Reference Include="Telerik.Reporting.Services.WebApi, Version=11.1.17.614, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
     <Reference Include="Telerik.Reporting.XpsRendering, Version=11.1.17.614, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
     <Reference Include="Telerik.ReportViewer.Html5.WebForms, Version=11.1.17.614, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="WebCalendar">
+      <HintPath>D:\Multi media\Work\IT-Bonyad Training\Web Design Training_Yousefifard\Session-07-p1-p2\Persian-Calendar\WebCalendar.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\Common.dll" />
+    <Content Include="bin\Common.pdb" />
+    <Content Include="bin\DataAccess.dll" />
+    <Content Include="bin\DataAccess.pdb" />
+    <Content Include="bin\de\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\es\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\fr\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Highcharts.Web.Mvc.dll" />
+    <Content Include="bin\Highcharts.Web.Mvc.xml" />
+    <Content Include="bin\it\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\ja\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\ko\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="bin\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\PrintControl.dll" />
+    <Content Include="bin\pt\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\ru\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="bin\Telerik.Reporting.dll" />
+    <Content Include="bin\Telerik.Reporting.pdb" />
+    <Content Include="bin\Telerik.Reporting.Services.WebApi.dll" />
+    <Content Include="bin\Telerik.Reporting.Services.WebApi.pdb" />
+    <Content Include="bin\Telerik.Reporting.Services.WebApi.xml" />
+    <Content Include="bin\Telerik.Reporting.xml" />
+    <Content Include="bin\Telerik.Reporting.XpsRendering.dll" />
+    <Content Include="bin\Telerik.Reporting.XpsRendering.pdb" />
+    <Content Include="bin\Telerik.Reporting.XpsRendering.xml" />
+    <Content Include="bin\Telerik.ReportViewer.Html5.WebForms.dll" />
+    <Content Include="bin\Telerik.ReportViewer.Html5.WebForms.pdb" />
+    <Content Include="bin\Telerik.ReportViewer.Html5.WebForms.xml" />
+    <Content Include="bin\WebPages.dll" />
+    <Content Include="bin\WebPages.pdb" />
+    <Content Include="bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll" />
+    <Content Include="bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll" />
     <Content Include="Controllers\HighChartsControl.ascx" />
     <Content Include="Dashboard\Admin\AddEmployee.aspx" />
     <Content Include="Dashboard\Admin\AddLesson.aspx" />
@@ -662,13 +732,16 @@
     <Content Include="Dashboard\Admin\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="Dashboard\Admin\ckeditor\styles.js" />
     <Content Include="Dashboard\Admin\ClassMembers.aspx" />
+    <Content Include="Dashboard\Admin\GradeChart.aspx" />
     <Content Include="Dashboard\Admin\reportsGrades.aspx" />
     <Content Include="Dashboard\Admin\reportsGradesChart.aspx" />
     <Content Include="Dashboard\Admin\reportsLessonGroupsChart.aspx" />
     <Content Include="Dashboard\Admin\reportsStudents.aspx" />
     <Content Include="Dashboard\Admin\reportsStudentsChart.aspx" />
+    <Content Include="Dashboard\Controllers\GradeChart.ascx" />
     <Content Include="Dashboard\Controllers\HighChartsControl.ascx" />
     <Content Include="Dashboard\Controllers\WebUserControl1.ascx" />
+    <Content Include="Dashboard\HighCharts\exporting.js" />
     <Content Include="Dashboard\Teacher\ClassStudents.aspx" />
     <Content Include="Dashboard\Admin\EditKartabl.aspx" />
     <Content Include="Dashboard\Admin\EditLessonGroup.aspx" />
@@ -688,7 +761,6 @@
     <Content Include="Dashboard\Teacher\SessionHistory.aspx" />
     <Content Include="Dashboard\Admin\Students.aspx" />
     <Content Include="Dashboard\Admin\studentsPayment.aspx" />
-    <Content Include="Dashboard\Admin\test.aspx" />
     <Content Include="Dashboard\Charts.aspx" />
     <Content Include="Dashboard\ClassScores.aspx" />
     <Content Include="Dashboard\Dashboard.aspx" />
@@ -722,6 +794,7 @@
     <Content Include="Dashboard\Styles\simple-sidebar.css" />
     <Content Include="Dashboard\Teacher\ClassManagment.aspx" />
     <Content Include="Dashboard\Teacher\TeacherKartabl.aspx" />
+    <Content Include="Dashboard\Teacher\TeacherNews.aspx" />
     <Content Include="Dashboard\Teacher\TeacherPass.aspx" />
     <Content Include="Dashboard\Teacher\TeacherPicture.aspx" />
     <Content Include="Dashboard\WeeklySchedule.aspx" />
@@ -838,6 +911,10 @@
     <Content Include="Dashboard\Admin\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Dashboard\Admin\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Dashboard\Teacher\TeacherPanel.Master" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\WebPages.dll.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -935,6 +1012,13 @@
     <Compile Include="Dashboard\Admin\ClassMembers.aspx.designer.cs">
       <DependentUpon>ClassMembers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Admin\GradeChart.aspx.cs">
+      <DependentUpon>GradeChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\GradeChart.aspx.designer.cs">
+      <DependentUpon>GradeChart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Admin\reportsGrades.aspx.cs">
       <DependentUpon>reportsGrades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -969,6 +1053,13 @@
     </Compile>
     <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.designer.cs">
       <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\GradeChart.ascx.cs">
+      <DependentUpon>GradeChart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Controllers\GradeChart.ascx.designer.cs">
+      <DependentUpon>GradeChart.ascx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Controllers\HighChartsControl.ascx.cs">
       <DependentUpon>HighChartsControl.ascx</DependentUpon>
@@ -1117,13 +1208,6 @@
     <Compile Include="Dashboard\Admin\studentsPayment.aspx.designer.cs">
       <DependentUpon>studentsPayment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\Admin\test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Dashboard\Admin\test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Dashboard\Charts.aspx.cs">
       <DependentUpon>Charts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1236,6 +1320,13 @@
     <Compile Include="Dashboard\Teacher\TeacherKartabl.aspx.designer.cs">
       <DependentUpon>TeacherKartabl.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherNews.aspx.cs">
+      <DependentUpon>TeacherNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Teacher\TeacherNews.aspx.designer.cs">
+      <DependentUpon>TeacherNews.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Teacher\TeacherPanel.Master.cs">
       <DependentUpon>TeacherPanel.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1294,9 +1385,6 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>HamoonResource.Designer.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

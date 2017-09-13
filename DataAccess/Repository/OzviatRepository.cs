@@ -29,6 +29,14 @@ namespace DataAccess.Repository
             return result;
         }
 
+        //public List<int> GetOzviatListByStudentCode(string stu)
+        //{
+        //    List<int> result = new List<int>();
+        //    SchoolDBEntities sd = conn.GetContext();
+        //    IEnumerable<int> ie =
+        //        from r in sd.oz
+        //    return result;
+        //}
         public DataTable FindByLGID(int lgid)
         {
             List<vOzviat> result = new List<vOzviat>();

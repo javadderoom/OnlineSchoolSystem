@@ -118,13 +118,15 @@ namespace WebPages.Dashboard.Admin
 
         protected void gvEmployees_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int index = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "Details")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
 
-            GridViewRow row = gvLessonGroups.Rows[index];
+                GridViewRow row = gvLessonGroups.Rows[index];
 
-            string id = row.Cells[0].Text;
-            Response.Redirect("http://localhost:4911/Dashboard/Admin/reportsLessonGroupsChart.aspx?LGID=" + row.Cells[0].Text);
-
+                string id = row.Cells[0].Text;
+                Response.Redirect("http://localhost:4911/Dashboard/Admin/reportsLessonGroupsChart.aspx?LGID=" + row.Cells[0].Text);
+            }
         }
 
         protected void gvEmployees_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,5 +141,10 @@ namespace WebPages.Dashboard.Admin
         {
         }
 
+        protected void gvLessonGroups_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvLessonGroups.PageIndex = e.NewPageIndex;
+            LoadLessonGroups();
+        }
     }
 }

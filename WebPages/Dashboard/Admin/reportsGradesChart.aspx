@@ -67,8 +67,6 @@
                 <br />
                 <span runat="server" id="lblmianginshafahi" class="control-label formLabel" style="color: #0066CC; font-size: 100%; font-weight: bold;"></span>
             </div>
-
-
         </div>
     </div>
     <div class="ln_solid"></div>
@@ -87,7 +85,6 @@
                     <asp:BoundField DataField="Class" HeaderText="کلاس" />
                     <asp:BoundField DataField="avgNomre" HeaderText=" میانگین نمرات" />
 
-
                     <asp:TemplateField>
                         <ItemTemplate>
 
@@ -103,9 +100,6 @@
 
                             <asp:CheckBox ID="GVchk" runat="server" AutoPostBack="false" OnCheckedChanged="GVchk_CheckedChanged" />--%>
                         </ItemTemplate>
-
-
-
                     </asp:TemplateField>
                 </Columns>
 
@@ -122,7 +116,7 @@
     </asp:UpdatePanel>
     <div class="row">
         <div class="col-md-5 col-md-push-7 col-xs-6 col-xs-push-6">
-            <button type="button" id="btnViewAll" class="btn btn-auto-h btn-info goRight" runat="server" style="margin-right: 5px;" onserverclick="btnShowAll_Click">
+            <button type="button" id="btnViewAll" class="btn btn-auto-h btn-info goRight" runat="server" onserverclick="btnViewAll_ServerClick" style="margin-right: 5px;">
                 <asp:Literal runat="server" Text="گزارشات نموداری" />
                 <span class="fa fa-list"></span>
             </button>
