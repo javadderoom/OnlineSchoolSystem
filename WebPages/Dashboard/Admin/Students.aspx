@@ -323,5 +323,4 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 
-    <script src="../JavaScript/JavaScript.js"></script>
 </asp:Content>
