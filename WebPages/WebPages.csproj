@@ -742,6 +742,8 @@
     <Content Include="Dashboard\Controllers\HighChartsControl.ascx" />
     <Content Include="Dashboard\Controllers\WebUserControl1.ascx" />
     <Content Include="Dashboard\HighCharts\exporting.js" />
+    <Content Include="Dashboard\Images\lionLogo.jpg" />
+    <Content Include="Dashboard\Images\printlogo.png" />
     <Content Include="Dashboard\Teacher\ClassStudents.aspx" />
     <Content Include="Dashboard\Admin\EditKartabl.aspx" />
     <Content Include="Dashboard\Admin\EditLessonGroup.aspx" />
