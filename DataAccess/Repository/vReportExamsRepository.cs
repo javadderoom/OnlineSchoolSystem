@@ -132,6 +132,49 @@ namespace DataAccess.Repository
             return result;
         }
 
+        public List<decimal?> GetAvgOfStudentPerMonth(string stu)
+        {
+            List<decimal?> result = new List<decimal?>();
+
+            SchoolDBEntities sd = conn.GetContext();
+            IQueryable<decimal?> pl =
+                from r in sd.vAvgStudentPerMonths
+                where r.StudentCode == stu
+                orderby r.ID
+                select r.AvgNomre;
+
+            result = pl.ToList();
+            return result;
+        }
+
+        public List<string> GetClassMonthForChart(string cls)
+        {
+            List<string> result = new List<string>();
+
+            SchoolDBEntities sd = conn.GetContext();
+            IQueryable<string> pl =
+                from r in sd.vAvgPerMonths
+                where r.Class == cls
+                orderby r.ID
+                select r.mnth;
+            result = pl.ToList();
+            return result;
+        }
+
+        public List<string> GetStudentMonthForChart(string stu)
+        {
+            List<string> result = new List<string>();
+
+            SchoolDBEntities sd = conn.GetContext();
+            IQueryable<string> pl =
+                from r in sd.vAvgStudentPerMonths
+                where r.StudentCode == stu
+                orderby r.ID
+                select r.mnth;
+            result = pl.ToList();
+            return result;
+        }
+
         public List<string> GetMonthForChart(string cls)
         {
             List<string> result = new List<string>();

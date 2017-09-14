@@ -4,18 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebPages.Dashboard.Controllers;
 using Common;
 
 namespace WebPages.Dashboard.Admin
 {
-    public partial class GradeChart : System.Web.UI.Page
+    public partial class ClassChart : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id = Request.QueryString["GradeID"];
-            int b = id.ToInt();
-            GradeChartController.grade = b;
+            string id = Request.QueryString["LGID"];
+            ClassChartt.lgid = id.ToInt();
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GradeChart.aspx.cs" Inherits="WebPages.Dashboard.Admin.GradeChart" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClassChart.aspx.cs" Inherits="WebPages.Dashboard.Admin.ClassChart" %>
 
-<%@ Register Src="~/Controllers/GradeChartController.ascx" TagPrefix="hc" TagName="GradeChartController" %>
+<%@ Register Src="~/Controllers/ClassChartt.ascx" TagPrefix="hc" TagName="ClassChartt" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <hc:GradeChartController runat="server" id="GradeChartController" />
+            <hc:ClassChartt runat="server" ID="ClassChartt" />
         </div>
     </form>
 </body>
