@@ -4,34 +4,25 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link href="../Styles/bootstrap.css" rel="stylesheet" />
+    <link href="../Styles/MdBootstrapPersianDateTimePicker/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Styles/MdBootstrapPersianDateTimePicker/bootstrap-theme.css" rel="stylesheet" />
+
+    <%--<link href="../Styles/bootstrap.css" rel="stylesheet" />--%>
     <link href="../Styles/simple-sidebar.css" rel="stylesheet" />
     <script src="../JavaScript/custom.min.js"></script>
     <link href="../Styles/AdminPanelStyles.css" rel="stylesheet" />
     <link href="../font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="../Styles/jquery-ui-1.8.14.css" rel="stylesheet" />
-    <script src="../JavaScript/jquery-1.6.2.min.js"></script>
-    <script src="../JavaScript/jquery.ui.datepicker-cc.all.min.js"></script>
+
+
+
+    <link href="../Styles/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.css" rel="stylesheet" />
+
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script>
-        $(function () {
 
-            //-----------------------------------
-            // استفاده از dropdown
-            $('#ContentPlaceHolder1_tbxSessionDate').datepicker({
-                changeMonth: true,
-                changeYear: true,
-                dateFormat: 'dd - mm - yy'
-            });
-            //-----------------------------------
-
-
-        });
-    </script>
     <div class="c-title">
+
         <h4>
 
             <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,NewSession%>" />
@@ -47,8 +38,14 @@
                                 <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,SessionDate%>" /></span>
                             <span class="fa fa-arrow-circle-down"></span>
                             <br />
-                            <span runat="server" id="Span2" class="control-label formLabel" style="color: #0066CC; font-size: 100%; font-weight: bold;">
-                                <asp:TextBox ID="tbxSessionDate" runat="server"></asp:TextBox></span>
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <asp:TextBox ID="txtStartDate" ClientIDMode="Static" runat="server" CssClass="m-wrap span12 date form_datetime form-control" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#txtStartDate" data-groupid="group1" data-todate="true" data-enabletimepicker="false" data-placement="bottom"></asp:TextBox>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="col-xs-12 col-sm-2 text-right dirRight goLeft">
                             <span id="ContentPlaceHolder1_Label5" class="control-label formLabel" style="color: #666666; font-size: 100%; font-weight: bold;">
