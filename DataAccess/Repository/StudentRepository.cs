@@ -55,6 +55,7 @@ namespace DataAccess.Repository
             myConnection.Close();
 
             return cnt;
+            //////
         }
 
         public DataTable getStudentAverageGroupByLGIDByStuCode(int id)
