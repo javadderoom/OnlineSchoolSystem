@@ -22,7 +22,7 @@
     <br />
     <div class="form-group">
         <div class="row">
-            <asp:Button ID="Button1" runat="server" Text="Button" />
+
             <div class="col-xs-12 col-sm-3  text-right dirRight goLeft" style="float: right">
                 <span id="iili" class="control-label formLabel" style="color: #666666; font-size: 100%; font-weight: bold;">
                     <asp:Literal runat="server" Text="<%$ Resources:sasanRes,StuCode%>" />
