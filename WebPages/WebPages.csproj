@@ -180,6 +180,7 @@
     <Content Include="Controllers\ClassChartt.ascx" />
     <Content Include="Controllers\GradeChartController.ascx" />
     <Content Include="Controllers\HighChartsControl.ascx" />
+    <Content Include="Controllers\StudentChartController.ascx" />
     <Content Include="Dashboard\Admin\AddEmployee.aspx" />
     <Content Include="Dashboard\Admin\AddLesson.aspx" />
     <Content Include="Dashboard\Admin\AddLessonGroup.aspx" />
@@ -992,6 +993,13 @@
       <DependentUpon>HighChartsControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\StudentChartController.ascx.cs">
+      <DependentUpon>StudentChartController.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controllers\StudentChartController.ascx.designer.cs">
+      <DependentUpon>StudentChartController.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Admin\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
