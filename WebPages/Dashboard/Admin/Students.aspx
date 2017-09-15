@@ -11,35 +11,6 @@
     <script src="../JavaScript/custom.min.js"></script>
     <link href="../Styles/AdminPanelStyles.css" rel="stylesheet" />
     <link href="../font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
-    <script>
-        function printGrid(printdiv, gvID, gvCellToDelete) {
-
-            var headstr = "<html><head><title></title></head><body>";
-            var footstr = "</body>";
-            var logostr = '<div style="width: 100%; margin: 10px;padding:10px; text-align: center; height: 60px;"><div class="pull-right"> : شماره ثبت<br /> : تاریخ</div><div>به نام خدا<br />مدرسه هوشمند</div><div class="pull-left" style="text-align:center;padding-bottom:50px;">موارد مورد نیاز دیگر</div></div>';
-
-            var newstr = document.all.item(printdiv).innerHTML;
-            var oldstr = document.body.innerHTML;
-            document.body.innerHTML = headstr + logostr + newstr + footstr;
-
-            var rows = document.getElementById(gvID).rows;
-            for (var i = 0; i < rows.length; i++) {
-                if (gvCellToDelete != n)
-                { rows[i].deleteCell(gvCellToDelete); }
-
-            }
-
-            window.print();
-            document.body.innerHTML = oldstr;
-
-            $('#modalShowDetails').modal('hide');
-            $('body').removeClass('modal-open');
-            $('.modal-backdrop').remove();
-            $('.fade').remove();
-
-            return true;
-        }
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="c-title">

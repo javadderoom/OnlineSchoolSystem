@@ -58,10 +58,10 @@ namespace WebPages.Dashboard.Teacher
             }
             else
             {
-                if (tbxSessionDate.Text == "")
-                {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('لطفا تاریخ را وارد کنید! ');", true);
-                }
+                //if (toDate1.Value == "")
+                //{
+                //    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('لطفا تاریخ را وارد کنید! ');", true);
+                //}
             }
         }
 
@@ -88,7 +88,7 @@ namespace WebPages.Dashboard.Teacher
                         id = Convert.ToInt32(Session["LGIDforSessionHistory"].ToString());
                         ///////////////// Save session ////////////////
                         Sessoin newSes = new Sessoin();
-                        newSes.Date = tbxSessionDate.Text;
+                        //newSes.Date = toDate1.Value;
                         newSes.LGID = id;
                         SessionRepository sRep = new SessionRepository();
                         newSes.SessionNum = sRep.CountSessionsByLGID(id).ToInt();
@@ -104,7 +104,7 @@ namespace WebPages.Dashboard.Teacher
                             nomre.OzviatID = ozviatid;
                             int lastSession = sRep.FindLastSessionID();
                             nomre.SessionID = lastSession;
-                            nomre.Date = tbxSessionDate.Text;
+
                             nomre.Nomre = (row.FindControl("Score") as TextBox).Text;
                             vNomratRepository nomreRep = new vNomratRepository();
                             nomreRep.SaveNomre(nomre);
@@ -112,7 +112,7 @@ namespace WebPages.Dashboard.Teacher
                             Presence presence = new Presence();
                             presence.OzviatID = ozviatid;
                             presence.SessionID = sRep.FindLastSessionID();
-                            presence.Date = tbxSessionDate.Text;
+
                             presence.Status = (row.FindControl("RowChB") as CheckBox).Checked;
                             presence.isMovajjah = (row.FindControl("RowChB2") as CheckBox).Checked;
                             presence.Description = (row.FindControl("DescriptionTbx") as TextBox).Text.ToString();
