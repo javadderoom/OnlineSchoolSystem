@@ -385,6 +385,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نام و نام خانوادگی.
+        /// </summary>
+        internal static string fullName {
+            get {
+                return ResourceManager.GetString("fullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to پایه تحصیلی.
         /// </summary>
         internal static string GradeTitle {

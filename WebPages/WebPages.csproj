@@ -740,7 +740,7 @@
     <Content Include="Dashboard\Admin\reportsGradesChart.aspx" />
     <Content Include="Dashboard\Admin\reportsLessonGroupsChart.aspx" />
     <Content Include="Dashboard\Admin\reportsStudents.aspx" />
-    <Content Include="Dashboard\Admin\reportsStudentsChart.aspx" />
+    <Content Include="Dashboard\Admin\ReportStudentsChart.aspx" />
     <Content Include="Dashboard\Admin\WebForm1.aspx" />
     <Content Include="Dashboard\Controllers\GradeChart.ascx" />
     <Content Include="Dashboard\Controllers\HighChartsControl.ascx" />
@@ -1090,12 +1090,12 @@
     <Compile Include="Dashboard\Admin\reportsStudents.aspx.designer.cs">
       <DependentUpon>reportsStudents.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.cs">
-      <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
+    <Compile Include="Dashboard\Admin\ReportStudentsChart.aspx.cs">
+      <DependentUpon>ReportStudentsChart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Dashboard\Admin\reportsStudentsChart.aspx.designer.cs">
-      <DependentUpon>reportsStudentsChart.aspx</DependentUpon>
+    <Compile Include="Dashboard\Admin\ReportStudentsChart.aspx.designer.cs">
+      <DependentUpon>ReportStudentsChart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

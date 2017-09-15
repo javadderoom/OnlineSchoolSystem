@@ -11,7 +11,35 @@
     <script src="../JavaScript/custom.min.js"></script>
     <link href="../Styles/AdminPanelStyles.css" rel="stylesheet" />
     <link href="../font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script>
+        function printGrid(printdiv, gvID, gvCellToDelete) {
 
+            var headstr = "<html><head><title></title></head><body>";
+            var footstr = "</body>";
+            var logostr = '<div style="width: 100%; margin: 10px;padding:10px; text-align: center; height: 60px;"><div class="pull-right"> : شماره ثبت<br /> : تاریخ</div><div>به نام خدا<br />مدرسه هوشمند</div><div class="pull-left" style="text-align:center;padding-bottom:50px;">موارد مورد نیاز دیگر</div></div>';
+
+            var newstr = document.all.item(printdiv).innerHTML;
+            var oldstr = document.body.innerHTML;
+            document.body.innerHTML = headstr + logostr + newstr + footstr;
+
+            var rows = document.getElementById(gvID).rows;
+            for (var i = 0; i < rows.length; i++) {
+                if (gvCellToDelete != n)
+                { rows[i].deleteCell(gvCellToDelete); }
+
+            }
+
+            window.print();
+            document.body.innerHTML = oldstr;
+
+            $('#modalShowDetails').modal('hide');
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+            $('.fade').remove();
+
+            return true;
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="c-title">
@@ -39,7 +67,6 @@
             <div class="col-md-4 col-xs-12 text-righ">
                 <asp:Button ID="btnAddStudent" name="btnAdd" class="btn btn-primary" runat="server"
                     Text="<%$ Resources:Dashboard,add_student%>" OnClick="btnAddStudent_Click" />
-
             </div>
             <div class="col-md-4 col-xs-12 text-righ">
                 <div class="input-group">
@@ -303,7 +330,6 @@
                                     <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
                                         <textarea name="ctl00$ContentPlaceHolder1$tbxAddress" rows="2" cols="20" runat="server" id="tbxAddress" class="form-control text-right dirRight"></textarea>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -317,10 +343,8 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
         </ContentTemplate>
     </asp:UpdatePanel>
-
 </asp:Content>

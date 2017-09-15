@@ -6,7 +6,6 @@
 //    $('.pull-right').append(img);
 //};
 function printGrid(printdiv, gvID, gvCellToDelete) {
-
     var headstr = "<html><head><title></title></head><body>";
     var footstr = "</body>";
     var logostr = '<div style="width: 100%; margin: 10px;padding:10px; text-align: center; height: 60px;"><div class="pull-right"> : شماره ثبت<br /> : تاریخ</div><div>به نام خدا<br />مدرسه هوشمند</div><div class="pull-left" style="text-align:center;padding-bottom:50px;">موارد مورد نیاز دیگر</div></div>';
@@ -19,7 +18,6 @@ function printGrid(printdiv, gvID, gvCellToDelete) {
     for (var i = 0; i < rows.length; i++) {
         if (gvCellToDelete != n)
         { rows[i].deleteCell(gvCellToDelete); }
-
     }
 
     window.print();
@@ -33,7 +31,6 @@ function printGrid(printdiv, gvID, gvCellToDelete) {
     return true;
 }
 function printGrid(printdiv, gvID) {
-
     var headstr = "<html><head><title></title></head><body>";
     var footstr = "</body>";
     var logostr = '<div style="width: 100%; margin: 10px;padding:10px; text-align: center; height: 60px;"><div class="pull-right"> : شماره ثبت<br /> : تاریخ</div><div>به نام خدا<br />مدرسه هوشمند</div><div class="pull-left" style="text-align:center;padding-bottom:50px;">موارد مورد نیاز دیگر</div></div>';
@@ -53,7 +50,6 @@ function printGrid(printdiv, gvID) {
     return true;
 }
 function printModal(printdiv) {
-
     var headstr = "<html><head><title></title></head><body>";
     var footstr = "</body>";
     var logostr = '<div style="width: 100%; margin: 10px;padding:10px; text-align: center; height: 60px;"><div class="pull-right"> : شماره ثبت<br /> : تاریخ</div><div>به نام خدا<br />مدرسه هوشمند</div><div class="pull-left" style="text-align:center;padding-bottom:50px;">موارد مورد نیاز دیگر</div></div>';
@@ -61,7 +57,6 @@ function printModal(printdiv) {
     var newstr = document.all.item(printdiv).innerHTML;
     var oldstr = document.body.innerHTML;
     document.body.innerHTML = headstr + logostr + newstr + footstr;
-
 
     window.print();
     document.body.innerHTML = oldstr;

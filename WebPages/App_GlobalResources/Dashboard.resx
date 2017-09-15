@@ -399,4 +399,7 @@
   <data name="Description" xml:space="preserve">
     <value>توضیحات</value>
   </data>
+  <data name="fullName" xml:space="preserve">
+    <value>نام و نام خانوادگی</value>
+  </data>
 </root>
