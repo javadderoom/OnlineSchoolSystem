@@ -742,6 +742,7 @@
     <Content Include="Dashboard\Admin\reportsLessonGroupsChart.aspx" />
     <Content Include="Dashboard\Admin\reportsStudents.aspx" />
     <Content Include="Dashboard\Admin\ReportStudentsChart.aspx" />
+    <Content Include="Dashboard\Admin\StudentChart.aspx" />
     <Content Include="Dashboard\Admin\WebForm1.aspx" />
     <Content Include="Dashboard\Controllers\GradeChart.ascx" />
     <Content Include="Dashboard\Controllers\HighChartsControl.ascx" />
@@ -1104,6 +1105,13 @@
     </Compile>
     <Compile Include="Dashboard\Admin\ReportStudentsChart.aspx.designer.cs">
       <DependentUpon>ReportStudentsChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\StudentChart.aspx.cs">
+      <DependentUpon>StudentChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\StudentChart.aspx.designer.cs">
+      <DependentUpon>StudentChart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

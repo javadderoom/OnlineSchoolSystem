@@ -132,6 +132,21 @@ namespace DataAccess.Repository
             return result;
         }
 
+        public List<decimal?> GetAvgOfLessonsOFStudentPerMonth(string stu)
+        {
+            List<decimal?> result = new List<decimal?>();
+
+            SchoolDBEntities sd = conn.GetContext();
+            IQueryable<decimal?> pl =
+                from r in sd.vAvgStuLessonsPerMonths
+                where r.StudentCode == stu
+                orderby r.ID
+                select r.AvgNomre;
+
+            result = pl.ToList();
+            return result;
+        }
+
         public List<decimal?> GetAvgOfStudentPerMonth(string stu)
         {
             List<decimal?> result = new List<decimal?>();

@@ -59,5 +59,6 @@ namespace DataAccess
         public DbSet<Month> Months { get; set; }
         public DbSet<vAvgPerMonth> vAvgPerMonths { get; set; }
         public DbSet<vAvgStudentPerMonth> vAvgStudentPerMonths { get; set; }
+        public DbSet<vAvgStuLessonsPerMonth> vAvgStuLessonsPerMonths { get; set; }
     }
 }
