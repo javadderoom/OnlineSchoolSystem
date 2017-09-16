@@ -123,6 +123,19 @@ namespace DataAccess.Repository
             return pl;
         }
 
+        public List<string> GetLessonsOfStudent(string stu)
+        {
+            List<string> result = new List<string>();
+            SchoolDBEntities sd = conn.GetContext();
+            IQueryable<string> pl =
+                from r in sd.vAvgStuLessonsPerMonths
+                where r.StudentCode == stu
+                orderby r.ID
+                select r.LessonTitle;
+            result = pl.ToList();
+            return result;
+        }
+
         public List<string> GetStudentCodeOfLessonGroup(int lgid)
         {
             List<string> result = new List<string>();

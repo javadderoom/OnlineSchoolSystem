@@ -56,8 +56,10 @@
         <AssociationConnector Association="SchoolDBModel.FK_PaymentHistory_Students" />
         <AssociationConnector Association="SchoolDBModel.FK_Presence_Sessoins" />
         <AssociationConnector Association="SchoolDBModel.FK_StuRegister_Students" />
+
         <EntityTypeShape EntityType="SchoolDBModel.Karmand" Width="1.5" PointX="19.375" PointY="1" />
         <AssociationConnector Association="SchoolDBModel.FK_LessonGroups_Karmand" />
+
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

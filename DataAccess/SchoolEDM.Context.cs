@@ -58,6 +58,7 @@ namespace DataAccess
         public DbSet<vStudent> vStudents { get; set; }
         public DbSet<vStudentsInfo> vStudentsInfoes { get; set; }
         public DbSet<vTamrin> vTamrins { get; set; }
+
         public DbSet<Karmand> Karmands { get; set; }
     }
 }

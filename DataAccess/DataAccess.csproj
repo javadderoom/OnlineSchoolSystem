@@ -149,6 +149,9 @@
     <Compile Include="vAvgStudentPerMonth.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="vAvgStuLessonsPerMonth.cs">
+      <DependentUpon>SchoolEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="vbarnameHaftegi.cs">
       <DependentUpon>SchoolEDM.tt</DependentUpon>
     </Compile>

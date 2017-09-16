@@ -180,6 +180,7 @@
     <Content Include="Controllers\ClassChartt.ascx" />
     <Content Include="Controllers\GradeChartController.ascx" />
     <Content Include="Controllers\HighChartsControl.ascx" />
+    <Content Include="Controllers\StudentChartController.ascx" />
     <Content Include="Dashboard\Admin\AddEmployee.aspx" />
     <Content Include="Dashboard\Admin\AddLesson.aspx" />
     <Content Include="Dashboard\Admin\AddLessonGroup.aspx" />
@@ -741,6 +742,7 @@
     <Content Include="Dashboard\Admin\reportsLessonGroupsChart.aspx" />
     <Content Include="Dashboard\Admin\reportsStudents.aspx" />
     <Content Include="Dashboard\Admin\ReportStudentsChart.aspx" />
+    <Content Include="Dashboard\Admin\StudentChart.aspx" />
     <Content Include="Dashboard\Admin\WebForm1.aspx" />
     <Content Include="Dashboard\Controllers\GradeChart.ascx" />
     <Content Include="Dashboard\Controllers\HighChartsControl.ascx" />
@@ -982,6 +984,13 @@
       <DependentUpon>HighChartsControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\StudentChartController.ascx.cs">
+      <DependentUpon>StudentChartController.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controllers\StudentChartController.ascx.designer.cs">
+      <DependentUpon>StudentChartController.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Admin\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1086,6 +1095,13 @@
     </Compile>
     <Compile Include="Dashboard\Admin\ReportStudentsChart.aspx.designer.cs">
       <DependentUpon>ReportStudentsChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Admin\StudentChart.aspx.cs">
+      <DependentUpon>StudentChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Admin\StudentChart.aspx.designer.cs">
+      <DependentUpon>StudentChart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Admin\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

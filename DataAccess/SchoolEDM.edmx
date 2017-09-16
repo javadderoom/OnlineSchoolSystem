@@ -272,6 +272,21 @@ warning 6002: The table/view 'SchoolDB.dbo.vAvgStudentPerMonth' does not have a 
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'SchoolDB.dbo.vAvgStuLessonsPerMonth' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vAvgStuLessonsPerMonth">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="LGID" Type="int" />
+          <Property Name="LessonTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="mnth" Type="nvarchar" MaxLength="2" />
+          <Property Name="AvgNomre" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="adad" Type="nvarchar" MaxLength="50" />
+          <Property Name="StudentCode" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'SchoolDB.dbo.vbarnameHaftegi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vbarnameHaftegi">
           <Key>
@@ -863,6 +878,18 @@ FROM [dbo].[vAvgPerMonth] AS [vAvgPerMonth]</DefiningQuery>
 [vAvgStudentPerMonth].[Title] AS [Title]
 FROM [dbo].[vAvgStudentPerMonth] AS [vAvgStudentPerMonth]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vAvgStuLessonsPerMonth" EntityType="Self.vAvgStuLessonsPerMonth" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vAvgStuLessonsPerMonth].[LGID] AS [LGID], 
+[vAvgStuLessonsPerMonth].[LessonTitle] AS [LessonTitle], 
+[vAvgStuLessonsPerMonth].[mnth] AS [mnth], 
+[vAvgStuLessonsPerMonth].[AvgNomre] AS [AvgNomre], 
+[vAvgStuLessonsPerMonth].[ID] AS [ID], 
+[vAvgStuLessonsPerMonth].[Title] AS [Title], 
+[vAvgStuLessonsPerMonth].[adad] AS [adad], 
+[vAvgStuLessonsPerMonth].[StudentCode] AS [StudentCode]
+FROM [dbo].[vAvgStuLessonsPerMonth] AS [vAvgStuLessonsPerMonth]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vbarnameHaftegi" EntityType="Self.vbarnameHaftegi" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [vbarnameHaftegi].[FullName] AS [FullName], 
@@ -1320,6 +1347,12 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             <End Role="Karmand" EntitySet="Karmands" />
             <End Role="LessonGroup" EntitySet="LessonGroups" />
           </AssociationSet>
+
+          <EntitySet Name="Months" EntityType="SchoolDBModel.Month" />
+          <EntitySet Name="vAvgPerMonths" EntityType="SchoolDBModel.vAvgPerMonth" />
+          <EntitySet Name="vAvgStudentPerMonths" EntityType="SchoolDBModel.vAvgStudentPerMonth" />
+          <EntitySet Name="vAvgStuLessonsPerMonths" EntityType="SchoolDBModel.vAvgStuLessonsPerMonth" />
+
         </EntityContainer>
         <EntityType Name="AnjomanOlya">
           <Key>
@@ -2149,6 +2182,49 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+
+        <EntityType Name="Month">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vAvgPerMonth">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mth" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="miangin" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="mnth" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vAvgStudentPerMonth">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="mnth" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AvgNomre" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="vAvgStuLessonsPerMonth">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="LGID" Type="Int32" />
+          <Property Name="LessonTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mnth" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="AvgNomre" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2726,6 +2802,20 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="EID" ColumnName="EID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vAvgStuLessonsPerMonths">
+            <EntityTypeMapping TypeName="SchoolDBModel.vAvgStuLessonsPerMonth">
+              <MappingFragment StoreEntitySet="vAvgStuLessonsPerMonth">
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="adad" ColumnName="adad" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AvgNomre" ColumnName="AvgNomre" />
+                <ScalarProperty Name="mnth" ColumnName="mnth" />
+                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
