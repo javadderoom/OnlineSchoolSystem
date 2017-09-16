@@ -49,8 +49,7 @@
 
                     <div id="ContentPlaceHolder1_upSearch">
 
-                        <input name="ctl00$ContentPlaceHolder1$tbxnameSearch" runat="server" placeholder="نام دانش آموز" type="text" maxlength="50" id="tbxSearch" class="form-control text-right dirRight" />
-                        <input name="ctl00$ContentPlaceHolder1$tbxfamilySearch" runat="server" placeholder="نام خانوادگی دانش آموز" type="text" maxlength="50" id="tbxFamilySearch" class="form-control text-right dirRight" />
+                        <input name="ctl00$ContentPlaceHolder1$tbxnameSearch" runat="server" placeholder="نام یا نام خانوادگی دانش آموز" type="text" maxlength="50" id="tbxSearch" class="form-control text-right dirRight" />
                     </div>
                 </div>
             </div>
@@ -65,7 +64,13 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
 
-                            <asp:GridView ID="gvStudents" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" CssClass="dirRight table" HorizontalAlign="Center" OnRowDataBound="gvStudents_RowDataBound" AllowCustomPaging="True" AllowPaging="True" OnSelectedIndexChanged="gvStudents_SelectedIndexChanged" OnRowEditing="gvStudents_RowEditing" OnRowCommand="gvStudents_RowCommand">
+                            <asp:GridView ID="gvStudents" runat="server"
+                                BackColor="White" BorderColor="#CCCCCC" BorderStyle="None"
+                                BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal"
+                                AutoGenerateColumns="False" CssClass="dirRight table" HorizontalAlign="Center"
+                                OnRowDataBound="gvStudents_RowDataBound" AllowCustomPaging="True" AllowPaging="True"
+                                OnSelectedIndexChanged="gvStudents_SelectedIndexChanged" OnRowEditing="gvStudents_RowEditing"
+                                OnRowCommand="gvStudents_RowCommand">
                                 <Columns>
                                     <asp:BoundField DataField="studentCode" HeaderText="<%$ Resources:Dashboard,shomare_daneshamozi%>" />
                                     <asp:BoundField DataField="FirstName" HeaderText="<%$ Resources:Dashboard,name%>" />
@@ -112,9 +117,9 @@
                     <asp:Literal runat="server" Text="<%$ Resources:Dashboard,ShowAll%>" />
                     <span class="fa fa-list"></span>
                 </button>
-                <input name="b_print" type="button" class="btn btn-primary" onclick="printGrid('gridtoprint', 'ContentPlaceHolder1_gvStudents', 4);" value=" Print " />
+                <input name="b_print" type="button" class="btn btn-primary" onclick="printGrid('gridtoprint', 'ContentPlaceHolder1_gvStudents', 4);" value=" پرینت " />
             </div>
-            <div class="extra" style="height: 100px">
+            <div class="extra" style="height: 100px" dir="rtl">
             </div>
         </div>
     </div>
@@ -235,19 +240,6 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                        <span id="ContentPlaceHolder1_lbl_EmployeePassword" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,Password%>" />
-                                        </span>
-                                    </div>
-
-                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                        <span id="tbxPassword" runat="server" class="form-control control-label formLabel"></span>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="form-group">
                                 <div class="row">
@@ -262,19 +254,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
-                                        <span id="ContentPlaceHolder1_lbl_EmpoyeetType" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                            <asp:Literal runat="server" Text="<%$ Resources:Dashboard,EmployeeType%>" />
-                                        </span>
-                                    </div>
 
-                                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 text-right">
-                                        <span id="tbxEmployeeType" runat="server" class="form-control control-label formLabel"></span>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="form-group">
                                 <div class="row">
@@ -310,7 +290,7 @@
                                     <button type="button" class="btn btn-default " data-dismiss="modal">
                                         <asp:Literal runat="server" Text="<%$ Resources:Dashboard,back%>" />
                                     </button>
-                                    <input name="b_print2" type="button" class="btn btn-primary" data-dismiss="modal" onclick="printModal('divtoprint');" value=" Print " />
+                                    <input name="b_print2" type="button" class="btn btn-primary" data-dismiss="modal" onclick="printModal('divtoprint');" value=" پرینت " />
                                 </div>
                             </div>
                         </div>

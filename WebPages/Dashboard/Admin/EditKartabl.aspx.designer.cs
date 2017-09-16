@@ -49,13 +49,13 @@ namespace WebPages.Dashboard.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblLastName;
         
         /// <summary>
-        /// tbxBirthYear control.
+        /// tbxBirthDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tbxBirthYear;
+        protected global::System.Web.UI.WebControls.TextBox tbxBirthDate;
         
         /// <summary>
         /// tbxFixTel control.

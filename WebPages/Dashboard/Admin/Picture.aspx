@@ -34,15 +34,15 @@
                 <div class="ln_solid"></div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-2 col-sm-push-10 text-right">
-                            <span id="ContentPlaceHolder1_lblCoverPhoto" class="control-label formLabel" style="font-size: 100%; font-weight: bold;">
-                                <asp:Literal runat="server" Text="<%$ Resources:Dashboard,img_file%>" /></span><asp:FileUpload ID="FileUpload1" runat="server" BackColor="#CCCCCC" />
-                        </div>
 
-                        <div class="col-xs-12 col-sm-10 col-sm-pull-2 text-right">
 
-                            <asp:Button ID="btnSabtEditProfile" name="btnSabt" class="btn btn-info" runat="server"
-                                Text="<%$ Resources:Dashboard,select_img%>" OnClick="btnSabtEditProfile_Click" />
+                        <div class="col-xs-12 col-sm-10 col-sm-pull-2 text-right input-group">
+                            <label class="btn btn-info">
+                                &hellip;<asp:Literal runat="server" Text="<%$ Resources:Dashboard,select_img%>" />
+                                <asp:FileUpload ID="FileUpload1" runat="server" accept="image/*" CssClass="displaynone" BackColor="#CCCCCC" />
+
+                            </label>
+
                         </div>
                     </div>
                 </div>

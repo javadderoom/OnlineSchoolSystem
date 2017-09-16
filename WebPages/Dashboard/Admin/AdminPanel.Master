@@ -121,21 +121,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#" class="a-properties ">
-                                <asp:Literal runat="server" Text=" <%$ Resources:Dashboard,ClassManagment%>" /><span class="fa-stack fa-lg pull-left">
 
-                                    <i class="glyphicon glyphicon-education fa-stack-1x " style="float: left;"></i></span>
-                            </a>
-                            <ul class="nav-pills nav-stacked" style="list-style-type: none;">
-                                <li><a href="http://localhost:4911/Dashboard/Admin/ClassManagment.aspx" class="a-properties sub-menu">
-                                    <span class="glyphicon glyphicon-record icon-style" aria-hidden="true"></span>
-                                    <asp:Literal runat="server" Text="<%$ Resources:HamoonResource,ClassList%>" />
-                                    <span class="fa-stack fa-lg pull-left"></span>
-                                </a>
-                                </li>
-                            </ul>
-                        </li>
                         <li class="">
                             <a href="#" class="a-properties ">
                                 <asp:Literal runat="server" Text="<%$ Resources:Dashboard,EmployeesManage%>" /><span class="fa-stack fa-lg pull-left">
@@ -240,12 +226,14 @@
 
         <!-- /#wrapper -->
         <!-- jQuery -->
-
-        <script src="../JavaScript/jquery.min.js"></script>
-        <script src="../JavaScript/bootstrap.min.js"></script>
+        <script src="../JavaScript/MdBootstrapPersianDateTimePicker/jquery.min.js"></script>
+        <script src="../JavaScript/MdBootstrapPersianDateTimePicker/bootstrap.min.js"></script>
         <script src="../JavaScript/custom.min.js"></script>
-        <script src="../JavaScript/JavaScript.js"></script>
         <script src="../JavaScript/sidebar_menu.js"></script>
+        <script src="../JavaScript/JavaScript.js"></script>
+        <script src="../JavaScript/MdBootstrapPersianDateTimePicker/jalaali.js"></script>
+        <script src="../JavaScript/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.js"></script>
+
 
     </form>
 </body>

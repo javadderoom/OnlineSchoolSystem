@@ -17,7 +17,7 @@ namespace WebPages.Dashboard.Admin
             lblFirstName.InnerText = stu.FirstName;
             lblLastName.InnerText = stu.LastName;
 
-            lblBirthYear.InnerText = stu.BirthDate.Substring(0, 4);
+            lblBirthYear.InnerText = stu.BirthDate;
 
             lblFixTel.InnerText = stu.PhoneNumber;
             lblMobile.InnerText = stu.Mobile;
