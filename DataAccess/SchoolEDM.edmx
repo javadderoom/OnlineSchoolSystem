@@ -69,7 +69,7 @@
           <Property Name="EID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-          <Property Name="BirthDate" Type="nvarchar" MaxLength="8" />
+          <Property Name="BirthDate" Type="nvarchar" MaxLength="10" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="12" />
@@ -422,7 +422,6 @@ warning 6002: The table/view 'SchoolDB.dbo.vPresence' does not have a primary ke
         <EntityType Name="vPresence">
           <Key>
             <PropertyRef Name="StudentCode" />
-            <PropertyRef Name="Date" />
           </Key>
           <Property Name="StudentCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
@@ -431,7 +430,7 @@ warning 6002: The table/view 'SchoolDB.dbo.vPresence' does not have a primary ke
           <Property Name="ParentUser" Type="nvarchar" MaxLength="50" />
           <Property Name="ParentPass" Type="nvarchar(max)" />
           <Property Name="Class" Type="nvarchar" MaxLength="50" />
-          <Property Name="Date" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Date" Type="nvarchar" MaxLength="10" />
           <Property Name="Status" Type="bit" />
           <Property Name="LessonTitle" Type="nvarchar" MaxLength="50" />
           <Property Name="Day" Type="int" />
@@ -1213,11 +1212,12 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
         <EntityContainer Name="SchoolDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AnjomanOlyas" EntityType="SchoolDBModel.AnjomanOlya" />
           <EntitySet Name="Fathers" EntityType="SchoolDBModel.Father" />
+          <EntitySet Name="Fields" EntityType="SchoolDBModel.Field" />
           <EntitySet Name="Grades" EntityType="SchoolDBModel.Grade" />
           <EntitySet Name="JavabeTamrins" EntityType="SchoolDBModel.JavabeTamrin" />
-          <EntitySet Name="Karmands" EntityType="SchoolDBModel.Karmand" />
           <EntitySet Name="LessonGroups" EntityType="SchoolDBModel.LessonGroup" />
           <EntitySet Name="Lessons" EntityType="SchoolDBModel.Lesson" />
+          <EntitySet Name="Months" EntityType="SchoolDBModel.Month" />
           <EntitySet Name="Mothers" EntityType="SchoolDBModel.Mother" />
           <EntitySet Name="Nomarats" EntityType="SchoolDBModel.Nomarat" />
           <EntitySet Name="Ozviats" EntityType="SchoolDBModel.Ozviat" />
@@ -1228,6 +1228,9 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <EntitySet Name="Students" EntityType="SchoolDBModel.Student" />
           <EntitySet Name="StuRegisters" EntityType="SchoolDBModel.StuRegister" />
           <EntitySet Name="Tamarins" EntityType="SchoolDBModel.Tamarin" />
+          <EntitySet Name="vAvgPerMonths" EntityType="SchoolDBModel.vAvgPerMonth" />
+          <EntitySet Name="vAvgStudentPerMonths" EntityType="SchoolDBModel.vAvgStudentPerMonth" />
+          <EntitySet Name="vbarnameHaftegis" EntityType="SchoolDBModel.vbarnameHaftegi" />
           <EntitySet Name="vJavabeTamrins" EntityType="SchoolDBModel.vJavabeTamrin" />
           <EntitySet Name="vJTamrins" EntityType="SchoolDBModel.vJTamrin" />
           <EntitySet Name="vLessonGroups" EntityType="SchoolDBModel.vLessonGroup" />
@@ -1244,6 +1247,10 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             <End Role="Father" EntitySet="Fathers" />
             <End Role="Student" EntitySet="Students" />
           </AssociationSet>
+          <AssociationSet Name="FK_StuRegister_Fields" Association="SchoolDBModel.FK_StuRegister_Fields">
+            <End Role="Field" EntitySet="Fields" />
+            <End Role="StuRegister" EntitySet="StuRegisters" />
+          </AssociationSet>
           <AssociationSet Name="FK_LessonGroups_Grades" Association="SchoolDBModel.FK_LessonGroups_Grades">
             <End Role="Grade" EntitySet="Grades" />
             <End Role="LessonGroup" EntitySet="LessonGroups" />
@@ -1259,10 +1266,6 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <AssociationSet Name="FK_JavabeTamrin_Tamarin" Association="SchoolDBModel.FK_JavabeTamrin_Tamarin">
             <End Role="Tamarin" EntitySet="Tamarins" />
             <End Role="JavabeTamrin" EntitySet="JavabeTamrins" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LessonGroups_Karmand" Association="SchoolDBModel.FK_LessonGroups_Karmand">
-            <End Role="Karmand" EntitySet="Karmands" />
-            <End Role="LessonGroup" EntitySet="LessonGroups" />
           </AssociationSet>
           <AssociationSet Name="FK_LessonGroups_Lessons" Association="SchoolDBModel.FK_LessonGroups_Lessons">
             <End Role="Lesson" EntitySet="Lessons" />
@@ -1312,15 +1315,11 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             <End Role="Student" EntitySet="Students" />
             <End Role="StuRegister" EntitySet="StuRegisters" />
           </AssociationSet>
-          <EntitySet Name="Fields" EntityType="SchoolDBModel.Field" />
-          <EntitySet Name="vbarnameHaftegis" EntityType="SchoolDBModel.vbarnameHaftegi" />
-          <AssociationSet Name="FK_StuRegister_Fields" Association="SchoolDBModel.FK_StuRegister_Fields">
-            <End Role="Field" EntitySet="Fields" />
-            <End Role="StuRegister" EntitySet="StuRegisters" />
+          <EntitySet Name="Karmands" EntityType="SchoolDBModel.Karmand" />
+          <AssociationSet Name="FK_LessonGroups_Karmand" Association="SchoolDBModel.FK_LessonGroups_Karmand">
+            <End Role="Karmand" EntitySet="Karmands" />
+            <End Role="LessonGroup" EntitySet="LessonGroups" />
           </AssociationSet>
-          <EntitySet Name="Months" EntityType="SchoolDBModel.Month" />
-          <EntitySet Name="vAvgPerMonths" EntityType="SchoolDBModel.vAvgPerMonth" />
-          <EntitySet Name="vAvgStudentPerMonths" EntityType="SchoolDBModel.vAvgStudentPerMonth" />
         </EntityContainer>
         <EntityType Name="AnjomanOlya">
           <Key>
@@ -1353,6 +1352,14 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Students" Relationship="SchoolDBModel.FK_Students_Fathers" FromRole="Father" ToRole="Student" />
         </EntityType>
+        <EntityType Name="Field">
+          <Key>
+            <PropertyRef Name="FieldID" />
+          </Key>
+          <Property Name="FieldID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FieldTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="StuRegisters" Relationship="SchoolDBModel.FK_StuRegister_Fields" FromRole="Field" ToRole="StuRegister" />
+        </EntityType>
         <EntityType Name="Grade">
           <Key>
             <PropertyRef Name="GradeID" />
@@ -1377,25 +1384,6 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <NavigationProperty Name="Ozviat" Relationship="SchoolDBModel.FK_JavabeTamrin_Ozviat" FromRole="JavabeTamrin" ToRole="Ozviat" />
           <NavigationProperty Name="Tamarin" Relationship="SchoolDBModel.FK_JavabeTamrin_Tamarin" FromRole="JavabeTamrin" ToRole="Tamarin" />
         </EntityType>
-        <EntityType Name="Karmand">
-          <Key>
-            <PropertyRef Name="PersonalCode" />
-          </Key>
-          <Property Name="EID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BirthDate" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
-          <Property Name="PersonalCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UserPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="LessonGroups" Relationship="SchoolDBModel.FK_LessonGroups_Karmand" FromRole="Karmand" ToRole="LessonGroup" />
-        </EntityType>
         <EntityType Name="LessonGroup">
           <Key>
             <PropertyRef Name="LGID" />
@@ -1410,11 +1398,11 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="FieldID" Type="Int32" />
           <Property Name="Year" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Grade" Relationship="SchoolDBModel.FK_LessonGroups_Grades" FromRole="LessonGroup" ToRole="Grade" />
-          <NavigationProperty Name="Karmand" Relationship="SchoolDBModel.FK_LessonGroups_Karmand" FromRole="LessonGroup" ToRole="Karmand" />
           <NavigationProperty Name="Lesson" Relationship="SchoolDBModel.FK_LessonGroups_Lessons" FromRole="LessonGroup" ToRole="Lesson" />
           <NavigationProperty Name="Ozviats" Relationship="SchoolDBModel.FK_Ozviat_LessonGroups" FromRole="LessonGroup" ToRole="Ozviat" />
           <NavigationProperty Name="Sessoins" Relationship="SchoolDBModel.FK_Sessoins_LessonGroups" FromRole="LessonGroup" ToRole="Sessoin" />
           <NavigationProperty Name="Tamarins" Relationship="SchoolDBModel.FK_Tamarin_LessonGroups" FromRole="LessonGroup" ToRole="Tamarin" />
+          <NavigationProperty Name="Karmand" Relationship="SchoolDBModel.FK_LessonGroups_Karmand" FromRole="LessonGroup" ToRole="Karmand" />
         </EntityType>
         <EntityType Name="Lesson">
           <Key>
@@ -1424,6 +1412,14 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="LessonTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Unit" Type="Int32" />
           <NavigationProperty Name="LessonGroups" Relationship="SchoolDBModel.FK_LessonGroups_Lessons" FromRole="Lesson" ToRole="LessonGroup" />
+        </EntityType>
+        <EntityType Name="Month">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Mother">
           <Key>
@@ -1569,9 +1565,9 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="RegGrade" Type="Int32" />
           <Property Name="EduYear" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Student" Relationship="SchoolDBModel.FK_StuRegister_Students" FromRole="StuRegister" ToRole="Student" />
           <Property Name="FieldID" Type="Int32" />
           <NavigationProperty Name="Field" Relationship="SchoolDBModel.FK_StuRegister_Fields" FromRole="StuRegister" ToRole="Field" />
+          <NavigationProperty Name="Student" Relationship="SchoolDBModel.FK_StuRegister_Students" FromRole="StuRegister" ToRole="Student" />
         </EntityType>
         <EntityType Name="Tamarin">
           <Key>
@@ -1585,6 +1581,40 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="JavabeTamrins" Relationship="SchoolDBModel.FK_JavabeTamrin_Tamarin" FromRole="Tamarin" ToRole="JavabeTamrin" />
           <NavigationProperty Name="LessonGroup" Relationship="SchoolDBModel.FK_Tamarin_LessonGroups" FromRole="Tamarin" ToRole="LessonGroup" />
+        </EntityType>
+        <EntityType Name="vAvgPerMonth">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mth" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="miangin" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="mnth" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vAvgStudentPerMonth">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="mnth" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="AvgNomre" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vbarnameHaftegi">
+          <Key>
+            <PropertyRef Name="OzviatID" />
+          </Key>
+          <Property Name="FullName" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Day" Type="Int32" />
+          <Property Name="Time" Type="Int32" />
+          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LessonTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OzviatID" Type="Int32" Nullable="false" />
+          <Property Name="LGID" Type="Int32" />
+          <Property Name="Year" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vJavabeTamrin">
           <Key>
@@ -1707,7 +1737,6 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
         <EntityType Name="vPresence">
           <Key>
             <PropertyRef Name="StudentCode" />
-            <PropertyRef Name="Date" />
           </Key>
           <Property Name="StudentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1716,7 +1745,7 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
           <Property Name="ParentUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ParentPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="LessonTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Day" Type="Int32" />
@@ -1883,6 +1912,18 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_StuRegister_Fields">
+          <End Type="SchoolDBModel.Field" Role="Field" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.StuRegister" Role="StuRegister" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Field">
+              <PropertyRef Name="FieldID" />
+            </Principal>
+            <Dependent Role="StuRegister">
+              <PropertyRef Name="FieldID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_LessonGroups_Grades">
           <End Type="SchoolDBModel.Grade" Role="Grade" Multiplicity="0..1" />
           <End Type="SchoolDBModel.LessonGroup" Role="LessonGroup" Multiplicity="*" />
@@ -1928,18 +1969,6 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             </Principal>
             <Dependent Role="JavabeTamrin">
               <PropertyRef Name="TamrinID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_LessonGroups_Karmand">
-          <End Type="SchoolDBModel.Karmand" Role="Karmand" Multiplicity="0..1" />
-          <End Type="SchoolDBModel.LessonGroup" Role="LessonGroup" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Karmand">
-              <PropertyRef Name="PersonalCode" />
-            </Principal>
-            <Dependent Role="LessonGroup">
-              <PropertyRef Name="TeacherCode" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2089,68 +2118,37 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Field">
+        <EntityType Name="Karmand">
           <Key>
-            <PropertyRef Name="FieldID" />
+            <PropertyRef Name="PersonalCode" />
           </Key>
-          <Property Name="FieldID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FieldTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="StuRegisters" Relationship="SchoolDBModel.FK_StuRegister_Fields" FromRole="Field" ToRole="StuRegister" />
+          <Property Name="EID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="PersonalCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LessonGroups" Relationship="SchoolDBModel.FK_LessonGroups_Karmand" FromRole="Karmand" ToRole="LessonGroup" />
         </EntityType>
-        <EntityType Name="vbarnameHaftegi">
-          <Key>
-            <PropertyRef Name="OzviatID" />
-          </Key>
-          <Property Name="FullName" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
-          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Day" Type="Int32" />
-          <Property Name="Time" Type="Int32" />
-          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="LessonTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="OzviatID" Type="Int32" Nullable="false" />
-          <Property Name="LGID" Type="Int32" />
-          <Property Name="Year" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <Association Name="FK_StuRegister_Fields">
-          <End Type="SchoolDBModel.Field" Role="Field" Multiplicity="0..1" />
-          <End Type="SchoolDBModel.StuRegister" Role="StuRegister" Multiplicity="*" />
+        <Association Name="FK_LessonGroups_Karmand">
+          <End Type="SchoolDBModel.Karmand" Role="Karmand" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.LessonGroup" Role="LessonGroup" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Field">
-              <PropertyRef Name="FieldID" />
+            <Principal Role="Karmand">
+              <PropertyRef Name="PersonalCode" />
             </Principal>
-            <Dependent Role="StuRegister">
-              <PropertyRef Name="FieldID" />
+            <Dependent Role="LessonGroup">
+              <PropertyRef Name="TeacherCode" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Month">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="adad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="vAvgPerMonth">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="mth" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="miangin" Type="Decimal" Precision="38" Scale="6" />
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="mnth" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="vAvgStudentPerMonth">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="StudentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="mnth" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AvgNomre" Type="Decimal" Precision="10" Scale="2" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2189,6 +2187,14 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Fields">
+            <EntityTypeMapping TypeName="SchoolDBModel.Field">
+              <MappingFragment StoreEntitySet="Fields">
+                <ScalarProperty Name="FieldTitle" ColumnName="FieldTitle" />
+                <ScalarProperty Name="FieldID" ColumnName="FieldID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Grades">
             <EntityTypeMapping TypeName="SchoolDBModel.Grade">
               <MappingFragment StoreEntitySet="Grades">
@@ -2208,25 +2214,6 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
                 <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
                 <ScalarProperty Name="TamrinID" ColumnName="TamrinID" />
                 <ScalarProperty Name="JavabID" ColumnName="JavabID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Karmands">
-            <EntityTypeMapping TypeName="SchoolDBModel.Karmand">
-              <MappingFragment StoreEntitySet="Karmand">
-                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-                <ScalarProperty Name="UserPass" ColumnName="UserPass" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="EID" ColumnName="EID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2251,6 +2238,15 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
                 <ScalarProperty Name="Unit" ColumnName="Unit" />
                 <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
                 <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Months">
+            <EntityTypeMapping TypeName="SchoolDBModel.Month">
+              <MappingFragment StoreEntitySet="Months">
+                <ScalarProperty Name="adad" ColumnName="adad" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2398,6 +2394,43 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
                 <ScalarProperty Name="GroupID" ColumnName="GroupID" />
                 <ScalarProperty Name="TamrinTitle" ColumnName="TamrinTitle" />
                 <ScalarProperty Name="TamrinID" ColumnName="TamrinID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vAvgPerMonths">
+            <EntityTypeMapping TypeName="SchoolDBModel.vAvgPerMonth">
+              <MappingFragment StoreEntitySet="vAvgPerMonth">
+                <ScalarProperty Name="mnth" ColumnName="mnth" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="miangin" ColumnName="miangin" />
+                <ScalarProperty Name="mth" ColumnName="mth" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vAvgStudentPerMonths">
+            <EntityTypeMapping TypeName="SchoolDBModel.vAvgStudentPerMonth">
+              <MappingFragment StoreEntitySet="vAvgStudentPerMonth">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AvgNomre" ColumnName="AvgNomre" />
+                <ScalarProperty Name="mnth" ColumnName="mnth" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vbarnameHaftegis">
+            <EntityTypeMapping TypeName="SchoolDBModel.vbarnameHaftegi">
+              <MappingFragment StoreEntitySet="vbarnameHaftegi">
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="LGID" ColumnName="LGID" />
+                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
+                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2677,57 +2710,22 @@ FROM [dbo].[vTamrin] AS [vTamrin]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Fields">
-            <EntityTypeMapping TypeName="SchoolDBModel.Field">
-              <MappingFragment StoreEntitySet="Fields">
-                <ScalarProperty Name="FieldTitle" ColumnName="FieldTitle" />
-                <ScalarProperty Name="FieldID" ColumnName="FieldID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vbarnameHaftegis">
-            <EntityTypeMapping TypeName="SchoolDBModel.vbarnameHaftegi">
-              <MappingFragment StoreEntitySet="vbarnameHaftegi">
-                <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="LGID" ColumnName="LGID" />
-                <ScalarProperty Name="OzviatID" ColumnName="OzviatID" />
-                <ScalarProperty Name="LessonTitle" ColumnName="LessonTitle" />
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Months">
-            <EntityTypeMapping TypeName="SchoolDBModel.Month">
-              <MappingFragment StoreEntitySet="Months">
-                <ScalarProperty Name="adad" ColumnName="adad" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vAvgPerMonths">
-            <EntityTypeMapping TypeName="SchoolDBModel.vAvgPerMonth">
-              <MappingFragment StoreEntitySet="vAvgPerMonth">
-                <ScalarProperty Name="mnth" ColumnName="mnth" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="miangin" ColumnName="miangin" />
-                <ScalarProperty Name="mth" ColumnName="mth" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vAvgStudentPerMonths">
-            <EntityTypeMapping TypeName="SchoolDBModel.vAvgStudentPerMonth">
-              <MappingFragment StoreEntitySet="vAvgStudentPerMonth">
-                <ScalarProperty Name="AvgNomre" ColumnName="AvgNomre" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="mnth" ColumnName="mnth" />
-                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+          <EntitySetMapping Name="Karmands">
+            <EntityTypeMapping TypeName="SchoolDBModel.Karmand">
+              <MappingFragment StoreEntitySet="Karmand">
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

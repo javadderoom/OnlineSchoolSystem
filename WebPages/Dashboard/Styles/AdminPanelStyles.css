@@ -194,3 +194,7 @@ dropdownlist {
         color: #000;
         border: 1px solid #3AC0F2;
     }
+
+.displaynone {
+    display: none !important;
+}

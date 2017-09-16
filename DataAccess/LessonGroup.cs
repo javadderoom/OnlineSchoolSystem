@@ -32,10 +32,10 @@ namespace DataAccess
         public string Year { get; set; }
     
         public virtual Grade Grade { get; set; }
-        public virtual Karmand Karmand { get; set; }
         public virtual Lesson Lesson { get; set; }
         public virtual ICollection<Ozviat> Ozviats { get; set; }
         public virtual ICollection<Sessoin> Sessoins { get; set; }
         public virtual ICollection<Tamarin> Tamarins { get; set; }
+        public virtual Karmand Karmand { get; set; }
     }
 }

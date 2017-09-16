@@ -24,7 +24,7 @@ namespace WebPages.Dashboard.Admin
                 tbxFirstName.Value = lo.FirstName;
                 tbxLastName.Value = lo.LastName;
 
-                tbxBirthYear.Value = lo.BirthDate.Substring(0, 4);
+                tbxBirthDate.Text = lo.BirthDate;
                 tbxIDNumber.Value = lo.NationalCode.ToString();
                 tbxFixTel.Value = lo.PhoneNumber;
                 tbxMobile.Value = lo.MobileNumber;
@@ -69,7 +69,7 @@ namespace WebPages.Dashboard.Admin
                 stu.ParentPass = stuu.ParentPass;
                 stu.FirstName = tbxFirstName.Value;
                 stu.LastName = tbxLastName.Value;
-                stu.BirthDate = string.Format("{0}{1}{2}", tbxBirthYear.Value, stuu.BirthDate.Substring(4, 2), stuu.BirthDate.Substring(6, 2));
+                stu.BirthDate = tbxBirthDate.Text;
                 stu.NationalCode = stuu.NationalCode;
                 stu.PhoneNumber = tbxFixTel.Value;
                 stu.MobileNumber = tbxMobile.Value;

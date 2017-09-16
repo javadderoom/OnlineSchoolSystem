@@ -43,7 +43,7 @@ namespace WebPages.Dashboard.Admin
             {
                 vStudentRepository sr = new vStudentRepository();
 
-                gvStudents.DataSource = sr.FindByFullName(tbxSearch.Value, tbxFamilySearch.Value);
+                gvStudents.DataSource = sr.FindByFullName(tbxSearch.Value);
                 gvStudents.DataBind();
             }
         }
@@ -100,12 +100,12 @@ namespace WebPages.Dashboard.Admin
                     tbxNatinalCode.InnerText = lo.NationalCode;
                     tbxBirthDay.InnerText = string.Format("{0}/{1}/{2}", lo.BirthDate.Substring(0, 4), lo.BirthDate.Substring(4, 2), lo.BirthDate.Substring(6, 2));
                     tbxUserName.InnerText = lo.UserName;
-                    tbxPassword.InnerText = lo.Password;
+
                     tbxFixTel.InnerText = lo.PhoneNumber;
                     tbxMobile.InnerText = lo.MobileNumber;
                     tbxAddress.InnerText = lo.Address;
 
-                    //tbxEmail.Value = lo.Email;
+                    tbxEmail.InnerText = lo.Email;
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
                     sb.Append(@"<script type='text/javascript'>");
                     sb.Append("$('#modalShowDetails').modal('show');");

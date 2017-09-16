@@ -22,14 +22,14 @@ namespace WebPages.Dashboard.Admin
 
         private void LoadKrmand()
         {
-            Karmand stu = kr.FindByUserName("karim");
+            Karmand stu = kr.FindByUserName("moosa");
 
             lblID.InnerText = stu.EID.ToString();
             lblPersonalCode.InnerText = stu.PersonalCode.ToString();
             lblFirstName.InnerText = stu.FirstName;
             lblLastName.InnerText = stu.LastName;
 
-            tbxBirthYear.Value = stu.BirthDate.Substring(0, 4);
+            tbxBirthDate.Text = stu.BirthDate;
 
             tbxFixTel.Value = stu.PhoneNumber;
             tbxMobile.Value = stu.Mobile;
@@ -41,7 +41,7 @@ namespace WebPages.Dashboard.Admin
             Karmand stu = new Karmand();
             SchoolDBEntities db = new SchoolDBEntities();
 
-            Karmand stuu = db.Karmands.Where(p => p.UserName == "karim").Single();
+            Karmand stuu = db.Karmands.Where(p => p.UserName == "moosa").Single();
 
             stu.EID = lblID.InnerText.ToInt();
             stu.FirstName = stuu.FirstName;
@@ -50,7 +50,7 @@ namespace WebPages.Dashboard.Admin
             stu.UserName = stuu.UserName;
             stu.UserPass = stuu.UserPass;
 
-            stu.BirthDate = string.Format("{0}{1}{2}", tbxBirthYear.Value, stuu.BirthDate.Substring(4, 2), stuu.BirthDate.Substring(6, 2));
+            stu.BirthDate = tbxBirthDate.Text;
 
             stu.PhoneNumber = tbxFixTel.Value;
             stu.Mobile = tbxMobile.Value;
